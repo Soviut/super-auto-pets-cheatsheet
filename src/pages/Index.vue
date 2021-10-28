@@ -9,6 +9,7 @@ const normalizedTerm = computed(() => term.value.trim().toLowerCase())
 // TODO: move to types
 interface Animal {
   name: string
+  icon: string
   packs: number[]
   tier: number
   attack: number
@@ -29,11 +30,11 @@ const filteredAnimals = computed(() => {
 
 <template>
   <div class="container mx-auto">
-    <header>
+    <header class="mb-8">
       <h1>Super Auto Pets</h1>
     </header>
 
-    <form>
+    <form class="mb-8">
       <label for="search" class="sr-only"> Search animals and food </label>
       <input
         id="search"
@@ -43,11 +44,27 @@ const filteredAnimals = computed(() => {
       />
     </form>
 
-    <ul>
-      <li v-for="animal in filteredAnimals" :key="animal.name">
-        <h3>
-          {{ animal.name }}
-        </h3>
+    <ul class="grid grid-cols-4 gap-5">
+      <li
+        v-for="animal in filteredAnimals"
+        :key="animal.name"
+        class="flex p-3 border rounded"
+      >
+        <div>
+          <span v-html="animal.icon" />
+        </div>
+
+        <div>
+          <h3>
+            {{ animal.name }}
+          </h3>
+
+          <div>Tier {{ animal.tier }}</div>
+
+          <div>{{ animal.attack }}/{{ animal.health }}</div>
+
+
+        </div>
       </li>
     </ul>
   </div>
