@@ -29,7 +29,7 @@ const filteredAnimals = computed(() => {
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto px-5">
     <header class="mb-8">
       <h1>Super Auto Pets</h1>
     </header>
@@ -44,7 +44,7 @@ const filteredAnimals = computed(() => {
       />
     </form>
 
-    <ul class="grid grid-cols-4 gap-5">
+    <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       <li
         v-for="animal in filteredAnimals"
         :key="animal.name"
@@ -63,7 +63,11 @@ const filteredAnimals = computed(() => {
 
           <div>{{ animal.attack }}/{{ animal.health }}</div>
 
-
+          <ul>
+            <li v-for="(level, i) in animal.levels" :key="i">
+              Level {{ i + 1 }} - {{ level }}
+            </li>
+          </ul>
         </div>
       </li>
     </ul>
