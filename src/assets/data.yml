@@ -1,0 +1,328 @@
+animals:
+  - name: Ant
+    packs:
+      - 0
+    tier: 1
+    attack: 2
+    health: 1
+    levels:
+      - 'Faint: give a random friend +2/+1'
+      - 'Faint: give a random friend +4/+2'
+      - 'Faint: give a random friend +6/+3'
+    tags:
+      - 'faint'
+
+  - name: Beaver
+    packs:
+      - 0
+    tier: 1
+    attack: 2
+    health: 2
+    levels:
+      - 'Sell: give 2 random friends +1 Health'
+      - 'Sell: give 2 random friends +1 Health'
+      - 'Sell: give 2 random friends +1 Health'
+    tags:
+      - 'sell'
+
+  - name: Cricket
+    packs:
+      - 0
+    tier: 1
+    attack: 1
+    health: 2
+    levels:
+      - 'Faint: Summon a 1/1 Cricket'
+      - 'Faint: Summon a 2/2 Cricket'
+      - 'Faint: Summon a 3/3 Cricket'
+    tags:
+      - 'faint'
+
+  - name: Duck
+    packs:
+      - 0
+    tier: 1
+    attack: 1
+    health: 2
+    levels:
+      - 'Sell: Give shop animals +1/+1'
+      - 'Sell: Give shop animals +2/+2'
+      - 'Sell: Give shop animals +3/+3'
+    tags:
+      - 'sell'
+
+  - name: Fish
+    packs:
+      - 0
+    tier: 1
+    attack: 2
+    health: 3
+    levels:
+      - 'Level-up: Give all friends +1/+1'
+      - 'Level-up: Give all friends +2/+2'
+      - 'Level-up: Animal is already at max level'
+    tags:
+      - 'level-up'
+
+  - name: Horse
+    packs:
+      - 0
+    tier: 1
+    attack: 1
+    health: 1
+    levels:
+      - 'Friend summoned: Give it +1 Attack until end of battle'
+      - 'Friend summoned: Give it +2 Attack until end of battle'
+      - 'Friend summoned: Give it +3 Attack until end of battle'
+    tags:
+      - 'friend-summoned'
+
+  - name: Mosquito
+    packs:
+      - 0
+    tier: 1
+    attack: 2
+    health: 2
+    levels:
+      - 'Start of battle: Deal 1 damage to a random enemy'
+      - 'Start of battle: Deal 2 damage to a random enemy'
+      - 'Start of battle: Deal 3 damage to a random enemy'
+    tags:
+      - 'start-of-battle'
+
+  - name: Otter
+    packs:
+      - 0
+    tier: 1
+    attack: 1
+    health: 2
+    levels:
+      - 'Buy: Give a random friend +1/+1'
+      - 'Buy: Give a random friend +2/+2'
+      - 'Buy: Give a random friend +3/+3'
+    tags:
+      - 'buy'
+
+  - name: Pig
+    packs:
+      - 0
+    tier: 1
+    attack: 2
+    health: 2
+    levels:
+      - 'Sell: Gain an extra 1 gold'
+      - 'Sell: Gain an extra 2 gold'
+      - 'Sell: Gain an extra 3 gold'
+    tags:
+      - 'sell'
+
+  - name: Crab
+    packs:
+      - 0
+    tier: 2
+    attack: 3
+    health: 3
+    levels:
+      - 'Start of battle: Copy Health from friend ahead'
+      - 'Start of battle: Copy Health from friend ahead'
+      - 'Start of battle: Copy Health from friend ahead'
+    tags:
+      - 'start-of-battle'
+
+  - name: Dodo
+    packs:
+      - 0
+    tier: 2
+    attack: 1
+    health: 3
+    levels:
+      - 'Start of battle: Give attack to friend ahead'
+      - 'Start of battle: Give attack to 2 friends ahead'
+      - 'Start of battle: Give attack to 3 friends ahead'
+    tags:
+      - 'start-of-battle'
+
+  - name: Dog
+    packs:
+      - 0
+    tier: 2
+    attack: 2
+    health: 2
+    levels:
+      - 'Friend summoned: Gain +1 Attack or +1 Health'
+      - 'Friend summoned: Gain +2 Attack or +2 Health'
+      - 'Friend summoned: Gain +3 Attack or +3 Health'
+    tags:
+      - 'friend-summoned'
+
+  - name: Elephant
+    packs:
+      - 0
+    tier: 2
+    attack: 3
+    health: 5
+    levels:
+      - 'Before attack: Deal 1 damage to friend behind'
+      - 'Before attack: Deal 1 damage to 2 friends behind'
+      - 'Before attack: Deal 1 damage to 3 friends behind'
+    tags:
+      - 'before-attack'
+
+  - name: Flamingo
+    packs:
+      - 0
+    tier: 2
+    attack: 3
+    health: 1
+    levels:
+      - 'Faint: give the two friends behind +1/+1'
+      - 'Faint: give the two friends behind +2/+2'
+      - 'Faint: give the two friends behind +3/+3'
+    tags:
+      - 'faint'
+
+  - name: Hedgehog
+    packs:
+      - 0
+    tier: 2
+    attack: 3
+    health: 2
+    levels:
+      - 'Faint: Deal 2 damage to all'
+      - 'Faint: Deal 4 damage to all'
+      - 'Faint: Deal 6 damage to all'
+    tags:
+      - 'faint'
+
+  - name: Peacock
+    packs:
+      - 0
+    tier: 2
+    attack: 1
+    health: 5
+    levels:
+      - 'Hurt: Gain +2 Attack'
+      - 'Hurt: Gain +4 Attack'
+      - 'Hurt: Gain +6 Attack'
+    tags:
+      - 'hurt'
+
+  - name: Rat
+    packs:
+      - 0
+    tier: 2
+    attack: 4
+    health: 5
+    levels:
+      - 'Faint: Summon one 1/1 Dirty Rat for the opponent that betrays him'
+      - 'Faint: Summon one 1/1 Dirty Rat for the opponent that betrays him'
+      - 'Faint: Summon one 1/1 Dirty Rat for the opponent that betrays him'
+    tags:
+      - 'faint'
+
+  - name: Shrimp
+    packs:
+      - 0
+    tier: 2
+    attack: 2
+    health: 1
+    levels:
+      - 'Friend sold: Give a random friend +1 Health'
+      - 'Friend sold: Give a random friend +2 Health'
+      - 'Friend sold: Give a random friend +3 Health'
+    tags:
+      - 'friend-sold'
+
+  - name: Spider
+    packs:
+      - 0
+    tier: 2
+    attack: 2
+    health: 2
+    levels:
+      - 'Faint: Summon one tier 3 animal as a 2/2'
+      - 'Faint: Summon one tier 3 animal as a 4/4'
+      - 'Faint: Summon one tier 3 animal as a 6/6'
+    tags:
+      - 'faint'
+
+  - name: Swan
+    packs:
+      - 0
+    tier: 2
+    attack: 3
+    health: 4
+    levels:
+      - 'Start of turn: Gain 1 gold'
+      - 'Start of turn: Gain 2 gold'
+      - 'Start of turn: Gain 3 gold'
+    tags:
+      - 'start-of-turn'
+
+  - name: Badger
+    packs:
+      - 0
+    tier: 3
+    attack: 5
+    health: 4
+    levels:
+      - 'Faint: Deal attack damage to adjacent animals'
+      - 'Faint: Deal attack damage to adjacent animals'
+      - 'Faint: Deal attack damage to adjacent animals'
+    tags:
+      - 'faint'
+
+  - name: Blowfish
+    packs:
+      - 0
+    tier: 3
+    attack: 3
+    health: 5
+    levels:
+      - 'Hurt: Deal 2 damage to a random enemy'
+      - 'Hurt: Deal 4 damage to a random enemy'
+      - 'Hurt: Deal 6 damage to a random enemy'
+    tags:
+      - 'hurt'
+
+  - name: Camel
+    packs:
+      - 0
+    tier: 3
+    attack: 2
+    health: 5
+    levels:
+      - 'Hurt: Give friend behind +1/+2'
+      - 'Hurt: Give friend behind +2/+4'
+      - 'Hurt: Give friend behind +3/+6'
+    tags:
+      - 'hurt'
+
+  - name: Giraffe
+    packs:
+      - 0
+    tier: 3
+    attack: 1
+    health: 3
+    levels:
+      - 'End turn: Give friend ahead +1/+1'
+      - 'End turn: Give 2 friends ahead +1/+1'
+      - 'End turn: Give 3 friends ahead +1/+1'
+    tags:
+      - 'end-turn'
+
+  - name: Kangaroo
+    packs:
+      - 0
+    tier: 3
+    attack: 2
+    health: 3
+    levels:
+      - 'Friend ahead attacks: Gain +2/+2'
+      - 'Friend ahead attacks: Gain +4/+4'
+      - 'Friend ahead attacks: Gain +6/+6'
+    tags:
+      - 'friend-ahead-attacks'
+
+# equipment:
+#   -
