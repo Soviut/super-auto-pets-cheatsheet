@@ -1,7 +1,9 @@
 <template>
   <div>
     <header>
-      <h1>Super Auto Pets Cheatsheet</h1>
+      <router-link :to="{ name: 'home' }">
+        Lootsheet
+      </router-link>
     </header>
 
     <main>
