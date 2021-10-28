@@ -1,6 +1,6 @@
-# Arternal Frontend Next
+# Super Auto Pets Cheatsheet
 
-> Next generation Arternal web portal written in Vue 3 and TypeScript.
+> Cheatsheet for all animals and food in Super Auto Pets.
 
 ## Installation
 

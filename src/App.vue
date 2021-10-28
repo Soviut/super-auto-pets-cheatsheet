@@ -1,21 +1,15 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-</template>
+  <div>
+    <header>
+      <h1>Super Auto Pets Cheatsheet</h1>
+    </header>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    <main>
+      <router-view />
+    </main>
+
+    <footer>
+      &copy; 2021 Lootsheet
+    </footer>
+  </div>
+</template>
