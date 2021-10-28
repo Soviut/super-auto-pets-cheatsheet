@@ -1,10 +1,27 @@
 {
+  "packs": [
+    {
+      "name": "Standard Pack"
+    },
+    {
+      "name": "Expansion Pack 1"
+    }
+  ],
+  "tiers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
   "animals": [
     {
       "name": "Ant",
       "icon": "&#128512;",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 1,
       "attack": 2,
@@ -22,7 +39,8 @@
       "name": "Beaver",
       "icon": "&#128512;",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 1,
       "attack": 2,

@@ -26,6 +26,10 @@ const filteredAnimals = computed(() => {
     ]
   }, [])
 })
+
+const packs = data.packs
+
+const filteredPacks = ref([0, 1])
 </script>
 
 <template>
@@ -42,6 +46,11 @@ const filteredAnimals = computed(() => {
         placeholder="Search animals and food"
         v-model="term"
       />
+
+      <div v-for="(pack, i) in packs" :key="pack.name">
+        <input :id="`pack-${i}`" type="checkbox">
+        <label :for="`pack-${i}`">{{ pack.name }}</label>
+      </div>
     </form>
 
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
