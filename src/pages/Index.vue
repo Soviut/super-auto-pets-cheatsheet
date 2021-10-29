@@ -20,13 +20,15 @@ interface Animal {
 
 const { animals, packs, tiers } = data
 
-// TODO: do test filtering as 2nd step
+// TODO: do text filtering as 2nd step
 const filteredAnimals = computed(() => {
   return (animals as Animal[]).reduce<Animal[]>((acc, curr) => {
-    // TODO: search more fields
     return [
       ...acc,
-      ...(curr.name.toLowerCase().includes(normalizedTerm.value) &&
+      ...((curr.name.toLowerCase().includes(normalizedTerm.value) ||
+        curr.levels.some((level) =>
+          level.toLowerCase().includes(normalizedTerm.value)
+        )) &&
       curr.packs.some((pack) => selectedPacks.value[pack]) &&
       selectedTiers.value[curr.tier]
         ? [curr]
@@ -50,13 +52,13 @@ const animalsByTier = computed(() => {
     .filter((tier) => tier.animals.length)
 })
 
-const selectedPacks = ref([true, true])
+const selectedPacks = ref(new Array(packs.length).fill(true))
 
 const togglePack = (i: number) => {
   selectedPacks.value[i] = !selectedPacks.value[i]
 }
 
-const selectedTiers = ref([true, true, true, true, true, true])
+const selectedTiers = ref(new Array(tiers.length).fill(true))
 
 const toggleTier = (i: number) => {
   selectedTiers.value[i] = !selectedTiers.value[i]
