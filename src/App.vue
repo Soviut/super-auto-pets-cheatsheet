@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col min-h-screen">
     <header class="px-5 py-3 bg-gray-900">
       <router-link :to="{ name: 'home' }" class="text-white hover:no-underline">
         <img src="@/assets/logo.svg" class="inline-block w-10 h-10" />
@@ -8,7 +8,7 @@
       </router-link>
     </header>
 
-    <main>
+    <main class="flex-grow">
       <router-view />
     </main>
 
