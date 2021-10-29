@@ -20,6 +20,7 @@ interface Animal {
 
 const { animals, packs, tiers } = data
 
+// TODO: do test filtering as 2nd step
 const filteredAnimals = computed(() => {
   return (animals as Animal[]).reduce<Animal[]>((acc, curr) => {
     // TODO: search more fields
@@ -32,6 +33,13 @@ const filteredAnimals = computed(() => {
         : []),
     ]
   }, [])
+})
+
+const animalsByTier = computed(() => {
+  return filteredAnimals.value.reduce<Array<Array<Animal>>>((acc, curr) => {
+    acc[curr.tier].push(curr)
+    return acc
+  }, [[], [], [], [], [], []])
 })
 
 const selectedPacks = ref([true, true])
@@ -53,7 +61,7 @@ const toggleTier = (i: number) => {
       <h1>Super Auto Pets</h1>
     </header>
 
-    <form class="mb-8">
+    <form class="mb-8" @submit.prevent>
       <fieldset
         class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 p-3 mb-2 border rounded"
       >
@@ -95,32 +103,39 @@ const toggleTier = (i: number) => {
       </div>
     </form>
 
-    <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-      <li
-        v-for="animal in filteredAnimals"
-        :key="animal.name"
-        class="flex p-3 border rounded"
-      >
-        <div>
-          <span v-html="animal.icon" />
-        </div>
+    <section v-for="(tier, t) in animalsByTier" :key="t" class="mb-8">
+      <header class="mb-3">
+        <h2>{{ tiers[t] }}</h2>
+      </header>
 
-        <div>
-          <h3>
-            {{ animal.name }}
-          </h3>
+      <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <li
+          v-for="animal in tier"
+          :key="animal.name"
+          class="flex p-3 border rounded"
+        >
+          <div>
+            <span v-html="animal.icon" />
+          </div>
 
-          <div>Tier {{ animal.tier + 1 }}</div>
+          <div>
+            <h3>
+              {{ animal.name }}
+            </h3>
 
-          <div>{{ animal.attack }}/{{ animal.health }}</div>
+            <div>{{ tiers[animal.tier] }}</div>
 
-          <ul>
-            <li v-for="(level, i) in animal.levels" :key="i">
-              Level {{ i + 1 }} - {{ level }}
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+            <div>{{ animal.attack }}/{{ animal.health }}</div>
+
+            <ul>
+              <li v-for="(level, i) in animal.levels" :key="i">
+                Level {{ i + 1 }} - {{ level }}
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+
   </div>
 </template>
