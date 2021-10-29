@@ -20,16 +20,30 @@ interface Animal {
 
 const filteredAnimals = computed(() => {
   return (data.animals as Animal[]).reduce<Animal[]>((acc, curr) => {
+    // TODO: search more fields
     return [
       ...acc,
-      ...(curr.name.toLowerCase().includes(normalizedTerm.value) ? [curr] : []),
+      ...(
+        curr.name.toLowerCase().includes(normalizedTerm.value)
+        && selectedPacks.value.some((pack) => curr.packs.includes(pack))
+          ? [curr]
+          : []
+      ),
     ]
   }, [])
 })
 
-const packs = data.packs
+const { packs } = data
 
-const filteredPacks = ref([0, 1])
+const selectedPacks = ref([0, 1])
+
+const togglePack = (i: number) => {
+  if (selectedPacks.value.includes(i)) {
+    selectedPacks.value = selectedPacks.value.filter((p) => p !== i)
+  } else {
+    selectedPacks.value.push(i)
+  }
+}
 </script>
 
 <template>
@@ -48,7 +62,12 @@ const filteredPacks = ref([0, 1])
       />
 
       <div v-for="(pack, i) in packs" :key="pack.name">
-        <input :id="`pack-${i}`" type="checkbox">
+        <input
+          :id="`pack-${i}`"
+          type="checkbox"
+          :checked="selectedPacks.includes(i)"
+          @input="togglePack(i)"
+        />
         <label :for="`pack-${i}`">{{ pack.name }}</label>
       </div>
     </form>
