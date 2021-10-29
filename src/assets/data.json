@@ -751,6 +751,166 @@
       "tags": [
         "eats-shop-food"
       ]
+    },
+    {
+      "name": "Cow",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 4,
+      "health": 6,
+      "levels": [
+        "Buy: Replace food shop with 2 free milk that gives +2/+2",
+        "Buy: Replace food shop with 2 free milk that gives +2/+2",
+        "Buy: Replace food shop with 2 free milk that gives +2/+2"
+      ],
+      "tags": [
+        "buy"
+      ]
+    },
+    {
+      "name": "Crocodile",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 6,
+      "health": 3,
+      "levels": [
+        "Start of battle: Deal 7 damage to the last enemy",
+        "Start of battle: Deal 14 damage to the last enemy",
+        "Start of battle: Deal 21 damage to the last enemy"
+      ],
+      "tags": [
+        "start-of-battle"
+      ]
+    },
+    {
+      "name": "Parrot",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 3,
+      "health": 2,
+      "levels": [
+        "End turn: Copy ability from pet ahead as level 1 until end of battle",
+        "End turn: Copy ability from pet ahead as level 2 until end of battle",
+        "End turn: Copy ability from pet ahead as level 3 until end of battle"
+      ],
+      "tags": [
+        "end-turn"
+      ]
+    },
+    {
+      "name": "Rhino",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 5,
+      "health": 6,
+      "levels": [
+        "Knock out: Deal 4 damage to the first enemy",
+        "Knock out: Deal 8 damage to the first enemy",
+        "Knock out: Deal 12 damage to the first enemy"
+      ],
+      "tags": [
+        "knock-out"
+      ]
+    },
+    {
+      "name": "Scorpion",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "No ability",
+        "No ability",
+        "No ability"
+      ],
+      "tags": []
+    },
+    {
+      "name": "Seal",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 3,
+      "health": 6,
+      "levels": [
+        "Eats shop food: Give 2 random friends +1/+1",
+        "Eats shop food: Give 2 random friends +2/+2",
+        "Eats shop food: Give 2 random friends +3/+3"
+      ],
+      "tags": [
+        "eats-shop-food"
+      ]
+    },
+    {
+      "name": "Shark",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 4,
+      "health": 4,
+      "levels": [
+        "Friend faints: Gain +2/+1",
+        "Friend faints: Gain +4/+2",
+        "Friend faints: Gain +6/+3"
+      ],
+      "tags": [
+        "friend-faints"
+      ]
+    },
+    {
+      "name": "Turkey",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 4,
+      "attack": 3,
+      "health": 4,
+      "levels": [
+        "Friend summoned: Give it +3/+3",
+        "Friend summoned: Give it +6/+6",
+        "Friend summoned: Give it +9/+9"
+      ],
+      "tags": [
+        "friend-summoned"
+      ]
+    },
+    {
+      "name": "Cat",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 4,
+      "health": 5,
+      "levels": [
+        "Food with Health and Attack effects are doubled",
+        "Food with Health and Attack effects are tripled",
+        "Food with Health and Attack effects are quadrupled"
+      ],
+      "tags": [
+        "food-doubled"
+      ]
     }
   ]
 }
