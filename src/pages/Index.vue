@@ -89,9 +89,9 @@ const toggleTier = (i: number) => {
         placeholder="Search animals and food"
         v-model="term"
       />
-    </form>
 
-    <div>Showing {{ animals.length }} / {{ filteredAnimals.length }}</div>
+      <div>Showing {{ filteredAnimals.length }} / {{ animals.length }}</div>
+    </form>
 
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       <li
