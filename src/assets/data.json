@@ -463,6 +463,294 @@
       "tags": [
         "friend-ahead-attacks"
       ]
+    },
+    {
+      "name": "Ox",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 2,
+      "attack": 1,
+      "health": 4,
+      "levels": [
+        "Friend ahead attacks: Gain Melon Armor and +2 Attack",
+        "Friend ahead attacks: Gain Melon Armor and +4 Attack",
+        "Friend ahead attacks: Gain Melon Armor and +6 Attack"
+      ],
+      "tags": [
+        "friend-ahead-attacks"
+      ]
+    },
+    {
+      "name": "Rabbit",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 2,
+      "attack": 3,
+      "health": 2,
+      "levels": [
+        "Friend eats shop food: Give it +1 Health",
+        "Friend eats shop food: Give it +2 Health",
+        "Friend eats shop food: Give it +3 Health"
+      ],
+      "tags": [
+        "friend-eats-shop-food"
+      ]
+    },
+    {
+      "name": "Sheep",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 2,
+      "attack": 2,
+      "health": 2,
+      "levels": [
+        "Faint: Summon two 2/2 Rams",
+        "Faint: Summon two 4/4 Rams",
+        "Faint: Summon two 6/6 Rams"
+      ],
+      "tags": [
+        "faint"
+      ]
+    },
+    {
+      "name": "Snail",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 2,
+      "attack": 2,
+      "health": 2,
+      "levels": [
+        "Buy: If you lost last battle, give all friends +2/+1",
+        "Buy: If you lost last battle, give all friends +4/+2",
+        "Buy: If you lost last battle, give all friends +6/+3"
+      ],
+      "tags": [
+        "buy"
+      ]
+    },
+    {
+      "name": "Turtle",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 2,
+      "attack": 2,
+      "health": 4,
+      "levels": [
+        "Faint: Give friend behind Melon Armor",
+        "Faint: Give 2 friends behind Melon Armor",
+        "Faint: Give 3 friends behind Melon Armor"
+      ],
+      "tags": [
+        "Faint"
+      ]
+    },
+    {
+      "name": "Whale",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 2,
+      "health": 6,
+      "levels": [
+        "Start of battle: Swallow friend ahead and release it as a level 1 after fainting",
+        "Start of battle: Swallow friend ahead and release it as a level 2 after fainting",
+        "Start of battle: Swallow friend ahead and release it as a level 3 after fainting"
+      ],
+      "tags": [
+        "start-of-battle"
+      ]
+    },
+    {
+      "name": "Bison",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 6,
+      "health": 6,
+      "levels": [
+        "End turn: Gain +2/+2 if there is at least one level 3 friend",
+        "End turn: Gain +4/+4 if there is at least one level 3 friend",
+        "End turn: Gain +6/+6 if there is at least one level 3 friend"
+      ],
+      "tags": [
+        "end-turn"
+      ]
+    },
+    {
+      "name": "Deer",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "Faint: Summon a 5/5 Bus with Spash attack",
+        "Faint: Summon a 10/10 Bus with Spash attack",
+        "Faint: Summon a 15/15 Bus with Spash attack"
+      ],
+      "tags": [
+        "faint"
+      ]
+    },
+    {
+      "name": "Dolphin",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 4,
+      "health": 6,
+      "levels": [
+        "Start of battle: Deal 5 damage to the lowest health enemy",
+        "Start of battle: Deal 10 damage to the lowest health enemy",
+        "Start of battle: Deal 15 damage to the lowest health enemy"
+      ],
+      "tags": [
+        "start-of-battle"
+      ]
+    },
+    {
+      "name": "Hippo",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 4,
+      "health": 7,
+      "levels": [
+        "Knock out: Gain +2/+2",
+        "Knock out: Gain +4/+4",
+        "Knock out: Gain +6/+6"
+      ],
+      "tags": [
+        "knock-out"
+      ]
+    },
+    {
+      "name": "Monkey",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 3,
+      "health": 3,
+      "levels": [
+        "End turn: Give right-most friend +2/+2",
+        "End turn: Give right-most friend +4/+4",
+        "End turn: Give right-most friend +6/+6"
+      ],
+      "tags": [
+        "end-turn"
+      ]
+    },
+    {
+      "name": "Penguin",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 1,
+      "health": 2,
+      "levels": [
+        "End turn: Give other level 2 and 3 friends +1/+1",
+        "End turn: Give other level 2 and 3 friends +2/+2",
+        "End turn: Give other level 2 and 3 friends +3/+3"
+      ],
+      "tags": [
+        "end-turn"
+      ]
+    },
+    {
+      "name": "Rooster",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 3,
+      "health": 3,
+      "levels": [
+        "Faint: Summon a chick with 1 health and the same Attack as this",
+        "Faint: Summon 2 chicks with 1 health and the same Attack as this",
+        "Faint: Summon 3 chicks with 1 health and the same Attack as this"
+      ],
+      "tags": [
+        "faint"
+      ]
+    },
+    {
+      "name": "Skunk",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 3,
+      "health": 5,
+      "levels": [
+        "Start of battle: Reduce the highest Health enemy by 33%",
+        "Start of battle: Reduce the highest Health enemy by 66%",
+        "Start of battle: Reduce the highest Health enemy by 99%"
+      ],
+      "tags": [
+        "start-of-battle"
+      ]
+    },
+    {
+      "name": "Squirrel",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 2,
+      "health": 2,
+      "levels": [
+        "Buy: Clear and fill shop with food",
+        "Buy: Clear and fill shop with food",
+        "Buy: Clear and fill shop with food"
+      ],
+      "tags": [
+        "buy"
+      ]
+    },
+    {
+      "name": "Worm",
+      "icon": "&#128512;",
+      "packs": [
+        0
+      ],
+      "tier": 3,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "Eats shop food: Gain +1/+1",
+        "Eats shop food: Gain +2/+2",
+        "Eats shop food: Gain +3/+3"
+      ],
+      "tags": [
+        "eats-shop-food"
+      ]
     }
   ]
 }

@@ -48,7 +48,7 @@ const toggleTier = (i: number) => {
 </script>
 
 <template>
-  <div class="container mx-auto px-5">
+  <div class="container mx-auto my-10 px-5">
     <header class="mb-8">
       <h1>Super Auto Pets</h1>
     </header>
@@ -90,7 +90,9 @@ const toggleTier = (i: number) => {
         v-model="term"
       />
 
-      <div>Showing {{ filteredAnimals.length }} / {{ animals.length }}</div>
+      <div class="text-sm text-gray-400">
+        Showing {{ filteredAnimals.length }} / {{ animals.length }}
+      </div>
     </form>
 
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
