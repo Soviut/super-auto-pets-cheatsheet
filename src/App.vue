@@ -12,6 +12,8 @@
       <router-view />
     </main>
 
-    <footer>&copy; 2021 Lootsheet</footer>
+    <footer class="p-5 bg-gray-200 text-gray-500">
+      &copy; 2021 Lootsheet
+    </footer>
   </div>
 </template>
