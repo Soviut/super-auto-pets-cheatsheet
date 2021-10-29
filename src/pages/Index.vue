@@ -18,23 +18,21 @@ interface Animal {
   tags: string[]
 }
 
+const { animals, packs, tiers } = data
+
 const filteredAnimals = computed(() => {
-  return (data.animals as Animal[]).reduce<Animal[]>((acc, curr) => {
+  return (animals as Animal[]).reduce<Animal[]>((acc, curr) => {
     // TODO: search more fields
     return [
       ...acc,
-      ...(
-        curr.name.toLowerCase().includes(normalizedTerm.value)
-        && curr.packs.some((pack) => selectedPacks.value[pack])
-        && selectedTiers.value[curr.tier]
-          ? [curr]
-          : []
-      ),
+      ...(curr.name.toLowerCase().includes(normalizedTerm.value) &&
+      curr.packs.some((pack) => selectedPacks.value[pack]) &&
+      selectedTiers.value[curr.tier]
+        ? [curr]
+        : []),
     ]
   }, [])
 })
-
-const { packs, tiers } = data
 
 const selectedPacks = ref([true, true])
 
@@ -56,6 +54,34 @@ const toggleTier = (i: number) => {
     </header>
 
     <form class="mb-8">
+      <fieldset
+        class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 p-3 mb-2 border rounded"
+      >
+        <div v-for="(pack, i) in packs" :key="pack">
+          <input
+            :id="`pack-${i}`"
+            type="checkbox"
+            :checked="selectedPacks[i]"
+            @input="togglePack(i)"
+          />
+          <label :for="`pack-${i}`" class="ml-2">{{ pack }}</label>
+        </div>
+      </fieldset>
+
+      <fieldset
+        class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 p-3 mb-2 border rounded"
+      >
+        <div v-for="(tier, i) in tiers" :key="tier">
+          <input
+            :id="`tier-${i}`"
+            type="checkbox"
+            :checked="selectedTiers[i]"
+            @input="toggleTier(i)"
+          />
+          <label :for="`tier-${i}`" class="ml-2">{{ tier }}</label>
+        </div>
+      </fieldset>
+
       <label for="search" class="sr-only"> Search animals and food </label>
       <input
         id="search"
@@ -63,27 +89,9 @@ const toggleTier = (i: number) => {
         placeholder="Search animals and food"
         v-model="term"
       />
-
-      <div v-for="(pack, i) in packs" :key="pack">
-        <input
-          :id="`pack-${i}`"
-          type="checkbox"
-          :checked="selectedPacks[i]"
-          @input="togglePack(i)"
-        />
-        <label :for="`pack-${i}`">{{ pack }}</label>
-      </div>
-
-      <div v-for="(tier, i) in tiers" :key="tier">
-        <input
-          :id="`tier-${i}`"
-          type="checkbox"
-          :checked="selectedTiers[i]"
-          @input="toggleTier(i)"
-        />
-        <label :for="`tier-${i}`">{{ tier }}</label>
-      </div>
     </form>
+
+    <div>Showing {{ animals.length }} / {{ filteredAnimals.length }}</div>
 
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       <li
