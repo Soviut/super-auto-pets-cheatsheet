@@ -35,11 +35,19 @@ const filteredAnimals = computed(() => {
   }, [])
 })
 
+// TODO: return array of objects so empty tiers can be filtered
 const animalsByTier = computed(() => {
-  return filteredAnimals.value.reduce<Array<Array<Animal>>>((acc, curr) => {
-    acc[curr.tier].push(curr)
-    return acc
-  }, [[], [], [], [], [], []])
+  return filteredAnimals.value
+    .reduce<Array<{ number: number; animals: Animal[] }>>(
+      (acc, curr) => {
+        acc[curr.tier].animals.push(curr)
+        return acc
+      },
+      new Array(tiers.length)
+        .fill(0)
+        .map((_, i) => ({ number: i, animals: [] }))
+    )
+    .filter((tier) => tier.animals.length)
 })
 
 const selectedPacks = ref([true, true])
@@ -63,7 +71,16 @@ const toggleTier = (i: number) => {
 
     <form class="mb-8" @submit.prevent>
       <fieldset
-        class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 p-3 mb-2 border rounded"
+        class="
+          grid
+          sm:grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-6
+          p-3
+          mb-2
+          border
+          rounded
+        "
       >
         <div v-for="(pack, i) in packs" :key="pack">
           <input
@@ -77,7 +94,16 @@ const toggleTier = (i: number) => {
       </fieldset>
 
       <fieldset
-        class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 p-3 mb-2 border rounded"
+        class="
+          grid
+          sm:grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-6
+          p-3
+          mb-2
+          border
+          rounded
+        "
       >
         <div v-for="(tier, i) in tiers" :key="tier">
           <input
@@ -105,12 +131,12 @@ const toggleTier = (i: number) => {
 
     <section v-for="(tier, t) in animalsByTier" :key="t" class="mb-8">
       <header class="mb-3">
-        <h2>{{ tiers[t] }}</h2>
+        <h2>{{ tiers[tier.number] }}</h2>
       </header>
 
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <li
-          v-for="animal in tier"
+          v-for="animal in tier.animals"
           :key="animal.name"
           class="flex p-3 border rounded"
         >
@@ -136,6 +162,5 @@ const toggleTier = (i: number) => {
         </li>
       </ul>
     </section>
-
   </div>
 </template>
