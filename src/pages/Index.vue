@@ -26,6 +26,7 @@ const filteredAnimals = computed(() => {
       ...(
         curr.name.toLowerCase().includes(normalizedTerm.value)
         && curr.packs.some((pack) => selectedPacks.value[pack])
+        && selectedTiers.value[curr.tier]
           ? [curr]
           : []
       ),
@@ -33,12 +34,18 @@ const filteredAnimals = computed(() => {
   }, [])
 })
 
-const { packs } = data
+const { packs, tiers } = data
 
 const selectedPacks = ref([true, true])
 
 const togglePack = (i: number) => {
   selectedPacks.value[i] = !selectedPacks.value[i]
+}
+
+const selectedTiers = ref([true, true, true, true, true, true])
+
+const toggleTier = (i: number) => {
+  selectedTiers.value[i] = !selectedTiers.value[i]
 }
 </script>
 
@@ -57,14 +64,24 @@ const togglePack = (i: number) => {
         v-model="term"
       />
 
-      <div v-for="(pack, i) in packs" :key="pack.name">
+      <div v-for="(pack, i) in packs" :key="pack">
         <input
           :id="`pack-${i}`"
           type="checkbox"
           :checked="selectedPacks[i]"
           @input="togglePack(i)"
         />
-        <label :for="`pack-${i}`">{{ pack.name }}</label>
+        <label :for="`pack-${i}`">{{ pack }}</label>
+      </div>
+
+      <div v-for="(tier, i) in tiers" :key="tier">
+        <input
+          :id="`tier-${i}`"
+          type="checkbox"
+          :checked="selectedTiers[i]"
+          @input="toggleTier(i)"
+        />
+        <label :for="`tier-${i}`">{{ tier }}</label>
       </div>
     </form>
 
@@ -83,7 +100,7 @@ const togglePack = (i: number) => {
             {{ animal.name }}
           </h3>
 
-          <div>Tier {{ animal.tier }}</div>
+          <div>Tier {{ animal.tier + 1 }}</div>
 
           <div>{{ animal.attack }}/{{ animal.health }}</div>
 

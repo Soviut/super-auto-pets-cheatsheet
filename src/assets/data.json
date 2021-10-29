@@ -1,19 +1,15 @@
 {
   "packs": [
-    {
-      "name": "Standard Pack"
-    },
-    {
-      "name": "Expansion Pack 1"
-    }
+    "Standard Pack",
+    "Expansion Pack 1"
   ],
   "tiers": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
+    "Tier 1",
+    "Tier 2",
+    "Tier 3",
+    "Tier 4",
+    "Tier 5",
+    "Tier 6"
   ],
   "animals": [
     {
@@ -23,7 +19,7 @@
         0,
         1
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 2,
       "health": 1,
       "levels": [
@@ -42,7 +38,7 @@
         0,
         1
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 2,
       "health": 2,
       "levels": [
@@ -60,7 +56,7 @@
       "packs": [
         0
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 1,
       "health": 2,
       "levels": [
@@ -78,7 +74,7 @@
       "packs": [
         0
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 1,
       "health": 2,
       "levels": [
@@ -96,7 +92,7 @@
       "packs": [
         0
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 2,
       "health": 3,
       "levels": [
@@ -114,7 +110,7 @@
       "packs": [
         0
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 1,
       "health": 1,
       "levels": [
@@ -132,7 +128,7 @@
       "packs": [
         0
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 2,
       "health": 2,
       "levels": [
@@ -150,7 +146,7 @@
       "packs": [
         0
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 1,
       "health": 2,
       "levels": [
@@ -168,7 +164,7 @@
       "packs": [
         0
       ],
-      "tier": 1,
+      "tier": 0,
       "attack": 2,
       "health": 2,
       "levels": [
@@ -186,7 +182,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 3,
       "health": 3,
       "levels": [
@@ -204,7 +200,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 1,
       "health": 3,
       "levels": [
@@ -222,7 +218,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 2,
       "health": 2,
       "levels": [
@@ -240,7 +236,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 3,
       "health": 5,
       "levels": [
@@ -258,7 +254,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 3,
       "health": 1,
       "levels": [
@@ -276,7 +272,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 3,
       "health": 2,
       "levels": [
@@ -294,7 +290,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 1,
       "health": 5,
       "levels": [
@@ -312,7 +308,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 4,
       "health": 5,
       "levels": [
@@ -330,7 +326,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 2,
       "health": 1,
       "levels": [
@@ -348,7 +344,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 2,
       "health": 2,
       "levels": [
@@ -366,7 +362,7 @@
       "packs": [
         0
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 3,
       "health": 4,
       "levels": [
@@ -384,7 +380,7 @@
       "packs": [
         0
       ],
-      "tier": 3,
+      "tier": 2,
       "attack": 5,
       "health": 4,
       "levels": [
@@ -402,7 +398,7 @@
       "packs": [
         0
       ],
-      "tier": 3,
+      "tier": 2,
       "attack": 3,
       "health": 5,
       "levels": [
@@ -420,7 +416,7 @@
       "packs": [
         0
       ],
-      "tier": 3,
+      "tier": 2,
       "attack": 2,
       "health": 5,
       "levels": [
@@ -438,7 +434,7 @@
       "packs": [
         0
       ],
-      "tier": 3,
+      "tier": 2,
       "attack": 1,
       "health": 3,
       "levels": [
@@ -456,7 +452,7 @@
       "packs": [
         0
       ],
-      "tier": 3,
+      "tier": 2,
       "attack": 2,
       "health": 3,
       "levels": [
