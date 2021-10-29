@@ -25,7 +25,7 @@ const filteredAnimals = computed(() => {
       ...acc,
       ...(
         curr.name.toLowerCase().includes(normalizedTerm.value)
-        && selectedPacks.value.some((pack) => curr.packs.includes(pack))
+        && curr.packs.some((pack) => selectedPacks.value[pack])
           ? [curr]
           : []
       ),
@@ -35,14 +35,10 @@ const filteredAnimals = computed(() => {
 
 const { packs } = data
 
-const selectedPacks = ref([0, 1])
+const selectedPacks = ref([true, true])
 
 const togglePack = (i: number) => {
-  if (selectedPacks.value.includes(i)) {
-    selectedPacks.value = selectedPacks.value.filter((p) => p !== i)
-  } else {
-    selectedPacks.value.push(i)
-  }
+  selectedPacks.value[i] = !selectedPacks.value[i]
 }
 </script>
 
@@ -65,7 +61,7 @@ const togglePack = (i: number) => {
         <input
           :id="`pack-${i}`"
           type="checkbox"
-          :checked="selectedPacks.includes(i)"
+          :checked="selectedPacks[i]"
           @input="togglePack(i)"
         />
         <label :for="`pack-${i}`">{{ pack.name }}</label>
