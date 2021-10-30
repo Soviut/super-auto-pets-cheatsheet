@@ -13,6 +13,7 @@
   ],
   "animals": [
     {
+      "id": "ant",
       "name": "Ant",
       "imageUrl": "ant.png",
       "packs": [
@@ -32,6 +33,7 @@
       ]
     },
     {
+      "id": "beaver",
       "name": "Beaver",
       "imageUrl": "beaver.png",
       "packs": [
@@ -51,6 +53,7 @@
       ]
     },
     {
+      "id": "cricket",
       "name": "Cricket",
       "imageUrl": "cricket.png",
       "packs": [
@@ -69,6 +72,7 @@
       ]
     },
     {
+      "id": "duck",
       "name": "Duck",
       "imageUrl": "duck.png",
       "packs": [
@@ -87,6 +91,7 @@
       ]
     },
     {
+      "id": "fish",
       "name": "Fish",
       "imageUrl": "fish.png",
       "packs": [
@@ -105,6 +110,7 @@
       ]
     },
     {
+      "id": "horse",
       "name": "Horse",
       "imageUrl": "horse.png",
       "packs": [
@@ -123,6 +129,7 @@
       ]
     },
     {
+      "id": "mosquito",
       "name": "Mosquito",
       "imageUrl": "mosquito.png",
       "packs": [
@@ -141,6 +148,7 @@
       ]
     },
     {
+      "id": "otter",
       "name": "Otter",
       "imageUrl": "otter.png",
       "packs": [
@@ -159,6 +167,7 @@
       ]
     },
     {
+      "id": "pig",
       "name": "Pig",
       "imageUrl": "pig.png",
       "packs": [
@@ -177,6 +186,7 @@
       ]
     },
     {
+      "id": "crab",
       "name": "Crab",
       "imageUrl": "crab.png",
       "packs": [
@@ -195,6 +205,7 @@
       ]
     },
     {
+      "id": "dodo",
       "name": "Dodo",
       "imageUrl": "dodo.png",
       "packs": [
@@ -213,6 +224,7 @@
       ]
     },
     {
+      "id": "dog",
       "name": "Dog",
       "imageUrl": "dog.png",
       "packs": [
@@ -231,6 +243,7 @@
       ]
     },
     {
+      "id": "elephant",
       "name": "Elephant",
       "imageUrl": "elephant.png",
       "packs": [
@@ -249,6 +262,7 @@
       ]
     },
     {
+      "id": "flamingo",
       "name": "Flamingo",
       "imageUrl": "flamingo.png",
       "packs": [
@@ -267,6 +281,7 @@
       ]
     },
     {
+      "id": "hedgehog",
       "name": "Hedgehog",
       "imageUrl": "hedgehog.png",
       "packs": [
@@ -285,6 +300,7 @@
       ]
     },
     {
+      "id": "peacock",
       "name": "Peacock",
       "imageUrl": "peacock.png",
       "packs": [
@@ -303,6 +319,7 @@
       ]
     },
     {
+      "id": "rat",
       "name": "Rat",
       "imageUrl": "rat.png",
       "packs": [
@@ -321,6 +338,7 @@
       ]
     },
     {
+      "id": "shrimp",
       "name": "Shrimp",
       "imageUrl": "shrimp.png",
       "packs": [
@@ -339,6 +357,7 @@
       ]
     },
     {
+      "id": "spider",
       "name": "Spider",
       "imageUrl": "spider.png",
       "packs": [
@@ -357,6 +376,7 @@
       ]
     },
     {
+      "id": "swan",
       "name": "Swan",
       "imageUrl": "swan.png",
       "packs": [
@@ -375,6 +395,7 @@
       ]
     },
     {
+      "id": "badger",
       "name": "Badger",
       "imageUrl": "badger.png",
       "packs": [
@@ -393,6 +414,7 @@
       ]
     },
     {
+      "id": "blowfish",
       "name": "Blowfish",
       "imageUrl": "blowfish.png",
       "packs": [
@@ -411,6 +433,7 @@
       ]
     },
     {
+      "id": "camel",
       "name": "Camel",
       "imageUrl": "two-hump-camel.png",
       "packs": [
@@ -429,6 +452,7 @@
       ]
     },
     {
+      "id": "giraffe",
       "name": "Giraffe",
       "imageUrl": "giraffe.png",
       "packs": [
@@ -447,6 +471,7 @@
       ]
     },
     {
+      "id": "kangaroo",
       "name": "Kangaroo",
       "imageUrl": "kangaroo.png",
       "packs": [
@@ -465,6 +490,7 @@
       ]
     },
     {
+      "id": "ox",
       "name": "Ox",
       "imageUrl": "ox.png",
       "packs": [
@@ -483,6 +509,7 @@
       ]
     },
     {
+      "id": "rabbit",
       "name": "Rabbit",
       "imageUrl": "rabbit.png",
       "packs": [
@@ -501,6 +528,7 @@
       ]
     },
     {
+      "id": "sheep",
       "name": "Sheep",
       "imageUrl": "ewe.png",
       "packs": [
@@ -519,6 +547,7 @@
       ]
     },
     {
+      "id": "snail",
       "name": "Snail",
       "imageUrl": "snail.png",
       "packs": [
@@ -537,6 +566,7 @@
       ]
     },
     {
+      "id": "turtle",
       "name": "Turtle",
       "imageUrl": "turtle.png",
       "packs": [
@@ -555,6 +585,7 @@
       ]
     },
     {
+      "id": "whale",
       "name": "Whale",
       "imageUrl": "whale.png",
       "packs": [
@@ -573,6 +604,7 @@
       ]
     },
     {
+      "id": "bison",
       "name": "Bison",
       "imageUrl": "bison.png",
       "packs": [
@@ -591,6 +623,7 @@
       ]
     },
     {
+      "id": "deer",
       "name": "Deer",
       "imageUrl": "deer.png",
       "packs": [
@@ -609,6 +642,7 @@
       ]
     },
     {
+      "id": "dolphin",
       "name": "Dolphin",
       "imageUrl": "dolphin.png",
       "packs": [
@@ -627,6 +661,7 @@
       ]
     },
     {
+      "id": "hippo",
       "name": "Hippo",
       "imageUrl": "hippopotamus.png",
       "packs": [
@@ -645,6 +680,7 @@
       ]
     },
     {
+      "id": "monkey",
       "name": "Monkey",
       "imageUrl": "monkey.png",
       "packs": [
@@ -663,6 +699,7 @@
       ]
     },
     {
+      "id": "penguin",
       "name": "Penguin",
       "imageUrl": "penguin.png",
       "packs": [
@@ -681,6 +718,7 @@
       ]
     },
     {
+      "id": "rooster",
       "name": "Rooster",
       "imageUrl": "rooster.png",
       "packs": [
@@ -699,6 +737,7 @@
       ]
     },
     {
+      "id": "skunk",
       "name": "Skunk",
       "imageUrl": "skunk.png",
       "packs": [
@@ -717,6 +756,7 @@
       ]
     },
     {
+      "id": "squirrel",
       "name": "Squirrel",
       "imageUrl": "chipmunk.png",
       "packs": [
@@ -735,6 +775,7 @@
       ]
     },
     {
+      "id": "worm",
       "name": "Worm",
       "imageUrl": "worm.png",
       "packs": [
@@ -753,6 +794,7 @@
       ]
     },
     {
+      "id": "cow",
       "name": "Cow",
       "imageUrl": "cow.png",
       "packs": [
@@ -771,6 +813,7 @@
       ]
     },
     {
+      "id": "crocodile",
       "name": "Crocodile",
       "imageUrl": "crocodile.png",
       "packs": [
@@ -789,6 +832,7 @@
       ]
     },
     {
+      "id": "parrot",
       "name": "Parrot",
       "imageUrl": "parrot.png",
       "packs": [
@@ -807,6 +851,7 @@
       ]
     },
     {
+      "id": "rhino",
       "name": "Rhino",
       "imageUrl": "rhinoceros.png",
       "packs": [
@@ -825,6 +870,7 @@
       ]
     },
     {
+      "id": "scorpion",
       "name": "Scorpion",
       "imageUrl": "scorpion.png",
       "packs": [
@@ -841,6 +887,7 @@
       "tags": []
     },
     {
+      "id": "seal",
       "name": "Seal",
       "imageUrl": "seal.png",
       "packs": [
@@ -859,6 +906,7 @@
       ]
     },
     {
+      "id": "shark",
       "name": "Shark",
       "imageUrl": "shark.png",
       "packs": [
@@ -877,6 +925,7 @@
       ]
     },
     {
+      "id": "turkey",
       "name": "Turkey",
       "imageUrl": "turkey.png",
       "packs": [
@@ -895,6 +944,7 @@
       ]
     },
     {
+      "id": "cat",
       "name": "Cat",
       "imageUrl": "cat.png",
       "packs": [

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import data from '@/assets/data.json'
+import { SearchCircleIcon } from '@heroicons/vue/outline'
 
 const term = ref('')
 
@@ -8,6 +9,7 @@ const normalizedTerm = computed(() => term.value.trim().toLowerCase())
 
 // TODO: move to types
 interface Animal {
+  id: string
   name: string
   imageUrl: string
   packs: number[]
@@ -131,7 +133,7 @@ const toggleTier = (i: number) => {
       </div>
     </form>
 
-    <section v-for="(tier, t) in animalsByTier" :key="t" class="mb-8">
+    <section v-for="tier in animalsByTier" :key="tier.number" class="mb-8">
       <header class="mb-3">
         <h2>{{ tiers[tier.number] }}</h2>
       </header>
@@ -139,7 +141,7 @@ const toggleTier = (i: number) => {
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <li
           v-for="animal in tier.animals"
-          :key="animal.name"
+          :key="animal.id"
           class="border rounded overflow-hidden"
         >
           <header class="flex p-3 gap-3 bg-gray-100">
@@ -147,7 +149,7 @@ const toggleTier = (i: number) => {
               <img :src="`images/${animal.imageUrl}`" class="w-20" />
             </div>
 
-            <div>
+            <div class="flex-grow">
               <h3>
                 {{ animal.name }}
               </h3>
@@ -155,6 +157,13 @@ const toggleTier = (i: number) => {
               <div>{{ tiers[animal.tier] }}</div>
 
               <div>{{ animal.attack }}/{{ animal.health }}</div>
+            </div>
+
+            <div class="flex-shrink-0">
+              <router-link :to="{ name: 'view', params: { id: animal.id } }" class="flex items-center">
+                <SearchCircleIcon class="w-6 h-6 mr-1" />
+                View
+              </router-link>
             </div>
           </header>
 

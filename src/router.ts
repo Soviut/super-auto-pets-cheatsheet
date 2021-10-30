@@ -6,5 +6,6 @@ export default createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', component: Home, name: 'home' },
+    { path: '/:id', component: Home, name: 'view' },
   ],
 })
