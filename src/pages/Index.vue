@@ -101,7 +101,7 @@ const toggleTier = (i: number) => {
           lg:grid-cols-6
           p-3
           mb-2
-          border
+          bg-white
           rounded
         "
       >
@@ -124,7 +124,7 @@ const toggleTier = (i: number) => {
           lg:grid-cols-6
           p-3
           mb-2
-          border
+          bg-white
           rounded
         "
       >
@@ -167,8 +167,8 @@ const toggleTier = (i: number) => {
               h-full
               p-5
               overflow-hidden
-              border
               rounded
+              bg-white
               text-black
               hover:no-underline hover:ring-4 hover:ring-primary-500/50
               focus:outline-none focus:ring-4 focus:ring-primary-500/50

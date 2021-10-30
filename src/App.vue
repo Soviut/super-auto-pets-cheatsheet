@@ -8,11 +8,11 @@
       </router-link>
     </header>
 
-    <main class="flex-grow">
+    <main class="flex-grow bg-gray-200">
       <router-view />
     </main>
 
-    <footer class="p-5 bg-gray-200 text-gray-500">
+    <footer class="p-5 bg-gray-300 text-gray-500">
       &copy; 2021 Lootsheet
     </footer>
   </div>
