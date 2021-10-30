@@ -84,8 +84,8 @@
   select[multiple],
   textarea {
     @apply rounded-lg
-      w-full px-3 py-2
-      border-2 border-gray-300 focus:border-white
+      w-full px-3 py-3
+      border-0 border-gray-300 focus:border-white
       dark:bg-gray-900 dark:border-gray-700
       focus:ring-4 focus:ring-primary-500 focus:ring-opacity-50
       outline-none;
