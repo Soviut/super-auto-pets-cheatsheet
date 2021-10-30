@@ -231,7 +231,7 @@ const toggleTier = (i: number) => {
               class="
                 flex
                 -mt-4
-                -mr-3
+                -mr-4
                 px-3
                 py-2
                 items-center
