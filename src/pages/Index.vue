@@ -1,7 +1,17 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import data from '@/assets/data.json'
 import { SearchCircleIcon } from '@heroicons/vue/outline'
+
+const route = useRoute()
+
+// lock scrolling if we are in a modal
+watch(
+  () => route.params.id,
+  (value) => document.body.classList.toggle('overflow-hidden', !!value),
+  { immediate: true },
+)
 
 const term = ref('')
 
@@ -160,7 +170,10 @@ const toggleTier = (i: number) => {
             </div>
 
             <div class="flex-shrink-0">
-              <router-link :to="{ name: 'view', params: { id: animal.id } }" class="flex items-center">
+              <router-link
+                :to="{ name: 'view', params: { id: animal.id } }"
+                class="flex items-center"
+              >
                 <SearchCircleIcon class="w-6 h-6 mr-1" />
                 View
               </router-link>
@@ -177,5 +190,7 @@ const toggleTier = (i: number) => {
         </li>
       </ul>
     </section>
+
+    <div v-if="route.params.id" class="fixed inset-0 bg-black/70">testing</div>
   </div>
 </template>
