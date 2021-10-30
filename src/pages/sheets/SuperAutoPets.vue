@@ -190,7 +190,7 @@ const toggleTier = (i: number) => {
               </div>
             </header>
 
-            <hr class="my-3 border-0 h-1 bg-gray-300 rounded-full" />
+            <hr class="my-3 border-0 h-1 bg-gray-200 rounded-full" />
 
             <div class="text-sm">
               <ul>
@@ -248,7 +248,7 @@ const toggleTier = (i: number) => {
           </div>
         </header>
 
-        <hr class="my-5 border-0 h-1 bg-gray-300 rounded-full" />
+        <hr class="my-5 border-0 h-1 bg-gray-200 rounded-full" />
 
         <div>
           <ul>
