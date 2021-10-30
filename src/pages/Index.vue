@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import data from '@/assets/data.json'
-import { SearchCircleIcon } from '@heroicons/vue/outline'
+import { XIcon, SearchCircleIcon } from '@heroicons/vue/outline'
 
 const router = useRouter()
 const route = useRoute()
@@ -36,6 +36,10 @@ interface Animal {
 }
 
 const { animals, packs, tiers } = data
+
+const current = computed(() => {
+  return (animals as Animal[]).find((animal) => animal.id === route.params.id)
+})
 
 // TODO: do text filtering as 2nd step
 const filteredAnimals = computed(() => {
@@ -157,9 +161,9 @@ const toggleTier = (i: number) => {
         <li
           v-for="animal in tier.animals"
           :key="animal.id"
-          class="border rounded overflow-hidden"
+          class="p-5 border rounded overflow-hidden"
         >
-          <header class="flex p-3 gap-3 bg-gray-100">
+          <header class="flex gap-3">
             <div class="flex-shrink-0">
               <img :src="`images/${animal.imageUrl}`" class="w-20" />
             </div>
@@ -185,7 +189,9 @@ const toggleTier = (i: number) => {
             </div>
           </header>
 
-          <div class="p-3 text-sm">
+          <hr class="my-3" />
+
+          <div class="text-sm">
             <ul>
               <li v-for="(level, i) in animal.levels" :key="i">
                 Level {{ i + 1 }} - {{ level }}
@@ -197,12 +203,46 @@ const toggleTier = (i: number) => {
     </section>
 
     <div
-      v-if="route.params.id"
+      v-if="current"
       class="fixed inset-0 px-5 py-10 bg-black/70"
       @click.self="closeModal"
     >
       <div class="mx-auto p-5 max-w-xl bg-white rounded shadow-xl">
-        This is a test
+        <header class="flex gap-3">
+          <div class="flex-shrink-0">
+            <img :src="`images/${current.imageUrl}`" class="w-20" />
+          </div>
+
+          <div class="flex-grow">
+            <h3>
+              {{ current.name }}
+            </h3>
+
+            <div>{{ tiers[current.tier] }}</div>
+
+            <div>{{ current.attack }}/{{ current.health }}</div>
+          </div>
+
+          <div class="flex-shrink-0">
+            <router-link
+              :to="{ name: 'home' }"
+              class="flex items-center"
+            >
+              <XIcon class="w-6 h-6 mr-1" />
+              Close
+            </router-link>
+          </div>
+        </header>
+
+        <hr class="my-3" />
+
+        <div class="text-sm">
+          <ul>
+            <li v-for="(level, i) in current.levels" :key="i">
+              Level {{ i + 1 }} - {{ level }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
