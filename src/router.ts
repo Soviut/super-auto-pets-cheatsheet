@@ -17,8 +17,27 @@ export default createRouter({
       path: '/sheets',
       component: PassLayout,
       children: [
-        { path: '', component: SuperAutoPets, name: 'super-auto-pets' },
-        { path: ':id', component: SuperAutoPets, name: 'super-auto-pets-view' },
+        {
+          path: '',
+          redirect: { name: 'super-auto-pets' },
+          name: 'sheets',
+        },
+        {
+          path: 'super-auto-pets',
+          component: PassLayout,
+          children: [
+            {
+              path: '',
+              component: SuperAutoPets,
+              name: 'super-auto-pets'
+            },
+            {
+              path: ':id',
+              component: SuperAutoPets,
+              name: 'super-auto-pets-view'
+            },
+          ],
+        },
       ],
     },
   ],
