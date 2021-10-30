@@ -53,11 +53,50 @@
       ]
     },
     {
+      "id": "beetle",
+      "name": "Beetle",
+      "imageUrl": "beetle.png",
+      "packs": [
+        1
+      ],
+      "tier": 0,
+      "attack": 2,
+      "health": 3,
+      "levels": [
+        "Eat shop food: Give shop pets +1 Health",
+        "Eat shop food: Give shop pets +2 Health",
+        "Eat shop food: Give shop pets +3 Health"
+      ],
+      "tags": [
+        "eat-shop-food"
+      ]
+    },
+    {
+      "id": "bluebird",
+      "name": "Bluebird",
+      "imageUrl": "bird.png",
+      "packs": [
+        1
+      ],
+      "tier": 0,
+      "attack": 2,
+      "health": 1,
+      "levels": [
+        "End turn: Give left-most friend +1 Attack",
+        "End turn: Give left-most friend +2 Attack",
+        "End turn: Give left-most friend +3 Attack"
+      ],
+      "tags": [
+        "end-turn"
+      ]
+    },
+    {
       "id": "cricket",
       "name": "Cricket",
       "imageUrl": "cricket.png",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 0,
       "attack": 1,
@@ -95,7 +134,8 @@
       "name": "Fish",
       "imageUrl": "fish.png",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 0,
       "attack": 2,
@@ -103,13 +143,12 @@
       "levels": [
         "Level-up: Give all friends +1/+1",
         "Level-up: Give all friends +2/+2",
-        "Level-up: Animal is already at max level"
+        "No effect"
       ],
       "tags": [
         "level-up"
       ]
-    },
-    {
+    },    {
       "id": "horse",
       "name": "Horse",
       "imageUrl": "horse.png",
@@ -129,11 +168,31 @@
       ]
     },
     {
+      "id": "ladybug",
+      "name": "Ladybug",
+      "imageUrl": "lady-beetle.png",
+      "packs": [
+        0
+      ],
+      "tier": 0,
+      "attack": 1,
+      "health": 3,
+      "levels": [
+        "Buy food: gain +1/+1 until end of battle",
+        "Buy food: gain +2/+2 until end of battle",
+        "Buy food: gain +3/+3 until end of battle"
+      ],
+      "tags": [
+        "buy-food"
+      ]
+    },
+    {
       "id": "mosquito",
       "name": "Mosquito",
       "imageUrl": "mosquito.png",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 0,
       "attack": 2,
@@ -171,7 +230,8 @@
       "name": "Pig",
       "imageUrl": "pig.png",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 0,
       "attack": 2,

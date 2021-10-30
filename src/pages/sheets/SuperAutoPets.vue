@@ -192,7 +192,7 @@ const toggleTier = (i: number) => {
 
             <hr class="my-3 border-0 h-1 bg-gray-200 rounded-full" />
 
-            <div class="text-sm">
+            <div class="text-sm text-gray-600">
               <ul>
                 <li v-for="(level, i) in animal.levels" :key="i">
                   Level {{ i + 1 }} - {{ level }}
