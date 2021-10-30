@@ -158,46 +158,47 @@ const toggleTier = (i: number) => {
       </header>
 
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        <li
-          v-for="animal in tier.animals"
-          :key="animal.id"
-          class="p-5 border rounded overflow-hidden"
-        >
-          <header class="flex gap-3">
-            <div class="flex-shrink-0">
-              <img :src="`images/${animal.imageUrl}`" class="w-20" />
+        <li v-for="animal in tier.animals" :key="animal.id">
+          <router-link
+            :to="{ name: 'view', params: { id: animal.id } }"
+            class="
+              block
+              h-full
+              p-5
+              overflow-hidden
+              border
+              rounded
+              text-black
+              hover:no-underline hover:ring-4 hover:ring-primary-500/50
+              focus:outline-none focus:ring-4 focus:ring-primary-500/50
+            "
+          >
+            <header class="flex gap-3">
+              <div class="flex-shrink-0">
+                <img :src="`images/${animal.imageUrl}`" class="w-20" />
+              </div>
+
+              <div class="flex-grow">
+                <h3>
+                  {{ animal.name }}
+                </h3>
+
+                <div>{{ tiers[animal.tier] }}</div>
+
+                <div>{{ animal.attack }}/{{ animal.health }}</div>
+              </div>
+            </header>
+
+            <hr class="my-3" />
+
+            <div class="text-sm">
+              <ul>
+                <li v-for="(level, i) in animal.levels" :key="i">
+                  Level {{ i + 1 }} - {{ level }}
+                </li>
+              </ul>
             </div>
-
-            <div class="flex-grow">
-              <h3>
-                {{ animal.name }}
-              </h3>
-
-              <div>{{ tiers[animal.tier] }}</div>
-
-              <div>{{ animal.attack }}/{{ animal.health }}</div>
-            </div>
-
-            <div class="flex-shrink-0">
-              <router-link
-                :to="{ name: 'view', params: { id: animal.id } }"
-                class="flex items-center"
-              >
-                <SearchCircleIcon class="w-6 h-6 mr-1" />
-                View
-              </router-link>
-            </div>
-          </header>
-
-          <hr class="my-3" />
-
-          <div class="text-sm">
-            <ul>
-              <li v-for="(level, i) in animal.levels" :key="i">
-                Level {{ i + 1 }} - {{ level }}
-              </li>
-            </ul>
-          </div>
+          </router-link>
         </li>
       </ul>
     </section>
@@ -207,14 +208,14 @@ const toggleTier = (i: number) => {
       class="fixed inset-0 px-5 py-10 bg-black/70"
       @click.self="closeModal"
     >
-      <div class="mx-auto p-5 max-w-xl bg-white rounded shadow-xl">
-        <header class="flex gap-3">
+      <div class="mx-auto p-8 max-w-xl bg-white rounded shadow-xl text-lg">
+        <header class="flex gap-5">
           <div class="flex-shrink-0">
-            <img :src="`images/${current.imageUrl}`" class="w-20" />
+            <img :src="`images/${current.imageUrl}`" class="w-32" />
           </div>
 
           <div class="flex-grow">
-            <h3>
+            <h3 class="text-3xl">
               {{ current.name }}
             </h3>
 
@@ -224,10 +225,7 @@ const toggleTier = (i: number) => {
           </div>
 
           <div class="flex-shrink-0">
-            <router-link
-              :to="{ name: 'home' }"
-              class="flex items-center"
-            >
+            <router-link :to="{ name: 'home' }" class="flex -mt-4 -mr-3 items-center text-base">
               <XIcon class="w-6 h-6 mr-1" />
               Close
             </router-link>
@@ -236,7 +234,7 @@ const toggleTier = (i: number) => {
 
         <hr class="my-3" />
 
-        <div class="text-sm">
+        <div>
           <ul>
             <li v-for="(level, i) in current.levels" :key="i">
               Level {{ i + 1 }} - {{ level }}
