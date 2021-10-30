@@ -14,7 +14,7 @@
   "animals": [
     {
       "name": "Ant",
-      "icon": "&#128512;",
+      "imageUrl": "ant.png",
       "packs": [
         0,
         1
@@ -33,7 +33,7 @@
     },
     {
       "name": "Beaver",
-      "icon": "&#128512;",
+      "imageUrl": "beaver.png",
       "packs": [
         0,
         1
@@ -52,7 +52,7 @@
     },
     {
       "name": "Cricket",
-      "icon": "&#128512;",
+      "imageUrl": "cricket.png",
       "packs": [
         0
       ],
@@ -70,7 +70,7 @@
     },
     {
       "name": "Duck",
-      "icon": "&#128512;",
+      "imageUrl": "duck.png",
       "packs": [
         0
       ],
@@ -88,7 +88,7 @@
     },
     {
       "name": "Fish",
-      "icon": "&#128512;",
+      "imageUrl": "fish.png",
       "packs": [
         0
       ],
@@ -106,7 +106,7 @@
     },
     {
       "name": "Horse",
-      "icon": "&#128512;",
+      "imageUrl": "horse.png",
       "packs": [
         0
       ],
@@ -124,7 +124,7 @@
     },
     {
       "name": "Mosquito",
-      "icon": "&#128512;",
+      "imageUrl": "mosquito.png",
       "packs": [
         0
       ],
@@ -142,7 +142,7 @@
     },
     {
       "name": "Otter",
-      "icon": "&#128512;",
+      "imageUrl": "otter.png",
       "packs": [
         0
       ],
@@ -160,7 +160,7 @@
     },
     {
       "name": "Pig",
-      "icon": "&#128512;",
+      "imageUrl": "pig.png",
       "packs": [
         0
       ],
@@ -178,7 +178,7 @@
     },
     {
       "name": "Crab",
-      "icon": "&#128512;",
+      "imageUrl": "crab.png",
       "packs": [
         0
       ],
@@ -196,7 +196,7 @@
     },
     {
       "name": "Dodo",
-      "icon": "&#128512;",
+      "imageUrl": "dodo.png",
       "packs": [
         0
       ],
@@ -214,7 +214,7 @@
     },
     {
       "name": "Dog",
-      "icon": "&#128512;",
+      "imageUrl": "dog.png",
       "packs": [
         0
       ],
@@ -232,7 +232,7 @@
     },
     {
       "name": "Elephant",
-      "icon": "&#128512;",
+      "imageUrl": "elephant.png",
       "packs": [
         0
       ],
@@ -250,7 +250,7 @@
     },
     {
       "name": "Flamingo",
-      "icon": "&#128512;",
+      "imageUrl": "flamingo.png",
       "packs": [
         0
       ],
@@ -268,7 +268,7 @@
     },
     {
       "name": "Hedgehog",
-      "icon": "&#128512;",
+      "imageUrl": "hedgehog.png",
       "packs": [
         0
       ],
@@ -286,7 +286,7 @@
     },
     {
       "name": "Peacock",
-      "icon": "&#128512;",
+      "imageUrl": "peacock.png",
       "packs": [
         0
       ],
@@ -304,7 +304,7 @@
     },
     {
       "name": "Rat",
-      "icon": "&#128512;",
+      "imageUrl": "rat.png",
       "packs": [
         0
       ],
@@ -322,7 +322,7 @@
     },
     {
       "name": "Shrimp",
-      "icon": "&#128512;",
+      "imageUrl": "shrimp.png",
       "packs": [
         0
       ],
@@ -340,7 +340,7 @@
     },
     {
       "name": "Spider",
-      "icon": "&#128512;",
+      "imageUrl": "spider.png",
       "packs": [
         0
       ],
@@ -358,7 +358,7 @@
     },
     {
       "name": "Swan",
-      "icon": "&#128512;",
+      "imageUrl": "swan.png",
       "packs": [
         0
       ],
@@ -376,7 +376,7 @@
     },
     {
       "name": "Badger",
-      "icon": "&#128512;",
+      "imageUrl": "badger.png",
       "packs": [
         0
       ],
@@ -394,7 +394,7 @@
     },
     {
       "name": "Blowfish",
-      "icon": "&#128512;",
+      "imageUrl": "blowfish.png",
       "packs": [
         0
       ],
@@ -412,7 +412,7 @@
     },
     {
       "name": "Camel",
-      "icon": "&#128512;",
+      "imageUrl": "two-hump-camel.png",
       "packs": [
         0
       ],
@@ -430,7 +430,7 @@
     },
     {
       "name": "Giraffe",
-      "icon": "&#128512;",
+      "imageUrl": "giraffe.png",
       "packs": [
         0
       ],
@@ -448,7 +448,7 @@
     },
     {
       "name": "Kangaroo",
-      "icon": "&#128512;",
+      "imageUrl": "kangaroo.png",
       "packs": [
         0
       ],
@@ -466,7 +466,7 @@
     },
     {
       "name": "Ox",
-      "icon": "&#128512;",
+      "imageUrl": "ox.png",
       "packs": [
         0
       ],
@@ -484,7 +484,7 @@
     },
     {
       "name": "Rabbit",
-      "icon": "&#128512;",
+      "imageUrl": "rabbit.png",
       "packs": [
         0
       ],
@@ -502,7 +502,7 @@
     },
     {
       "name": "Sheep",
-      "icon": "&#128512;",
+      "imageUrl": "ewe.png",
       "packs": [
         0
       ],
@@ -520,7 +520,7 @@
     },
     {
       "name": "Snail",
-      "icon": "&#128512;",
+      "imageUrl": "snail.png",
       "packs": [
         0
       ],
@@ -538,7 +538,7 @@
     },
     {
       "name": "Turtle",
-      "icon": "&#128512;",
+      "imageUrl": "turtle.png",
       "packs": [
         0
       ],
@@ -556,7 +556,7 @@
     },
     {
       "name": "Whale",
-      "icon": "&#128512;",
+      "imageUrl": "whale.png",
       "packs": [
         0
       ],
@@ -574,7 +574,7 @@
     },
     {
       "name": "Bison",
-      "icon": "&#128512;",
+      "imageUrl": "bison.png",
       "packs": [
         0
       ],
@@ -592,7 +592,7 @@
     },
     {
       "name": "Deer",
-      "icon": "&#128512;",
+      "imageUrl": "deer.png",
       "packs": [
         0
       ],
@@ -610,7 +610,7 @@
     },
     {
       "name": "Dolphin",
-      "icon": "&#128512;",
+      "imageUrl": "dolphin.png",
       "packs": [
         0
       ],
@@ -628,7 +628,7 @@
     },
     {
       "name": "Hippo",
-      "icon": "&#128512;",
+      "imageUrl": "hippopotamus.png",
       "packs": [
         0
       ],
@@ -646,7 +646,7 @@
     },
     {
       "name": "Monkey",
-      "icon": "&#128512;",
+      "imageUrl": "monkey.png",
       "packs": [
         0
       ],
@@ -664,7 +664,7 @@
     },
     {
       "name": "Penguin",
-      "icon": "&#128512;",
+      "imageUrl": "penguin.png",
       "packs": [
         0
       ],
@@ -682,7 +682,7 @@
     },
     {
       "name": "Rooster",
-      "icon": "&#128512;",
+      "imageUrl": "rooster.png",
       "packs": [
         0
       ],
@@ -700,7 +700,7 @@
     },
     {
       "name": "Skunk",
-      "icon": "&#128512;",
+      "imageUrl": "skunk.png",
       "packs": [
         0
       ],
@@ -718,7 +718,7 @@
     },
     {
       "name": "Squirrel",
-      "icon": "&#128512;",
+      "imageUrl": "chipmunk.png",
       "packs": [
         0
       ],
@@ -736,7 +736,7 @@
     },
     {
       "name": "Worm",
-      "icon": "&#128512;",
+      "imageUrl": "worm.png",
       "packs": [
         0
       ],
@@ -754,7 +754,7 @@
     },
     {
       "name": "Cow",
-      "icon": "&#128512;",
+      "imageUrl": "cow.png",
       "packs": [
         0
       ],
@@ -772,7 +772,7 @@
     },
     {
       "name": "Crocodile",
-      "icon": "&#128512;",
+      "imageUrl": "crocodile.png",
       "packs": [
         0
       ],
@@ -790,7 +790,7 @@
     },
     {
       "name": "Parrot",
-      "icon": "&#128512;",
+      "imageUrl": "parrot.png",
       "packs": [
         0
       ],
@@ -808,7 +808,7 @@
     },
     {
       "name": "Rhino",
-      "icon": "&#128512;",
+      "imageUrl": "rhinoceros.png",
       "packs": [
         0
       ],
@@ -826,7 +826,7 @@
     },
     {
       "name": "Scorpion",
-      "icon": "&#128512;",
+      "imageUrl": "scorpion.png",
       "packs": [
         0
       ],
@@ -842,7 +842,7 @@
     },
     {
       "name": "Seal",
-      "icon": "&#128512;",
+      "imageUrl": "seal.png",
       "packs": [
         0
       ],
@@ -860,7 +860,7 @@
     },
     {
       "name": "Shark",
-      "icon": "&#128512;",
+      "imageUrl": "shark.png",
       "packs": [
         0
       ],
@@ -878,7 +878,7 @@
     },
     {
       "name": "Turkey",
-      "icon": "&#128512;",
+      "imageUrl": "turkey.png",
       "packs": [
         0
       ],
@@ -896,7 +896,7 @@
     },
     {
       "name": "Cat",
-      "icon": "&#128512;",
+      "imageUrl": "cat.png",
       "packs": [
         0
       ],

@@ -9,7 +9,7 @@ const normalizedTerm = computed(() => term.value.trim().toLowerCase())
 // TODO: move to types
 interface Animal {
   name: string
-  icon: string
+  imageUrl: string
   packs: number[]
   tier: number
   attack: number
@@ -142,8 +142,8 @@ const toggleTier = (i: number) => {
           :key="animal.name"
           class="flex p-3 border rounded"
         >
-          <div>
-            <span v-html="animal.icon" />
+          <div class="flex-shrink-0">
+            <img :src="`images/${animal.imageUrl}`" class="w-20" />
           </div>
 
           <div>
