@@ -105,14 +105,14 @@ const toggleTier = (i: number) => {
           rounded-lg
         "
       >
-        <div v-for="(pack, i) in packs" :key="pack">
+        <div v-for="(pack, i) in packs" :key="pack" class="flex items-center">
           <input
             :id="`pack-${i}`"
             type="checkbox"
             :checked="selectedPacks[i]"
             @input="togglePack(i)"
           />
-          <label :for="`pack-${i}`" class="ml-2">{{ pack }}</label>
+          <label :for="`pack-${i}`" class="ml-2 flex-grow">{{ pack }}</label>
         </div>
       </fieldset>
 
@@ -128,14 +128,14 @@ const toggleTier = (i: number) => {
           rounded-lg
         "
       >
-        <div v-for="(tier, i) in tiers" :key="tier">
+        <div v-for="(tier, i) in tiers" :key="tier" class="flex items-center">
           <input
             :id="`tier-${i}`"
             type="checkbox"
             :checked="selectedTiers[i]"
             @input="toggleTier(i)"
           />
-          <label :for="`tier-${i}`" class="ml-2">{{ tier }}</label>
+          <label :for="`tier-${i}`" class="ml-2 flex-grow">{{ tier }}</label>
         </div>
       </fieldset>
 
