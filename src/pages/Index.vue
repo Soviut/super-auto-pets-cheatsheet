@@ -140,21 +140,25 @@ const toggleTier = (i: number) => {
         <li
           v-for="animal in tier.animals"
           :key="animal.name"
-          class="flex p-3 border rounded"
+          class="border rounded overflow-hidden"
         >
-          <div class="flex-shrink-0">
-            <img :src="`images/${animal.imageUrl}`" class="w-20" />
-          </div>
+          <header class="flex p-3 gap-3 bg-gray-100">
+            <div class="flex-shrink-0">
+              <img :src="`images/${animal.imageUrl}`" class="w-20" />
+            </div>
 
-          <div>
-            <h3>
-              {{ animal.name }}
-            </h3>
+            <div>
+              <h3>
+                {{ animal.name }}
+              </h3>
 
-            <div>{{ tiers[animal.tier] }}</div>
+              <div>{{ tiers[animal.tier] }}</div>
 
-            <div>{{ animal.attack }}/{{ animal.health }}</div>
+              <div>{{ animal.attack }}/{{ animal.health }}</div>
+            </div>
+          </header>
 
+          <div class="p-3 text-sm">
             <ul>
               <li v-for="(level, i) in animal.levels" :key="i">
                 Level {{ i + 1 }} - {{ level }}
