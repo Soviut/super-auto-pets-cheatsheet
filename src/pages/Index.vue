@@ -198,10 +198,12 @@ const toggleTier = (i: number) => {
 
     <div
       v-if="route.params.id"
-      class="fixed inset-0 bg-black/70"
-      @click.prevent="closeModal"
+      class="fixed inset-0 px-5 py-10 bg-black/70"
+      @click.self="closeModal"
     >
-      testing
+      <div class="mx-auto p-5 max-w-xl bg-white rounded shadow-xl">
+        This is a test
+      </div>
     </div>
   </div>
 </template>
