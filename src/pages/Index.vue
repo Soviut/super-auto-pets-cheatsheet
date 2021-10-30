@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import data from '@/assets/data.json'
 import { SearchCircleIcon } from '@heroicons/vue/outline'
 
+const router = useRouter()
 const route = useRoute()
 
 // lock scrolling if we are in a modal
 watch(
   () => route.params.id,
   (value) => document.body.classList.toggle('overflow-hidden', !!value),
-  { immediate: true },
+  { immediate: true }
 )
+
+const closeModal = () => {
+  router.push({ name: 'home' })
+}
 
 const term = ref('')
 
@@ -191,6 +196,12 @@ const toggleTier = (i: number) => {
       </ul>
     </section>
 
-    <div v-if="route.params.id" class="fixed inset-0 bg-black/70">testing</div>
+    <div
+      v-if="route.params.id"
+      class="fixed inset-0 bg-black/70"
+      @click.prevent="closeModal"
+    >
+      testing
+    </div>
   </div>
 </template>
