@@ -15,7 +15,7 @@ watch(
 )
 
 const closeModal = () => {
-  router.push({ name: 'home' })
+  router.push({ name: 'super-auto-pets' })
 }
 
 const term = ref('')
@@ -102,7 +102,7 @@ const toggleTier = (i: number) => {
           p-3
           mb-2
           bg-white
-          rounded
+          rounded-lg
         "
       >
         <div v-for="(pack, i) in packs" :key="pack">
@@ -125,7 +125,7 @@ const toggleTier = (i: number) => {
           p-3
           mb-2
           bg-white
-          rounded
+          rounded-lg
         "
       >
         <div v-for="(tier, i) in tiers" :key="tier">
@@ -161,13 +161,13 @@ const toggleTier = (i: number) => {
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <li v-for="animal in tier.animals" :key="animal.id">
           <router-link
-            :to="{ name: 'view', params: { id: animal.id } }"
+            :to="{ name: 'super-auto-pets-view', params: { id: animal.id } }"
             class="
               block
               h-full
               p-5
               overflow-hidden
-              rounded
+              rounded-lg
               bg-white
               text-black
               hover:no-underline hover:ring-4 hover:ring-primary-500/50
@@ -176,7 +176,7 @@ const toggleTier = (i: number) => {
           >
             <header class="flex gap-3">
               <div class="flex-shrink-0">
-                <img :src="`images/${animal.imageUrl}`" class="w-20" />
+                <img :src="`/images/${animal.imageUrl}`" class="w-20" />
               </div>
 
               <div class="flex-grow">
@@ -190,7 +190,7 @@ const toggleTier = (i: number) => {
               </div>
             </header>
 
-            <hr class="my-3" />
+            <hr class="my-3 border-0 h-1 bg-gray-200 rounded-full" />
 
             <div class="text-sm">
               <ul>
@@ -209,10 +209,10 @@ const toggleTier = (i: number) => {
       class="fixed inset-0 px-5 py-10 bg-black/70"
       @click.self="closeModal"
     >
-      <div class="mx-auto p-8 max-w-xl bg-white rounded shadow-xl text-lg">
+      <div class="mx-auto p-8 max-w-xl bg-white rounded-xl shadow-xl text-lg">
         <header class="flex gap-5">
           <div class="flex-shrink-0">
-            <img :src="`images/${current.imageUrl}`" class="w-32" />
+            <img :src="`/images/${current.imageUrl}`" class="w-32" />
           </div>
 
           <div class="flex-grow">
@@ -227,7 +227,7 @@ const toggleTier = (i: number) => {
 
           <div class="flex-shrink-0">
             <router-link
-              :to="{ name: 'home' }"
+              :to="{ name: 'super-auto-pets' }"
               class="
                 flex
                 -mt-4
