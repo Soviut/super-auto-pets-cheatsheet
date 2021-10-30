@@ -144,6 +144,7 @@ const toggleTier = (i: number) => {
         id="search"
         type="search"
         placeholder="Search animals and food"
+        autocomplete="off"
         v-model="term"
       />
 
@@ -225,7 +226,22 @@ const toggleTier = (i: number) => {
           </div>
 
           <div class="flex-shrink-0">
-            <router-link :to="{ name: 'home' }" class="flex -mt-4 -mr-3 items-center text-base">
+            <router-link
+              :to="{ name: 'home' }"
+              class="
+                flex
+                -mt-4
+                -mr-3
+                px-3
+                py-2
+                items-center
+                rounded
+                text-base
+                focus:outline-none focus:bg-primary-500 focus:text-white
+                hover:bg-primary-500 hover:text-white hover:no-underline
+                transition
+              "
+            >
               <XIcon class="w-6 h-6 mr-1" />
               Close
             </router-link>
