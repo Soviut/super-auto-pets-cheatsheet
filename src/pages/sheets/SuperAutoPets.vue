@@ -84,6 +84,12 @@ const selectedTiers = ref(new Array(tiers.length).fill(true))
 const toggleTier = (i: number) => {
   selectedTiers.value[i] = !selectedTiers.value[i]
 }
+
+const reset = () => {
+  term.value = ''
+  selectedPacks.value = new Array(packs.length).fill(true)
+  selectedTiers.value = new Array(tiers.length).fill(true)
+}
 </script>
 
 <template>
@@ -150,6 +156,14 @@ const toggleTier = (i: number) => {
 
       <div class="text-sm text-gray-400">
         Showing {{ filteredAnimals.length }} / {{ animals.length }}
+
+        <button
+          v-if="filteredAnimals.length !== animals.length"
+          class="text-primary-500"
+          @click="reset"
+        >
+          Reset
+        </button>
       </div>
     </form>
 
