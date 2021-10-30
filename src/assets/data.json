@@ -946,7 +946,7 @@
     {
       "id": "cat",
       "name": "Cat",
-      "imageUrl": "cat.png",
+      "imageUrl": "black-cat.png",
       "packs": [
         0
       ],
@@ -960,6 +960,120 @@
       ],
       "tags": [
         "food-doubled"
+      ]
+    },
+    {
+      "id": "dragon",
+      "name": "Dragon",
+      "imageUrl": "dragon.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 6,
+      "health": 8,
+      "levels": [
+        "Buy tier 1 pet: Give all friends +1/+1",
+        "Buy tier 1 pet: Give all friends +2/+2",
+        "Buy tier 1 pet: Give all friends +3/+3"
+      ],
+      "tags": [
+        "buy-tier-1-pet"
+      ]
+    },
+    {
+      "id": "fly",
+      "name": "Fly",
+      "imageUrl": "fly.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 2,
+      "health": 2,
+      "levels": [
+        "Friend faints: Summon a 2/2 fly in its place",
+        "Friend faints: Summon a 4/4 fly in its place",
+        "Friend faints: Summon a 6/6 fly in its place"
+      ],
+      "tags": [
+        "friend-faints"
+      ]
+    },
+    {
+      "id": "gorilla",
+      "name": "Gorilla",
+      "imageUrl": "gorilla.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 6,
+      "health": 6,
+      "levels": [
+        "Hurt: Gain Coconut Shield",
+        "Hurt: Gain Coconut Shield",
+        "Hurt: Gain Coconut Shield"
+      ],
+      "tags": [
+        "hurt"
+      ]
+    },
+    {
+      "id": "leopard",
+      "name": "Leopard",
+      "imageUrl": "leopard.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 6,
+      "health": 4,
+      "levels": [
+        "Start of battle: Deal 50% Attack damage to a random enemy",
+        "Start of battle: Deal 50% Attack damage to 2 random enemies",
+        "Start of battle: Deal 50% Attack damage to 4 random enemies"
+      ],
+      "tags": [
+        "start-of-battle"
+      ]
+    },
+    {
+      "id": "mammoth",
+      "name": "Mammoth",
+      "imageUrl": "mammoth.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 2,
+      "health": 6,
+      "levels": [
+        "Faint: Give all friends +2/+2",
+        "Faint: Give all friends +4/+4",
+        "Faint: Give all friends +6/+6"
+      ],
+      "tags": [
+        "faint"
+      ]
+    },
+    {
+      "id": "tiger",
+      "name": "Tiger",
+      "imageUrl": "tiger.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 4,
+      "health": 3,
+      "levels": [
+        "The friend ahead casts their ability twice in battle",
+        "The friend ahead casts their ability twice in battle",
+        "The friend ahead casts their ability twice in battle"
+      ],
+      "tags": [
+        "friend-summoned"
       ]
     }
   ]
