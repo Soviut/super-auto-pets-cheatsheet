@@ -78,18 +78,30 @@ const animalsByTier = computed(() => {
     .filter((tier) => tier.animals.length)
 })
 
-const selectedPacks = ref(new Array(packs.length).fill(true))
+const selectedPacks = ref<boolean[]>(new Array(packs.length).fill(true))
 const selectedPacksCount = computed(
   () => selectedPacks.value.filter((pack) => pack).length
+)
+const selectedPacksIndexes = computed(() =>
+  selectedPacks.value.reduce<number[]>(
+    (acc, curr, i) => (curr ? [...acc, i] : acc),
+    []
+  )
 )
 
 const togglePack = (i: number) => {
   selectedPacks.value[i] = !selectedPacks.value[i]
 }
 
-const selectedTiers = ref(new Array(tiers.length).fill(true))
+const selectedTiers = ref<boolean[]>(new Array(tiers.length).fill(true))
 const selectedTiersCount = computed(
   () => selectedTiers.value.filter((tier) => tier).length
+)
+const selectedTiersIndexes = computed(() =>
+  selectedTiers.value.reduce<number[]>(
+    (acc, curr, i) => (curr ? [...acc, i] : acc),
+    []
+  )
 )
 
 const toggleTier = (i: number) => {
@@ -97,10 +109,53 @@ const toggleTier = (i: number) => {
 }
 
 const reset = () => {
+  console.log('reset')
   term.value = ''
   selectedPacks.value = new Array(packs.length).fill(true)
   selectedTiers.value = new Array(tiers.length).fill(true)
 }
+
+watch(
+  [term, selectedPacks, selectedTiers],
+  ([term, packs, tiers]) => {
+    const filtering =
+      term.length ||
+      selectedPacksCount.value !== packs.length ||
+      selectedTiersCount.value !== tiers.length
+
+    router.replace({
+      query: filtering
+        ? {
+            term,
+            packs: selectedPacksIndexes.value.join(','),
+            tiers: selectedTiersIndexes.value.join(','),
+          }
+        : {},
+    })
+  },
+  { deep: true }
+)
+
+watch(
+  () => route.query,
+  (query) => {
+    if (query.term || query.packs || query.tiers) {
+      term.value = (query.term as string) ?? ''
+
+      const packIndexes = (query.packs as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
+      selectedPacks.value = selectedPacks.value.map((_, i) => packIndexes.includes(i))
+
+      // TODO: overwritten?
+      const tierIndexes = (query.tiers as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
+      console.log(tierIndexes)
+      selectedTiers.value = selectedTiers.value.map((_, i) => tierIndexes.includes(i))
+      console.log(selectedTiers.value)
+    } else {
+      reset()
+    }
+  },
+  { immediate: true }
+)
 </script>
 
 <template>
@@ -320,7 +375,18 @@ const reset = () => {
       class="fixed inset-0 px-5 py-10 bg-black/70"
       @click.self="closeModal"
     >
-      <div class="relative mx-auto p-8 max-w-xl bg-white rounded-xl shadow-xl text-lg">
+      <div
+        class="
+          relative
+          mx-auto
+          p-8
+          max-w-xl
+          bg-white
+          rounded-xl
+          shadow-xl
+          text-lg
+        "
+      >
         <router-link
           :to="{ name: 'sheets-view' }"
           class="
