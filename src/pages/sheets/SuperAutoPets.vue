@@ -3,7 +3,11 @@ import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import data from '@/assets/data.json'
-import { XIcon, SearchCircleIcon } from '@heroicons/vue/outline'
+import {
+  XIcon,
+  SearchCircleIcon,
+  ChevronDownIcon,
+} from '@heroicons/vue/outline'
 
 const router = useRouter()
 const route = useRoute()
@@ -75,12 +79,18 @@ const animalsByTier = computed(() => {
 })
 
 const selectedPacks = ref(new Array(packs.length).fill(true))
+const selectedPacksCount = computed(
+  () => selectedPacks.value.filter((pack) => pack).length
+)
 
 const togglePack = (i: number) => {
   selectedPacks.value[i] = !selectedPacks.value[i]
 }
 
 const selectedTiers = ref(new Array(tiers.length).fill(true))
+const selectedTiersCount = computed(
+  () => selectedTiers.value.filter((tier) => tier).length
+)
 
 const toggleTier = (i: number) => {
   selectedTiers.value[i] = !selectedTiers.value[i]
@@ -101,67 +111,106 @@ const reset = () => {
 
     <form class="mb-8" @submit.prevent>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <Popover class="relative">
-          <PopoverButton class="p-3 w-full bg-white rounded-lg">Packs</PopoverButton>
+        <Popover class="relative" v-slot="{ open }">
+          <PopoverButton
+            class="flex items-center px-5 py-3 w-full bg-white rounded-lg"
+            :class="{ 'rounded-b-none ': open }"
+          >
+            <div>Packs</div>
+
+            <div
+              class="
+                ml-2
+                px-2
+                py-1
+                rounded-full
+                bg-primary-500
+                text-white text-xs
+              "
+            >
+              {{ selectedPacksCount }} / {{ packs.length }}
+            </div>
+
+            <ChevronDownIcon class="w-5 h-5 ml-auto text-gray-500" />
+          </PopoverButton>
 
           <transition
             enter-active-class="transition duration-200 ease-out"
-            enter-from-class="translate-y-1 opacity-0"
+            enter-from-class="-translate-y-1 opacity-100"
             enter-to-class="translate-y-0 opacity-100"
             leave-active-class="transition duration-150 ease-in"
             leave-from-class="translate-y-0 opacity-100"
-            leave-to-class="translate-y-1 opacity-0"
+            leave-to-class="-translate-y-1 opacity-0"
           >
             <PopoverPanel class="absolute z-10 w-full">
-              <fieldset
-                class="
-                  p-5
-                  bg-white
-                  rounded-lg
-                  shadow-lg
-                "
-              >
-                <div v-for="(pack, i) in packs" :key="pack" class="flex items-center">
+              <fieldset class="p-5 bg-white rounded-b-lg shadow-lg space-y-2 border-t">
+                <div
+                  v-for="(pack, i) in packs"
+                  :key="pack"
+                  class="flex items-center"
+                >
                   <input
                     :id="`pack-${i}`"
                     type="checkbox"
                     :checked="selectedPacks[i]"
                     @input="togglePack(i)"
                   />
-                  <label :for="`pack-${i}`" class="ml-2 flex-grow">{{ pack }}</label>
+                  <label :for="`pack-${i}`" class="ml-2 flex-grow">{{
+                    pack
+                  }}</label>
                 </div>
               </fieldset>
             </PopoverPanel>
           </transition>
         </Popover>
 
-        <Popover class="relative">
-          <PopoverButton class="p-3 w-full bg-white rounded-lg">Tiers</PopoverButton>
+        <Popover class="relative" v-slot="{ open }">
+          <PopoverButton
+            class="flex items-center px-5 py-3 w-full bg-white rounded-lg"
+            :class="{ 'rounded-b-none ': open }"
+          >
+            <div>Tiers</div>
+
+            <div
+              class="
+                ml-2
+                px-2
+                py-1
+                rounded-full
+                bg-primary-500
+                text-white text-xs
+              "
+            >
+              {{ selectedTiersCount }} / {{ tiers.length }}
+            </div>
+
+            <ChevronDownIcon class="w-5 h-5 ml-auto text-gray-500" />
+          </PopoverButton>
+
           <transition
             enter-active-class="transition duration-200 ease-out"
-            enter-from-class="translate-y-1 opacity-0"
+            enter-from-class="-translate-y-1 opacity-100"
             enter-to-class="translate-y-0 opacity-100"
             leave-active-class="transition duration-150 ease-in"
             leave-from-class="translate-y-0 opacity-100"
-            leave-to-class="translate-y-1 opacity-0"
+            leave-to-class="-translate-y-1 opacity-0"
           >
             <PopoverPanel class="absolute z-10 w-full">
-              <fieldset
-                class="
-                  p-5
-                  bg-white
-                  rounded-lg
-                  shadow-lg
-                "
-              >
-                <div v-for="(tier, i) in tiers" :key="tier" class="flex items-center">
+              <fieldset class="p-5 bg-white rounded-b-lg shadow-lg space-y-2 border-t">
+                <div
+                  v-for="(tier, i) in tiers"
+                  :key="tier"
+                  class="flex items-center"
+                >
                   <input
                     :id="`tier-${i}`"
                     type="checkbox"
                     :checked="selectedTiers[i]"
                     @input="toggleTier(i)"
                   />
-                  <label :for="`tier-${i}`" class="ml-2 flex-grow">{{ tier }}</label>
+                  <label :for="`tier-${i}`" class="ml-2 flex-grow">{{
+                    tier
+                  }}</label>
                 </div>
               </fieldset>
             </PopoverPanel>
