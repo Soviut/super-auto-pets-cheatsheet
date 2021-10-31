@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import PassLayout from './pages/PassLayout.vue'
 
+import SheetIndex from './pages/sheets/Index.vue'
 import SuperAutoPets from './pages/sheets/SuperAutoPets.vue'
 
 export default createRouter({
@@ -9,7 +10,7 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      redirect: { name: 'super-auto-pets' },
+      redirect: { name: 'sheets' },
       name: 'home',
     },
 
@@ -19,22 +20,22 @@ export default createRouter({
       children: [
         {
           path: '',
-          redirect: { name: 'super-auto-pets' },
+          component: SheetIndex,
           name: 'sheets',
         },
         {
-          path: 'super-auto-pets',
+          path: ':sheetid',
           component: PassLayout,
           children: [
             {
               path: '',
               component: SuperAutoPets,
-              name: 'super-auto-pets'
+              name: 'sheets-view'
             },
             {
               path: ':id',
               component: SuperAutoPets,
-              name: 'super-auto-pets-view'
+              name: 'items-view'
             },
           ],
         },

@@ -20,7 +20,7 @@ watch(
 )
 
 const closeModal = () => {
-  router.push({ name: 'super-auto-pets' })
+  router.push({ name: 'sheets-view' })
 }
 
 const term = ref('')
@@ -272,7 +272,7 @@ const reset = () => {
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <li v-for="animal in tier.animals" :key="animal.id">
           <router-link
-            :to="{ name: 'super-auto-pets-view', params: { id: animal.id } }"
+            :to="{ name: 'items-view', params: { id: animal.id } }"
             class="
               block
               h-full
@@ -338,7 +338,7 @@ const reset = () => {
 
           <div class="flex-shrink-0">
             <router-link
-              :to="{ name: 'super-auto-pets' }"
+              :to="{ name: 'sheets-view' }"
               class="
                 flex
                 -mt-4
