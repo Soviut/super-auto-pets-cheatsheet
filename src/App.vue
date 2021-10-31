@@ -5,7 +5,7 @@
         <img src="@/assets/logo.svg" class="inline-block w-10 h-10" />
 
         <span class="font-light text-xl">
-          Lootsheet
+          LootSheet
         </span>
       </router-link>
     </header>
@@ -15,7 +15,7 @@
     </main>
 
     <footer class="p-5 bg-gray-300 text-gray-500">
-      &copy; 2021 Lootsheet
+      &copy; 2021 LootSheet
     </footer>
   </div>
 </template>
