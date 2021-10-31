@@ -20,7 +20,7 @@ watch(
 )
 
 const closeModal = () => {
-  router.push({ name: 'sheets-view' })
+  router.push({ name: 'sheets-view', query: route.query })
 }
 
 const term = ref('')
@@ -136,26 +136,18 @@ watch(
   { deep: true }
 )
 
-watch(
-  () => route.query,
-  (query) => {
-    if (query.term || query.packs || query.tiers) {
-      term.value = (query.term as string) ?? ''
+// apply query params on reload
+if (route.query.term || route.query.packs || route.query.tiers) {
+  term.value = (route.query.term as string) ?? ''
 
-      const packIndexes = (query.packs as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
-      selectedPacks.value = selectedPacks.value.map((_, i) => packIndexes.includes(i))
+  const packIndexes = (route.query.packs as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
+  selectedPacks.value = selectedPacks.value.map((_, i) => packIndexes.includes(i))
 
-      // TODO: overwritten?
-      const tierIndexes = (query.tiers as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
-      console.log(tierIndexes)
-      selectedTiers.value = selectedTiers.value.map((_, i) => tierIndexes.includes(i))
-      console.log(selectedTiers.value)
-    } else {
-      reset()
-    }
-  },
-  { immediate: true }
-)
+  const tierIndexes = (route.query.tiers as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
+  selectedTiers.value = selectedTiers.value.map((_, i) => tierIndexes.includes(i))
+} else {
+  reset()
+}
 </script>
 
 <template>
