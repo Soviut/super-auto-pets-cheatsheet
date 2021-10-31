@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import data from '@/assets/data.json'
 import { XIcon, SearchCircleIcon } from '@heroicons/vue/outline'
 
@@ -99,60 +100,85 @@ const reset = () => {
     </header>
 
     <form class="mb-8" @submit.prevent>
-      <fieldset
-        class="
-          grid
-          sm:grid-cols-2
-          md:grid-cols-3
-          lg:grid-cols-6
-          p-3
-          mb-2
-          bg-white
-          rounded-lg
-        "
-      >
-        <div v-for="(pack, i) in packs" :key="pack" class="flex items-center">
-          <input
-            :id="`pack-${i}`"
-            type="checkbox"
-            :checked="selectedPacks[i]"
-            @input="togglePack(i)"
-          />
-          <label :for="`pack-${i}`" class="ml-2 flex-grow">{{ pack }}</label>
-        </div>
-      </fieldset>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <Popover class="relative">
+          <PopoverButton class="p-3 w-full bg-white rounded-lg">Packs</PopoverButton>
 
-      <fieldset
-        class="
-          grid
-          sm:grid-cols-2
-          md:grid-cols-3
-          lg:grid-cols-6
-          p-3
-          mb-2
-          bg-white
-          rounded-lg
-        "
-      >
-        <div v-for="(tier, i) in tiers" :key="tier" class="flex items-center">
-          <input
-            :id="`tier-${i}`"
-            type="checkbox"
-            :checked="selectedTiers[i]"
-            @input="toggleTier(i)"
-          />
-          <label :for="`tier-${i}`" class="ml-2 flex-grow">{{ tier }}</label>
-        </div>
-      </fieldset>
+          <transition
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="translate-y-1 opacity-0"
+            enter-to-class="translate-y-0 opacity-100"
+            leave-active-class="transition duration-150 ease-in"
+            leave-from-class="translate-y-0 opacity-100"
+            leave-to-class="translate-y-1 opacity-0"
+          >
+            <PopoverPanel class="absolute z-10 w-full">
+              <fieldset
+                class="
+                  p-5
+                  bg-white
+                  rounded-lg
+                  shadow-lg
+                "
+              >
+                <div v-for="(pack, i) in packs" :key="pack" class="flex items-center">
+                  <input
+                    :id="`pack-${i}`"
+                    type="checkbox"
+                    :checked="selectedPacks[i]"
+                    @input="togglePack(i)"
+                  />
+                  <label :for="`pack-${i}`" class="ml-2 flex-grow">{{ pack }}</label>
+                </div>
+              </fieldset>
+            </PopoverPanel>
+          </transition>
+        </Popover>
 
-      <label for="search" class="sr-only"> Search animals and food </label>
-      <input
-        id="search"
-        type="search"
-        placeholder="Search animals and food"
-        autocomplete="off"
-        v-model="term"
-      />
+        <Popover class="relative">
+          <PopoverButton class="p-3 w-full bg-white rounded-lg">Tiers</PopoverButton>
+          <transition
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="translate-y-1 opacity-0"
+            enter-to-class="translate-y-0 opacity-100"
+            leave-active-class="transition duration-150 ease-in"
+            leave-from-class="translate-y-0 opacity-100"
+            leave-to-class="translate-y-1 opacity-0"
+          >
+            <PopoverPanel class="absolute z-10 w-full">
+              <fieldset
+                class="
+                  p-5
+                  bg-white
+                  rounded-lg
+                  shadow-lg
+                "
+              >
+                <div v-for="(tier, i) in tiers" :key="tier" class="flex items-center">
+                  <input
+                    :id="`tier-${i}`"
+                    type="checkbox"
+                    :checked="selectedTiers[i]"
+                    @input="toggleTier(i)"
+                  />
+                  <label :for="`tier-${i}`" class="ml-2 flex-grow">{{ tier }}</label>
+                </div>
+              </fieldset>
+            </PopoverPanel>
+          </transition>
+        </Popover>
+
+        <div class="md:col-span-2">
+          <label for="search" class="sr-only"> Search animals and food </label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search animals and food"
+            autocomplete="off"
+            v-model="term"
+          />
+        </div>
+      </div>
 
       <div class="text-sm text-gray-400">
         Showing {{ filteredAnimals.length }} / {{ animals.length }}
