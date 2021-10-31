@@ -140,11 +140,21 @@ watch(
 if (route.query.term || route.query.packs || route.query.tiers) {
   term.value = (route.query.term as string) ?? ''
 
-  const packIndexes = (route.query.packs as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
-  selectedPacks.value = selectedPacks.value.map((_, i) => packIndexes.includes(i))
+  const packIndexes = ((route.query.packs as string) ?? '')
+    .split(',')
+    .filter(Boolean)
+    .map((t) => parseInt(t))
+  selectedPacks.value = selectedPacks.value.map((_, i) =>
+    packIndexes.includes(i)
+  )
 
-  const tierIndexes = (route.query.tiers as string ?? '').split(',').filter(Boolean).map((t) => parseInt(t))
-  selectedTiers.value = selectedTiers.value.map((_, i) => tierIndexes.includes(i))
+  const tierIndexes = ((route.query.tiers as string) ?? '')
+    .split(',')
+    .filter(Boolean)
+    .map((t) => parseInt(t))
+  selectedTiers.value = selectedTiers.value.map((_, i) =>
+    tierIndexes.includes(i)
+  )
 } else {
   reset()
 }
@@ -186,14 +196,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             <div>Packs</div>
 
             <div
-              class="
-                ml-2
-                px-2
-                py-1
-                rounded-full
-                bg-primary-500
-                text-white text-xs
-              "
+              class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
+              :class="{
+                '!bg-primary-500': selectedPacksCount !== packs.length,
+              }"
             >
               {{ selectedPacksCount }} / {{ packs.length }}
             </div>
@@ -250,14 +256,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             <div>Tiers</div>
 
             <div
-              class="
-                ml-2
-                px-2
-                py-1
-                rounded-full
-                bg-primary-500
-                text-white text-xs
-              "
+              class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
+              :class="{
+                '!bg-primary-500': selectedTiersCount !== tiers.length,
+              }"
             >
               {{ selectedTiersCount }} / {{ tiers.length }}
             </div>
