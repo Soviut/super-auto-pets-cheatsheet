@@ -320,7 +320,27 @@ const reset = () => {
       class="fixed inset-0 px-5 py-10 bg-black/70"
       @click.self="closeModal"
     >
-      <div class="mx-auto p-8 max-w-xl bg-white rounded-xl shadow-xl text-lg">
+      <div class="relative mx-auto p-8 max-w-xl bg-white rounded-xl shadow-xl text-lg">
+        <router-link
+          :to="{ name: 'sheets-view' }"
+          class="
+            absolute
+            right-2
+            top-2
+            z-10
+            inline-block
+            p-1
+            rounded-lg
+            text-base
+            focus:outline-none focus:bg-primary-500 focus:text-white
+            hover:bg-primary-500 hover:text-white hover:no-underline
+            transition
+          "
+        >
+          <XIcon class="w-6 h-6" />
+          <span class="sr-only">Close</span>
+        </router-link>
+
         <header class="flex gap-5">
           <div class="flex-shrink-0">
             <img :src="`/images/${current.imageUrl}`" class="w-32" />
@@ -334,28 +354,6 @@ const reset = () => {
             <div>{{ tiers[current.tier] }}</div>
 
             <div>{{ current.attack }}/{{ current.health }}</div>
-          </div>
-
-          <div class="flex-shrink-0">
-            <router-link
-              :to="{ name: 'sheets-view' }"
-              class="
-                flex
-                -mt-4
-                -mr-4
-                px-3
-                py-2
-                items-center
-                rounded
-                text-base
-                focus:outline-none focus:bg-primary-500 focus:text-white
-                hover:bg-primary-500 hover:text-white hover:no-underline
-                transition
-              "
-            >
-              <XIcon class="w-6 h-6 mr-1" />
-              Close
-            </router-link>
           </div>
         </header>
 
