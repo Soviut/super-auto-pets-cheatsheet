@@ -4,7 +4,9 @@
       <router-link :to="{ name: 'home' }" class="text-white hover:no-underline">
         <img src="@/assets/logo.svg" class="inline-block w-10 h-10" />
 
-        Lootsheet
+        <span class="font-light text-xl">
+          Lootsheet
+        </span>
       </router-link>
     </header>
 
