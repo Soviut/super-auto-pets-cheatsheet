@@ -110,10 +110,19 @@ const reset = () => {
     </header>
 
     <form class="mb-8" @submit.prevent>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="mb-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <Popover class="relative" v-slot="{ open }">
           <PopoverButton
-            class="flex items-center px-5 py-3 w-full bg-white rounded-lg"
+            class="
+              flex
+              items-center
+              px-5
+              py-3
+              w-full
+              bg-white
+              rounded-lg
+              focus:outline-none focus:ring-4 focus:ring-primary-500/50
+            "
             :class="{ 'rounded-b-none ': open }"
           >
             <div>Packs</div>
@@ -143,7 +152,9 @@ const reset = () => {
             leave-to-class="-translate-y-1 opacity-0"
           >
             <PopoverPanel class="absolute z-10 w-full">
-              <fieldset class="p-5 bg-white rounded-b-lg shadow-lg space-y-2 border-t">
+              <fieldset
+                class="p-5 bg-white rounded-b-lg shadow-lg space-y-2 border-t"
+              >
                 <div
                   v-for="(pack, i) in packs"
                   :key="pack"
@@ -166,7 +177,16 @@ const reset = () => {
 
         <Popover class="relative" v-slot="{ open }">
           <PopoverButton
-            class="flex items-center px-5 py-3 w-full bg-white rounded-lg"
+            class="
+              flex
+              items-center
+              px-5
+              py-3
+              w-full
+              bg-white
+              rounded-lg
+              focus:outline-none focus:ring-4 focus:ring-primary-500/50
+            "
             :class="{ 'rounded-b-none ': open }"
           >
             <div>Tiers</div>
@@ -196,7 +216,9 @@ const reset = () => {
             leave-to-class="-translate-y-1 opacity-0"
           >
             <PopoverPanel class="absolute z-10 w-full">
-              <fieldset class="p-5 bg-white rounded-b-lg shadow-lg space-y-2 border-t">
+              <fieldset
+                class="p-5 bg-white rounded-b-lg shadow-lg space-y-2 border-t"
+              >
                 <div
                   v-for="(tier, i) in tiers"
                   :key="tier"
