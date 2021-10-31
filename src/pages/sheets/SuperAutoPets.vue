@@ -20,7 +20,7 @@ watch(
 )
 
 const closeModal = () => {
-  router.push({ name: 'sheets-view', query: route.query })
+  router.push({ name: 'sheets-view' })
 }
 
 const term = ref('')
