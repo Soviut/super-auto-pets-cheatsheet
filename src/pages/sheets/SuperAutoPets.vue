@@ -111,6 +111,17 @@ const reset = () => {
 
     <form class="mb-8" @submit.prevent>
       <div class="mb-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="md:col-span-2">
+          <label for="search" class="sr-only"> Search animals and food </label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search animals and food"
+            autocomplete="off"
+            v-model="term"
+          />
+        </div>
+
         <Popover class="relative" v-slot="{ open }">
           <PopoverButton
             class="
@@ -238,17 +249,6 @@ const reset = () => {
             </PopoverPanel>
           </transition>
         </Popover>
-
-        <div class="md:col-span-2">
-          <label for="search" class="sr-only"> Search animals and food </label>
-          <input
-            id="search"
-            type="search"
-            placeholder="Search animals and food"
-            autocomplete="off"
-            v-model="term"
-          />
-        </div>
       </div>
 
       <div class="text-sm text-gray-400">
