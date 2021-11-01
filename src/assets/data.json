@@ -325,7 +325,7 @@
     {
       "id": "dromedary",
       "name": "Dromedary",
-      "imageUrl": "dromedary.png",
+      "imageUrl": "camel.png",
       "packs": [
         1
       ],
