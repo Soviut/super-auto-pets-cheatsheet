@@ -168,6 +168,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             type="search"
             placeholder="Search animals and food"
             autocomplete="off"
+            autofocus
             v-model="term"
           />
         </div>
