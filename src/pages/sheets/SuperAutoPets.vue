@@ -19,10 +19,6 @@ import {
 const router = useRouter()
 const route = useRoute()
 
-const closeModal = () => {
-  router.push({ query: route.query })
-}
-
 const term = ref('')
 
 const normalizedTerm = computed(() => term.value.trim().toLowerCase())
