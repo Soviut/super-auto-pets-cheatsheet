@@ -367,6 +367,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           relative
           p-8
           max-w-xl
+          w-full
           bg-white
           rounded-xl
           shadow-xl
