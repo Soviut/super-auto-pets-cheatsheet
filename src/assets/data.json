@@ -1526,5 +1526,119 @@
         "end-turn"
       ]
     }
+  ],
+  "food": [
+    {
+      "id": "apple",
+      "name": "Apple",
+      "imageUrl": "red-apple.png",
+      "tier": 0,
+      "description": "Give an animal +1/+1"
+    },
+    {
+      "id": "honey",
+      "name": "Honey",
+      "imageUrl": "honey-pot.png",
+      "tier": 0,
+      "description": "Give an animal Honey Bee"
+    },
+    {
+      "id": "cupcake",
+      "name": "Cupcake",
+      "imageUrl": "cupcake.png",
+      "tier": 1,
+      "description": "Give an animal +3/+3 until end of battle"
+    },
+    {
+      "id": "meat-bone",
+      "name": "Meat Bone",
+      "imageUrl": "meat-on-bone.png",
+      "tier": 1,
+      "description": "Give an animal +3/+3 until end of battle"
+    },
+    {
+      "id": "sleeping-pill",
+      "name": "Sleeping Pill",
+      "imageUrl": "pill.png",
+      "tier": 1,
+      "description": "Give an animal Bone Attack"
+    },
+    {
+      "id": "garlic",
+      "name": "Garlic",
+      "imageUrl": "garlic.png",
+      "tier": 2,
+      "description": "Give an animal Garlic Armor"
+    },
+    {
+      "id": "salad-bowl",
+      "name": "Salad Bowl",
+      "imageUrl": "green-salad.png",
+      "tier": 2,
+      "description": "Give 2 random animals +1/+1"
+    },
+    {
+      "id": "canned-food",
+      "name": "Canned Food",
+      "imageUrl": "canned-food.png",
+      "tier": 3,
+      "description": "Give all current and future shop animals +2/+2"
+    },
+    {
+      "id": "pear",
+      "name": "Pear",
+      "imageUrl": "pear.png",
+      "tier": 3,
+      "description": "Give an animal +2/+2"
+    },
+    {
+      "id": "chili",
+      "name": "Chili",
+      "imageUrl": "hot-pepper.png",
+      "tier": 4,
+      "description": "Give an animal Splash Attack"
+    },
+    {
+      "id": "chocolate",
+      "name": "Chocolate",
+      "imageUrl": "chocolate-bar.png",
+      "tier": 4,
+      "description": "Give an animal +1 Experience"
+    },
+    {
+      "id": "sushi",
+      "name": "Sushi",
+      "imageUrl": "sushi.png",
+      "tier": 4,
+      "description": "Give 3 random animals +1/+1"
+    },
+    {
+      "id": "melon",
+      "name": "Melon",
+      "imageUrl": "melon.png",
+      "tier": 5,
+      "description": "Give an animal Melon Armor"
+    },
+    {
+      "id": "mushroom",
+      "name": "Mushroom",
+      "imageUrl": "mushroom.png",
+      "tier": 5,
+      "description": "Give an animal Extra Life"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "imageUrl": "pizza.png",
+      "tier": 5,
+      "description": "Give 2 random animals +2/+2"
+    },
+    {
+      "id": "steak",
+      "name": "Steak",
+      "imageUrl": "cut-of-meat.png",
+      "tier": 5,
+      "description": "Give an animal Steak Attack"
+    }
   ]
 }
