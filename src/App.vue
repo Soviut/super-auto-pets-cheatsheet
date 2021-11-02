@@ -1,14 +1,24 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <header class="px-5 py-3 bg-gray-900">
+    <header class="flex items-stretch gap-5 px-5 py-3 bg-gray-900">
       <router-link
         :to="{ name: 'home' }"
-        class="inline-block text-white hover:no-underline"
+        class="flex items-center gap-3 text-white hover:no-underline"
       >
-        <img src="@/assets/logo.svg" class="inline-block w-10 h-10" />
+        <img src="@/assets/logo.svg" class="w-10 h-10" />
 
         <span class="font-light text-xl"> LootSheet </span>
       </router-link>
+
+      <nav class="flex items-stretch">
+        <ul class="flex items-center">
+          <li>
+            <router-link :to="{ name: 'sheets' }" class="text-white font-light hover:text-primary-500 hover:no-underline">
+              Sheets
+            </router-link>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main class="flex-grow bg-gray-200">
