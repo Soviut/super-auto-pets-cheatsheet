@@ -301,10 +301,33 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           class="text-primary-500"
           @click="reset"
         >
-          Reset
+          Reset search
         </button>
       </div>
     </form>
+
+    <div v-if="filteredAnimals.length === 0" class="text-center">
+      <p class="mb-8">No results round, try modifying your search</p>
+
+      <footer>
+        <button
+          class="
+            px-5
+            py-3
+            rounded-lg
+            bg-primary-500
+            text-white
+            focus:outline-none
+            focus:ring-4
+            ring-primary-500/50
+            hover:bg-primary-600
+          "
+          @click="reset"
+        >
+          Reset search
+        </button>
+      </footer>
+    </div>
 
     <section v-for="tier in animalsByTier" :key="tier.number" class="mb-8">
       <header class="mb-3">
@@ -359,7 +382,16 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
     <Dialog
       :open="!!current"
-      class="flex fixed inset-0 px-5 py-10 items-center justify-center overflow-auto"
+      class="
+        flex
+        fixed
+        inset-0
+        px-5
+        py-10
+        items-center
+        justify-center
+        overflow-auto
+      "
       @close="closeModal"
     >
       <DialogOverlay class="fixed inset-0 bg-black/70" />
