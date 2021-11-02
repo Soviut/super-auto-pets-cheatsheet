@@ -20,7 +20,6 @@ const router = useRouter()
 const route = useRoute()
 
 const term = ref('')
-
 const normalizedTerm = computed(() => term.value.trim().toLowerCase())
 
 // TODO: move to types
@@ -52,6 +51,10 @@ watch(
   },
   { immediate: true }
 )
+
+const closeModal = () => {
+  router.push({ query: route.query })
+}
 
 // TODO: do text filtering as 2nd step
 const filteredAnimals = computed(() => {
