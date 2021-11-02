@@ -59,8 +59,8 @@ const filteredAnimals = computed(() => {
         curr.levels.some((level) =>
           level.toLowerCase().includes(normalizedTerm.value)
         )) &&
-      curr.packs.some((pack) => selectedPacks.value[pack]) &&
-      selectedTiers.value[curr.tier]
+      curr.packs.some((pack) => selectedPacks.value.includes(pack)) &&
+      selectedTiers.value.includes(curr.tier)
         ? [curr]
         : []),
     ]
@@ -82,58 +82,48 @@ const animalsByTier = computed(() => {
     .filter((tier) => tier.animals.length)
 })
 
-const selectedPacks = ref<boolean[]>([])
-const selectedPacksCount = computed(
-  () => selectedPacks.value.filter((pack) => pack).length
-)
-const selectedPacksIndexes = computed(() =>
-  selectedPacks.value.reduce<number[]>(
-    (acc, curr, i) => (curr ? [...acc, i] : acc),
-    []
-  )
-)
+const selectedPacks = ref<number[]>([])
 
 const togglePack = (i: number) => {
-  selectedPacks.value[i] = !selectedPacks.value[i]
+  if (selectedPacks.value.includes(i)) {
+    selectedPacks.value = selectedPacks.value.filter((t) => t !== i)
+  } else {
+    selectedPacks.value.push(i)
+  }
 }
 
-const selectedTiers = ref<boolean[]>([])
-const selectedTiersCount = computed(
-  () => selectedTiers.value.filter((tier) => tier).length
-)
-const selectedTiersIndexes = computed(() =>
-  selectedTiers.value.reduce<number[]>(
-    (acc, curr, i) => (curr ? [...acc, i] : acc),
-    []
-  )
-)
+const selectedTiers = ref<number[]>([])
 
 const toggleTier = (i: number) => {
-  selectedTiers.value[i] = !selectedTiers.value[i]
+  if (selectedTiers.value.includes(i)) {
+    selectedTiers.value = selectedTiers.value.filter((t) => t !== i)
+  } else {
+    selectedTiers.value.push(i)
+  }
 }
 
 const reset = () => {
   console.log('reset')
   term.value = ''
-  selectedPacks.value = new Array(packs.length).fill(true)
-  selectedTiers.value = new Array(tiers.length).fill(true)
+  selectedPacks.value = [0, 1]
+  selectedTiers.value = [0, 1, 2, 3, 4, 5]
 }
 
 watch(
   [term, selectedPacks, selectedTiers],
-  ([term, packs, tiers]) => {
+  ([newTerm, newPacks, newTiers]) => {
     const filtering =
-      term.length ||
-      selectedPacksCount.value !== packs.length ||
-      selectedTiersCount.value !== tiers.length
+      newTerm.length ||
+      newPacks.length !== 2 ||
+      newTiers.length !== 6
 
     router.replace({
       hash: route.hash,
       query: filtering
         ? {
-            term,
-            packs: selectedPacksIndexes.value.join(','),
-            tiers: selectedTiersIndexes.value.join(','),
+            term: newTerm,
+            packs: newPacks.join(','),
+            tiers: newTiers.join(','),
           }
         : {},
     })
@@ -146,21 +136,15 @@ if (route.query.term || route.query.packs || route.query.tiers) {
   console.log(route.query.term, route.query.packs, route.query.tiers)
   term.value = (route.query.term as string) ?? ''
 
-  const packIndexes = ((route.query.packs as string) ?? '')
+  selectedPacks.value = ((route.query.packs as string) ?? '')
     .split(',')
     .filter(Boolean)
     .map((t) => parseInt(t))
-  selectedPacks.value = (new Array(2).fill(0)).map((_, i) =>
-    packIndexes.includes(i)
-  )
 
-  const tierIndexes = ((route.query.tiers as string) ?? '')
+  selectedTiers.value = ((route.query.tiers as string) ?? '')
     .split(',')
     .filter(Boolean)
     .map((t) => parseInt(t))
-  selectedTiers.value = (new Array(6).fill(0)).map((_, i) =>
-    tierIndexes.includes(i)
-  )
 
   console.log(term, selectedPacks.value, selectedTiers.value)
 } else {
@@ -206,10 +190,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             <div
               class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
               :class="{
-                '!bg-primary-500': selectedPacksCount !== packs.length,
+                '!bg-primary-500': selectedPacks.length !== packs.length,
               }"
             >
-              {{ selectedPacksCount }} / {{ packs.length }}
+              {{ selectedPacks.length }} / {{ packs.length }}
             </div>
 
             <ChevronDownIcon class="w-5 h-5 ml-auto text-gray-500" />
@@ -235,7 +219,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                   <input
                     :id="`pack-${i}`"
                     type="checkbox"
-                    :checked="selectedPacks[i]"
+                    :checked="selectedPacks.includes(i)"
                     @input="togglePack(i)"
                   />
                   <label :for="`pack-${i}`" class="ml-2 flex-grow">{{
@@ -266,10 +250,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             <div
               class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
               :class="{
-                '!bg-primary-500': selectedTiersCount !== tiers.length,
+                '!bg-primary-500': selectedTiers.length !== tiers.length,
               }"
             >
-              {{ selectedTiersCount }} / {{ tiers.length }}
+              {{ selectedTiers.length }} / {{ tiers.length }}
             </div>
 
             <ChevronDownIcon class="w-5 h-5 ml-auto text-gray-500" />
@@ -295,7 +279,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                   <input
                     :id="`tier-${i}`"
                     type="checkbox"
-                    :checked="selectedTiers[i]"
+                    :checked="selectedTiers.includes(i)"
                     @input="toggleTier(i)"
                   />
                   <label :for="`tier-${i}`" class="ml-2 flex-grow">{{
