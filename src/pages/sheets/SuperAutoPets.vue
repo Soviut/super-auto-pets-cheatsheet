@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Dialog,
+  DialogOverlay,
+  DialogTitle,
+} from '@headlessui/vue'
 import data from '@/assets/data.json'
 import {
   XIcon,
@@ -112,9 +119,7 @@ watch(
   [term, selectedPacks, selectedTiers],
   ([newTerm, newPacks, newTiers]) => {
     const filtering =
-      newTerm.length ||
-      newPacks.length !== 2 ||
-      newTiers.length !== 6
+      newTerm.length || newPacks.length !== 2 || newTiers.length !== 6
 
     router.replace({
       hash: route.hash,
@@ -352,12 +357,15 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       </ul>
     </section>
 
-    <div
-      v-if="current"
-      class="fixed inset-0 px-5 py-10 bg-black/70"
-      @click.self="closeModal"
+    <Dialog
+      :open="!!current"
+      class="fixed inset-0 px-5 py-10"
+      @close="closeModal"
     >
+      <DialogOverlay class="fixed inset-0 bg-black/70" />
+
       <div
+        v-if="current"
         class="
           relative
           mx-auto
@@ -415,6 +423,6 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           </ul>
         </div>
       </div>
-    </div>
+    </Dialog>
   </div>
 </template>
