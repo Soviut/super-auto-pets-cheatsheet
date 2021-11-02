@@ -12,15 +12,8 @@ import {
 const router = useRouter()
 const route = useRoute()
 
-// lock scrolling if we are in a modal
-watch(
-  () => route.params.id,
-  (value) => document.body.classList.toggle('overflow-hidden', !!value),
-  { immediate: true }
-)
-
 const closeModal = () => {
-  router.push({ name: 'sheets-view' })
+  router.push({ query: route.query })
 }
 
 const term = ref('')
@@ -43,8 +36,19 @@ interface Animal {
 const { animals, packs, tiers } = data
 
 const current = computed(() => {
-  return (animals as Animal[]).find((animal) => animal.id === route.params.id)
+  return (animals as Animal[]).find(
+    (animal) => animal.id === route.hash.replace('#', '')
+  )
 })
+
+// lock scrolling if we are in a modal
+watch(
+  () => current.value,
+  (value) => {
+    document.body.classList.toggle('overflow-hidden', !!value)
+  },
+  { immediate: true }
+)
 
 // TODO: do text filtering as 2nd step
 const filteredAnimals = computed(() => {
@@ -78,7 +82,7 @@ const animalsByTier = computed(() => {
     .filter((tier) => tier.animals.length)
 })
 
-const selectedPacks = ref<boolean[]>(new Array(packs.length).fill(true))
+const selectedPacks = ref<boolean[]>([])
 const selectedPacksCount = computed(
   () => selectedPacks.value.filter((pack) => pack).length
 )
@@ -93,7 +97,7 @@ const togglePack = (i: number) => {
   selectedPacks.value[i] = !selectedPacks.value[i]
 }
 
-const selectedTiers = ref<boolean[]>(new Array(tiers.length).fill(true))
+const selectedTiers = ref<boolean[]>([])
 const selectedTiersCount = computed(
   () => selectedTiers.value.filter((tier) => tier).length
 )
@@ -124,6 +128,7 @@ watch(
       selectedTiersCount.value !== tiers.length
 
     router.replace({
+      hash: route.hash,
       query: filtering
         ? {
             term,
@@ -138,13 +143,14 @@ watch(
 
 // apply query params on reload
 if (route.query.term || route.query.packs || route.query.tiers) {
+  console.log(route.query.term, route.query.packs, route.query.tiers)
   term.value = (route.query.term as string) ?? ''
 
   const packIndexes = ((route.query.packs as string) ?? '')
     .split(',')
     .filter(Boolean)
     .map((t) => parseInt(t))
-  selectedPacks.value = selectedPacks.value.map((_, i) =>
+  selectedPacks.value = (new Array(2).fill(0)).map((_, i) =>
     packIndexes.includes(i)
   )
 
@@ -152,9 +158,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     .split(',')
     .filter(Boolean)
     .map((t) => parseInt(t))
-  selectedTiers.value = selectedTiers.value.map((_, i) =>
+  selectedTiers.value = (new Array(6).fill(0)).map((_, i) =>
     tierIndexes.includes(i)
   )
+
+  console.log(term, selectedPacks.value, selectedTiers.value)
 } else {
   reset()
 }
@@ -321,7 +329,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <li v-for="animal in tier.animals" :key="animal.id">
           <router-link
-            :to="{ name: 'items-view', params: { id: animal.id } }"
+            :to="{ query: route.query, hash: `#${animal.id}` }"
             class="
               block
               h-full
@@ -382,7 +390,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
         "
       >
         <router-link
-          :to="{ name: 'sheets-view' }"
+          :to="{ query: route.query }"
           class="
             absolute
             right-2

@@ -25,19 +25,8 @@ export default createRouter({
         },
         {
           path: ':sheetid',
-          component: PassLayout,
-          children: [
-            {
-              path: '',
-              component: SuperAutoPets,
-              name: 'sheets-view'
-            },
-            {
-              path: ':id',
-              component: SuperAutoPets,
-              name: 'items-view'
-            },
-          ],
+          component: SuperAutoPets,
+          name: 'sheet',
         },
       ],
     },

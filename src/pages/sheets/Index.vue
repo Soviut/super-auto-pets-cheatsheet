@@ -23,7 +23,7 @@ const sheets: Sheet[] = [
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       <li v-for="sheet in sheets" :key="sheet.id">
         <router-link
-          :to="{ name: 'sheets-view', params: { sheetid: sheet.id } }"
+          :to="{ name: 'sheet', params: { sheetid: sheet.id } }"
           class="
             flex
             gap-5
