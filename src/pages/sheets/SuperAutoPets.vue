@@ -103,7 +103,6 @@ const toggleTier = (i: number) => {
 }
 
 const reset = () => {
-  console.log('reset')
   term.value = ''
   selectedPacks.value = [0, 1]
   selectedTiers.value = [0, 1, 2, 3, 4, 5]
@@ -133,7 +132,6 @@ watch(
 
 // apply query params on reload
 if (route.query.term || route.query.packs || route.query.tiers) {
-  console.log(route.query.term, route.query.packs, route.query.tiers)
   term.value = (route.query.term as string) ?? ''
 
   selectedPacks.value = ((route.query.packs as string) ?? '')
@@ -145,8 +143,6 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     .split(',')
     .filter(Boolean)
     .map((t) => parseInt(t))
-
-  console.log(term, selectedPacks.value, selectedTiers.value)
 } else {
   reset()
 }
