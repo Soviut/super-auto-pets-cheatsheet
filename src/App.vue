@@ -13,7 +13,14 @@
       <nav class="flex items-stretch">
         <ul class="flex items-center">
           <li>
-            <router-link :to="{ name: 'sheets' }" class="text-white font-light hover:text-primary-500 hover:no-underline">
+            <router-link
+              :to="{ name: 'sheets' }"
+              class="
+                text-white
+                font-light
+                hover:text-primary-500 hover:no-underline
+              "
+            >
               Sheets
             </router-link>
           </li>
