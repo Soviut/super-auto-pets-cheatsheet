@@ -360,7 +360,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
     <Dialog
       :open="!!current"
-      class="fixed inset-0 px-5 py-10"
+      class="flex fixed inset-0 px-5 py-10 items-center justify-center overflow-auto"
       @close="closeModal"
     >
       <DialogOverlay class="fixed inset-0 bg-black/70" />
@@ -369,13 +369,12 @@ if (route.query.term || route.query.packs || route.query.tiers) {
         v-if="current"
         class="
           relative
-          mx-auto
           p-8
           max-w-xl
           bg-white
           rounded-xl
           shadow-xl
-          text-lg
+          lg:text-lg
         "
       >
         <router-link
