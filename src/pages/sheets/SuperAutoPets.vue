@@ -301,7 +301,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           class="text-primary-500"
           @click="reset"
         >
-          Reset search
+          Reset filters
         </button>
       </div>
     </form>
@@ -324,7 +324,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           "
           @click="reset"
         >
-          Reset search
+          Reset filters
         </button>
       </footer>
     </div>
