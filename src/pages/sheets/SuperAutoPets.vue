@@ -19,28 +19,36 @@ import {
 const router = useRouter()
 const route = useRoute()
 
-const term = ref('')
-const normalizedTerm = computed(() => term.value.trim().toLowerCase())
-
 // TODO: move to types
-interface Animal {
+interface Item {
   id: string
   name: string
   imageUrl: string
-  packs: number[]
   tier: number
-  attack: number
-  health: number
-  levels: string[]
   tags: string[]
 }
 
-const { animals, packs, tiers } = data
+interface Animal extends Item {
+  packs: number[]
+  attack: number
+  health: number
+  levels: string[]
+}
+
+interface Food extends Item {
+  description: string
+}
+
+const { animals, foods, packs, tiers } = data
+
+const term = ref('')
+const normalizedTerm = computed(() => term.value.trim().toLowerCase())
+
+const items = computed<Item[]>(() => [...animals, ...foods] as Item[])
 
 const current = computed(() => {
-  return (animals as Animal[]).find(
-    (animal) => animal.id === route.hash.replace('#', '')
-  )
+  const id = route.hash.replace('#', '')
+  return items.value.find((item) => item.id === id)
 })
 
 // lock scrolling if we are in a modal
@@ -56,34 +64,41 @@ const closeModal = () => {
   router.push({ query: route.query })
 }
 
-// TODO: do text filtering as 2nd step
-const filteredAnimals = computed(() => {
-  return (animals as Animal[]).reduce<Animal[]>((acc, curr) => {
+const filteredItems = computed(() => {
+  return items.value.reduce<Item[]>((acc, curr) => {
+    // prettier-ignore
     return [
       ...acc,
-      ...((curr.name.toLowerCase().includes(normalizedTerm.value) ||
-        curr.levels.some((level) =>
+      ...(
+        curr.name.toLowerCase().includes(normalizedTerm.value) &&
+        ((curr as Animal).levels?.some((level) =>
           level.toLowerCase().includes(normalizedTerm.value)
-        )) &&
-      curr.packs.some((pack) => selectedPacks.value.includes(pack)) &&
-      selectedTiers.value.includes(curr.tier)
+        ) ?? true) &&
+        ((curr as Animal).packs?.some((pack) =>
+          selectedPacks.value.includes(pack)
+        ) ?? true) &&
+        selectedTiers.value.includes(curr.tier)
+      )
         ? [curr]
-        : []),
+        : []
     ]
   }, [])
 })
 
-// TODO: return array of objects so empty tiers can be filtered
-const animalsByTier = computed(() => {
-  return filteredAnimals.value
-    .reduce<Array<{ number: number; animals: Animal[] }>>(
+const itemsByTier = computed(() => {
+  return filteredItems.value
+    .reduce<Array<{ number: number; animals: Animal[], foods: Food[] }>>(
       (acc, curr) => {
-        acc[curr.tier].animals.push(curr)
+        if ('levels' in (curr as Animal)) {
+          acc[curr.tier].animals.push(curr as Animal)
+        } else {
+          acc[curr.tier].foods.push(curr as Food)
+        }
         return acc
       },
       new Array(tiers.length)
-        .fill(0)
-        .map((_, i) => ({ number: i, animals: [] }))
+        .fill(0) // need to fill with primitives to avoid cross references
+        .map((_, i) => ({ number: i, animals: [], foods: [] }))
     )
     .filter((tier) => tier.animals.length)
 })
@@ -283,9 +298,9 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                     :checked="selectedTiers.includes(i)"
                     @input="toggleTier(i)"
                   />
-                  <label :for="`tier-${i}`" class="ml-2 flex-grow">{{
-                    tier
-                  }}</label>
+                  <label :for="`tier-${i}`" class="ml-2 flex-grow">
+                    {{ tier }}
+                  </label>
                 </div>
               </fieldset>
             </PopoverPanel>
@@ -294,10 +309,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       </div>
 
       <div class="text-sm text-gray-400">
-        Showing {{ filteredAnimals.length }} / {{ animals.length }}
+        Showing {{ filteredItems.length }} / {{ animals.length }}
 
         <button
-          v-if="filteredAnimals.length !== animals.length"
+          v-if="filteredItems.length !== animals.length"
           class="text-primary-500"
           @click="reset"
         >
@@ -306,7 +321,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       </div>
     </form>
 
-    <div v-if="filteredAnimals.length === 0" class="text-center">
+    <div v-if="filteredItems.length === 0" class="text-center">
       <p class="mb-8">No results round, try modifying your search</p>
 
       <footer>
@@ -317,8 +332,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             rounded-lg
             bg-primary-500
             text-white
-            focus:outline-none
-            focus:ring-4
+            focus:outline-none focus:ring-4
             ring-primary-500/50
             hover:bg-primary-600
           "
@@ -329,7 +343,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       </footer>
     </div>
 
-    <section v-for="tier in animalsByTier" :key="tier.number" class="mb-8">
+    <section v-for="tier in itemsByTier" :key="tier.number" class="mb-8">
       <header class="mb-3">
         <h2>{{ tiers[tier.number] }}</h2>
       </header>
@@ -374,6 +388,43 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                   Level {{ i + 1 }} - {{ level }}
                 </li>
               </ul>
+            </div>
+          </router-link>
+        </li>
+
+        <li v-for="food in tier.foods" :key="food.id">
+          <router-link
+            :to="{ query: route.query, hash: `#${food.id}` }"
+            class="
+              block
+              h-full
+              p-5
+              overflow-hidden
+              rounded-lg
+              bg-white
+              text-black
+              hover:no-underline hover:ring-4 hover:ring-primary-500/50
+              focus:outline-none focus:ring-4 focus:ring-primary-500/50
+            "
+          >
+            <header class="flex gap-3">
+              <div class="flex-shrink-0">
+                <img :src="`/images/${food.imageUrl}`" class="w-20" />
+              </div>
+
+              <div class="flex-grow">
+                <h3>
+                  {{ food.name }}
+                </h3>
+
+                <div>{{ tiers[food.tier] }}</div>
+              </div>
+            </header>
+
+            <hr class="my-3 border-0 h-1 bg-gray-200 rounded-full" />
+
+            <div class="text-sm text-gray-600">
+              {{ food.description }}
             </div>
           </router-link>
         </li>
@@ -441,18 +492,22 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
             <div>{{ tiers[current.tier] }}</div>
 
-            <div>{{ current.attack }}/{{ current.health }}</div>
+            <div v-if="current.attack && current.health">{{ current.attack }}/{{ current.health }}</div>
           </div>
         </header>
 
         <hr class="my-5 border-0 h-1 bg-gray-200 rounded-full" />
 
         <div>
-          <ul>
+          <ul v-if="current.levels">
             <li v-for="(level, i) in current.levels" :key="i">
               Level {{ i + 1 }} - {{ level }}
             </li>
           </ul>
+
+          <div v-if="current.description">
+            {{ current.description }}
+          </div>
         </div>
       </div>
     </Dialog>
