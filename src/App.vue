@@ -5,7 +5,7 @@
         :to="{ name: 'home' }"
         class="flex items-center gap-3 text-white hover:no-underline"
       >
-        <img src="@/assets/logo.svg" class="w-10 h-10" />
+        <img src="@/assets/logo.svg" class="w-10 h-10" alt="LootSheet logo" />
 
         <span class="font-light text-xl"> LootSheet </span>
       </router-link>
