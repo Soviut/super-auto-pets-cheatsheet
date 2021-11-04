@@ -324,7 +324,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     </form>
 
     <div v-if="filteredItems.length === 0" class="text-center">
-      <img src="/images/turtle.png" class="inline-block mb-8 w-32 h-32" />
+      <img src="/images/turtle.png" class="inline-block mb-8 w-32 h-32" alt="turtle mascot" />
 
       <p class="mb-8">No results found, try modifying your search</p>
 
@@ -370,7 +370,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           >
             <header class="flex gap-3">
               <div class="flex-shrink-0">
-                <img :src="animal.imageUrl" class="w-20" />
+                <img :src="animal.imageUrl" class="w-20 h-20 object-contain" :alt="animal.name" />
               </div>
 
               <div class="flex-grow">
@@ -413,7 +413,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           >
             <header class="flex gap-3">
               <div class="flex-shrink-0">
-                <img :src="food.imageUrl" class="w-20" />
+                <img :src="food.imageUrl" class="w-20 h-20 object-contain" :alt="food.name" />
               </div>
 
               <div class="flex-grow">
@@ -486,7 +486,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
         <header class="flex gap-5">
           <div class="flex-shrink-0">
-            <img :src="current.imageUrl" class="w-32" />
+            <img :src="current.imageUrl" class="w-32 h-32 object-contain" :alt="current.name" />
           </div>
 
           <div class="flex-grow">
