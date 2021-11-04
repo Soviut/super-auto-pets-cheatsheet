@@ -9,7 +9,7 @@ const app = createApp(App)
 app.use(router)
 
 app.use(VueGtag, {
-  isEnabled: process.env.NODE_ENV === 'development',
+  isEnabled: process.env.NODE_ENV !== 'development',
   property: {
     // id: 'G-253BBQQJER', // local
     id: 'G-71G27SVGCV', // prod
