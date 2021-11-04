@@ -172,7 +172,9 @@ if (route.query.term || route.query.packs || route.query.tiers) {
   <div class="container mx-auto my-10 px-5">
     <header class="mb-8">
       <h1>Super Auto Pets</h1>
-      <a href="https://teamwoodgames.com/" target="_blank">Team Wood Games</a>
+      <a href="https://teamwoodgames.com/" target="_blank" rel="noopener">
+        Team Wood Games
+      </a>
     </header>
 
     <form class="mb-8" @submit.prevent>
