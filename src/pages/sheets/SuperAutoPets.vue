@@ -49,9 +49,8 @@ const items = computed<Item[]>(() => [...animals, ...foods] as Item[])
 const current = computed<Animal | Food | undefined>(() => {
   const id = route.hash.replace('#', '')
   const item = items.value.find((item) => item.id === id)
-  return (item as Animal).levels
-    ? item as Animal
-    : item as Food
+
+  return item && ((item as Animal) ? item as Animal : item as Food)
 })
 
 // lock scrolling if we are in a modal
@@ -92,10 +91,8 @@ const itemsByTier = computed(() => {
     .reduce<Array<{ number: number; animals: Animal[]; foods: Food[] }>>(
       (acc, curr) => {
         if ('levels' in (curr as Animal)) {
-          console.log('add animal')
           acc[curr.tier].animals.push(curr as Animal)
         } else {
-          console.log('add food')
           acc[curr.tier].foods.push(curr as Food)
         }
         return acc
