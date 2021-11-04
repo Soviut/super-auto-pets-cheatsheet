@@ -367,7 +367,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           >
             <header class="flex gap-3">
               <div class="flex-shrink-0">
-                <img :src="`/images/${animal.imageUrl}`" class="w-20" />
+                <img :src="animal.imageUrl" class="w-20" />
               </div>
 
               <div class="flex-grow">
@@ -410,7 +410,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           >
             <header class="flex gap-3">
               <div class="flex-shrink-0">
-                <img :src="`/images/${food.imageUrl}`" class="w-20" />
+                <img :src="food.imageUrl" class="w-20" />
               </div>
 
               <div class="flex-grow">
@@ -483,7 +483,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
         <header class="flex gap-5">
           <div class="flex-shrink-0">
-            <img :src="`/images/${current.imageUrl}`" class="w-32" />
+            <img :src="current.imageUrl" class="w-32" />
           </div>
 
           <div class="flex-grow">
