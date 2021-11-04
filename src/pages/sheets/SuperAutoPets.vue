@@ -65,33 +65,34 @@ const closeModal = () => {
 }
 
 const filteredItems = computed(() => {
-  return items.value.reduce<Item[]>((acc, curr) => {
-    // prettier-ignore
-    return [
-      ...acc,
-      ...(
-        curr.name.toLowerCase().includes(normalizedTerm.value) &&
-        ((curr as Animal).levels?.some((level) =>
-          level.toLowerCase().includes(normalizedTerm.value)
-        ) ?? true) &&
-        ((curr as Animal).packs?.some((pack) =>
-          selectedPacks.value.includes(pack)
-        ) ?? true) &&
-        selectedTiers.value.includes(curr.tier)
-      )
-        ? [curr]
-        : []
-    ]
-  }, [])
+  // prettier-ignore
+  return items.value
+    // filter tiers and packs
+    .filter((item) =>
+      selectedTiers.value.includes(item.tier) &&
+      ((item as Animal).packs?.some((pack) =>
+        selectedPacks.value.includes(pack)
+      ) ?? true)
+    )
+    // filter text
+    .filter((item) =>
+      item.name.toLowerCase().includes(normalizedTerm.value) ||
+      (item as Animal).levels?.some((level) =>
+        level.toLowerCase().includes(normalizedTerm.value)
+      ) ||
+      (item as Food).description?.toLowerCase().includes(normalizedTerm.value)
+    )
 })
 
 const itemsByTier = computed(() => {
   return filteredItems.value
-    .reduce<Array<{ number: number; animals: Animal[], foods: Food[] }>>(
+    .reduce<Array<{ number: number; animals: Animal[]; foods: Food[] }>>(
       (acc, curr) => {
         if ('levels' in (curr as Animal)) {
+          console.log('add animal')
           acc[curr.tier].animals.push(curr as Animal)
         } else {
+          console.log('add food')
           acc[curr.tier].foods.push(curr as Food)
         }
         return acc
@@ -100,7 +101,7 @@ const itemsByTier = computed(() => {
         .fill(0) // need to fill with primitives to avoid cross references
         .map((_, i) => ({ number: i, animals: [], foods: [] }))
     )
-    .filter((tier) => tier.animals.length)
+    .filter((tier) => tier.animals.length || tier.foods.length)
 })
 
 const selectedPacks = ref<number[]>([])
@@ -309,10 +310,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       </div>
 
       <div class="text-sm text-gray-400">
-        Showing {{ filteredItems.length }} / {{ animals.length }}
+        Showing {{ filteredItems.length }} / {{ items.length }}
 
         <button
-          v-if="filteredItems.length !== animals.length"
+          v-if="filteredItems.length !== items.length"
           class="text-primary-500"
           @click="reset"
         >
@@ -492,7 +493,9 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
             <div>{{ tiers[current.tier] }}</div>
 
-            <div v-if="current.attack && current.health">{{ current.attack }}/{{ current.health }}</div>
+            <div v-if="current.attack && current.health">
+              {{ current.attack }}/{{ current.health }}
+            </div>
           </div>
         </header>
 
