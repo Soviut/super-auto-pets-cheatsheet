@@ -46,9 +46,12 @@ const normalizedTerm = computed(() => term.value.trim().toLowerCase())
 
 const items = computed<Item[]>(() => [...animals, ...foods] as Item[])
 
-const current = computed(() => {
+const current = computed<Animal | Food | undefined>(() => {
   const id = route.hash.replace('#', '')
-  return items.value.find((item) => item.id === id)
+  const item = items.value.find((item) => item.id === id)
+  return (item as Animal).levels
+    ? item as Animal
+    : item as Food
 })
 
 // lock scrolling if we are in a modal
@@ -496,7 +499,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
             <div>{{ tiers[current.tier] }}</div>
 
-            <div v-if="current.attack && current.health">
+            <div v-if="'attack' in current && 'health' in current">
               {{ current.attack }}/{{ current.health }}
             </div>
           </div>
@@ -505,13 +508,13 @@ if (route.query.term || route.query.packs || route.query.tiers) {
         <hr class="my-5 border-0 h-1 bg-gray-200 rounded-full" />
 
         <div>
-          <ul v-if="current.levels">
+          <ul v-if="'levels' in current">
             <li v-for="(level, i) in current.levels" :key="i">
               Level {{ i + 1 }} - {{ level }}
             </li>
           </ul>
 
-          <div v-if="current.description">
+          <div v-if="'description' in current">
             {{ current.description }}
           </div>
         </div>
