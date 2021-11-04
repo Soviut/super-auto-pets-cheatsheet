@@ -172,6 +172,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
   <div class="container mx-auto my-10 px-5">
     <header class="mb-8">
       <h1>Super Auto Pets</h1>
+      <a href="https://teamwoodgames.com/" target="_blank">Team Wood Games</a>
     </header>
 
     <form class="mb-8" @submit.prevent>
@@ -309,7 +310,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
         </Popover>
       </div>
 
-      <div class="text-sm text-gray-400">
+      <div class="text-gray-400">
         Showing {{ filteredItems.length }} / {{ items.length }}
 
         <button
@@ -323,7 +324,9 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     </form>
 
     <div v-if="filteredItems.length === 0" class="text-center">
-      <p class="mb-8">No results round, try modifying your search</p>
+      <img src="/images/turtle.png" class="inline-block mb-8 w-32 h-32" />
+
+      <p class="mb-8">No results found, try modifying your search</p>
 
       <footer>
         <button
