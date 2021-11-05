@@ -163,7 +163,6 @@ watch(
           }
         : {},
     })
-    console.log()
   },
   { deep: true }
 )
