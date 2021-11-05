@@ -114,6 +114,11 @@ const togglePack = (i: number) => {
   } else {
     selectedPacks.value.push(i)
   }
+
+  gtag.event('toggle_pack', {
+    event_category: 'filters',
+    event_label: i.toString(),
+  })
 }
 
 const selectedTiers = ref<number[]>([])
@@ -124,6 +129,11 @@ const toggleTier = (i: number) => {
   } else {
     selectedTiers.value.push(i)
   }
+
+  gtag.event('toggle_tier', {
+    event_category: 'filters',
+    event_label: i.toString(),
+  })
 }
 
 const reset = () => {
@@ -161,6 +171,23 @@ watch(
         event_category: 'items',
         event_label: hash.replace('#', ''),
       })
+    }
+  }
+)
+
+let termDebounce: ReturnType<typeof setTimeout>
+watch(
+  () => normalizedTerm.value,
+  (value) => {
+    clearTimeout(termDebounce)
+
+    if (value) {
+      termDebounce = setTimeout(() => {
+        gtag.event('search_term', {
+          event_category: 'filters',
+          event_label: value,
+        })
+      }, 500)
     }
   }
 )
