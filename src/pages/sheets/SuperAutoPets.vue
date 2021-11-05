@@ -140,6 +140,11 @@ const reset = () => {
   term.value = ''
   selectedPacks.value = [0, 1]
   selectedTiers.value = [0, 1, 2, 3, 4, 5]
+
+  gtag.event('reset_filters', {
+    event_category: 'filters',
+    event_label: 'all',
+  })
 }
 
 watch(
