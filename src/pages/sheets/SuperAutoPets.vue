@@ -15,9 +15,11 @@ import {
   SearchCircleIcon,
   ChevronDownIcon,
 } from '@heroicons/vue/outline'
+import { useGtag } from 'vue-gtag-next'
 
 const router = useRouter()
 const route = useRoute()
+const gtag = useGtag()
 
 // TODO: move to types
 interface Item {
@@ -146,8 +148,21 @@ watch(
           }
         : {},
     })
+    console.log()
   },
   { deep: true }
+)
+
+watch(
+  () => route.hash,
+  (hash) => {
+    if (hash) {
+      gtag.event('view_item', {
+        event_category: 'items',
+        event_label: hash.replace('#', ''),
+      })
+    }
+  }
 )
 
 // apply query params on reload
