@@ -28,6 +28,15 @@ from VSCode command palette.
 
 **TODO**
 
+## Building
+
+**TODO** Put the following back into package.json once vue-gtag-next stops
+throwing type errors about VueRouter.
+
+```json
+"build": "vue-tsc --noEmit && vite build",
+```
+
 ## Testing
 
 **TODO**
