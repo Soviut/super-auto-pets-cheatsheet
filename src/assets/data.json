@@ -172,7 +172,7 @@
       "name": "Ladybug",
       "imageUrl": "/images/lady-beetle.png",
       "packs": [
-        0
+        1
       ],
       "tier": 0,
       "attack": 1,
