@@ -783,9 +783,9 @@
       "attack": 2,
       "health": 4,
       "levels": [
-        "End turn: Give adjacent firends +1 Health",
-        "End turn: Give adjacent firends +2 Health",
-        "End turn: Give adjacent firends +3 Health"
+        "End turn: Give adjacent friends +1 Health",
+        "End turn: Give adjacent friends +2 Health",
+        "End turn: Give adjacent friends +3 Health"
       ],
       "tags": [
         "end-turn"
@@ -1554,14 +1554,14 @@
       "name": "Meat Bone",
       "imageUrl": "/images/meat-on-bone.png",
       "tier": 1,
-      "description": "Give an animal +3/+3 until end of battle"
+      "description": "Give an animal Bone Attack"
     },
     {
       "id": "sleeping-pill",
       "name": "Sleeping Pill",
       "imageUrl": "/images/pill.png",
       "tier": 1,
-      "description": "Give an animal Bone Attack"
+      "description": "Make a friendly animal faint"
     },
     {
       "id": "garlic",
