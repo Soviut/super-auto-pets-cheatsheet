@@ -295,8 +295,8 @@
       "health": 3,
       "levels": [
         "Start of battle: Give attack to friend ahead",
-        "Start of battle: Give attack to 2 friends ahead",
-        "Start of battle: Give attack to 3 friends ahead"
+        "Start of battle: Give 2x attack tp friend ahead",
+        "Start of battle: Give 3x attack to friend ahead"
       ],
       "tags": [
         "start-of-battle"
@@ -530,9 +530,9 @@
       "attack": 5,
       "health": 4,
       "levels": [
-        "Faint: Deal attack damage to adjacent animals",
-        "Faint: Deal attack damage to adjacent animals",
-        "Faint: Deal attack damage to adjacent animals"
+        "Faint: Deal Attack damage to adjacent animals",
+        "Faint: Deal 2x Attack damage to adjacent animals",
+        "Faint: Deal 3x Attack damage to adjacent animals"
       ],
       "tags": [
         "faint"
