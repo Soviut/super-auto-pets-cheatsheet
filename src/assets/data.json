@@ -45,8 +45,8 @@
       "health": 2,
       "levels": [
         "Sell: give 2 random friends +1 Health",
-        "Sell: give 2 random friends +1 Health",
-        "Sell: give 2 random friends +1 Health"
+        "Sell: give 2 random friends +2 Health",
+        "Sell: give 2 random friends +3 Health"
       ],
       "tags": [
         "sell"
@@ -294,9 +294,9 @@
       "attack": 1,
       "health": 3,
       "levels": [
-        "Start of battle: Give attack to friend ahead",
-        "Start of battle: Give 2x attack tp friend ahead",
-        "Start of battle: Give 3x attack to friend ahead"
+        "Start of battle: Give Attack to friend ahead",
+        "Start of battle: Give 2x Attack tp friend ahead",
+        "Start of battle: Give 3x Attack to friend ahead"
       ],
       "tags": [
         "start-of-battle"
@@ -530,9 +530,9 @@
       "attack": 5,
       "health": 4,
       "levels": [
-        "Faint: Deal Attack damage to adjacent animals",
-        "Faint: Deal 2x Attack damage to adjacent animals",
-        "Faint: Deal 3x Attack damage to adjacent animals"
+        "Faint: Deal Attack damage to adjacent pets",
+        "Faint: Deal 2x Attack damage to adjacent pets",
+        "Faint: Deal 3x Attack damage to adjacent pets"
       ],
       "tags": [
         "faint"
@@ -770,6 +770,25 @@
       ],
       "tags": [
         "buy"
+      ]
+    },
+    {
+      "id": "snake",
+      "name": "Snake",
+      "imageUrl": "/images/snake.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 6,
+      "health": 6,
+      "levels": [
+        "Friend ahead faints: Deal 5 damage to a random enemy",
+        "Friend ahead faints: Deal 10 damage to a random enemy",
+        "Friend ahead faints: Deal 15 damage to a random enemy"
+      ],
+      "tags": [
+        "friend-ahead-faints"
       ]
     },
     {
