@@ -76,7 +76,8 @@ const filteredItems = computed(() => {
       selectedTiers.value.includes(item.tier) &&
       ((item as Animal).packs?.some((pack) =>
         selectedPacks.value.includes(pack)
-      ) ?? true)
+      ) ?? true) &&
+      (showFood.value && 'description' in item || !('description' in item))
     )
     // filter text
     .filter((item) =>
@@ -136,10 +137,22 @@ const toggleTier = (i: number) => {
   })
 }
 
+const showFood = ref<boolean>(true)
+
+const toggleFood = () => {
+  showFood.value = !showFood.value
+
+  gtag.event('toggle_food', {
+    event_category: 'filters',
+    event_label: 'food',
+  })
+}
+
 const reset = () => {
   term.value = ''
   selectedPacks.value = [0, 1]
   selectedTiers.value = [0, 1, 2, 3, 4, 5]
+  showFood.value = true
 
   gtag.event('reset_filters', {
     event_category: 'filters',
@@ -291,6 +304,18 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                   <label :for="`pack-${i}`" class="ml-2 flex-grow">{{
                     pack
                   }}</label>
+                </div>
+
+                <hr />
+
+                <div class="flex items-center">
+                  <input
+                    id="food"
+                    type="checkbox"
+                    :checked="showFood"
+                    @input="toggleFood"
+                  />
+                  <label for="food" class="ml-2 flex-grow">Food</label>
                 </div>
               </fieldset>
             </PopoverPanel>
