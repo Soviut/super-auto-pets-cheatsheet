@@ -246,6 +246,24 @@
       ]
     },
     {
+      "id": "sloth",
+      "name": "Sloth",
+      "imageUrl": "/images/sloth.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 0,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "Has no special ability. Is kind of lame combat-wise. But he truly believes in you!",
+        "Has no special ability. Is kind of lame combat-wise. But he truly believes in you!",
+        "Has no special ability. Is kind of lame combat-wise. But he truly believes in you!"
+      ],
+      "tags": []
+    },
+    {
       "id": "bat",
       "name": "Bat",
       "imageUrl": "/images/bat.png",
@@ -770,25 +788,6 @@
       ],
       "tags": [
         "buy"
-      ]
-    },
-    {
-      "id": "snake",
-      "name": "Snake",
-      "imageUrl": "/images/snake.png",
-      "packs": [
-        0
-      ],
-      "tier": 5,
-      "attack": 6,
-      "health": 6,
-      "levels": [
-        "Friend ahead faints: Deal 5 damage to a random enemy",
-        "Friend ahead faints: Deal 10 damage to a random enemy",
-        "Friend ahead faints: Deal 15 damage to a random enemy"
-      ],
-      "tags": [
-        "friend-ahead-faints"
       ]
     },
     {
@@ -1505,6 +1504,25 @@
       ],
       "tags": [
         "buy-food"
+      ]
+    },
+    {
+      "id": "snake",
+      "name": "Snake",
+      "imageUrl": "/images/snake.png",
+      "packs": [
+        0
+      ],
+      "tier": 5,
+      "attack": 6,
+      "health": 6,
+      "levels": [
+        "Friend ahead faints: Deal 5 damage to a random enemy",
+        "Friend ahead faints: Deal 10 damage to a random enemy",
+        "Friend ahead faints: Deal 15 damage to a random enemy"
+      ],
+      "tags": [
+        "friend-ahead-faints"
       ]
     },
     {
