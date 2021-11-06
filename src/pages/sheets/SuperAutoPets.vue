@@ -275,6 +275,15 @@ if (route.query.term || route.query.packs || route.query.tiers) {
               {{ selectedPacks.length }} / {{ packs.length }}
             </div>
 
+            <div
+              class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
+              :class="{
+                '!bg-primary-500': !showFood,
+              }"
+            >
+              Food
+            </div>
+
             <ChevronDownIcon class="w-5 h-5 ml-auto text-gray-500" />
           </PopoverButton>
 
