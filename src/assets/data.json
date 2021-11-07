@@ -313,7 +313,7 @@
       "health": 3,
       "levels": [
         "Start of battle: Give Attack to friend ahead",
-        "Start of battle: Give 2x Attack tp friend ahead",
+        "Start of battle: Give 2x Attack to friend ahead",
         "Start of battle: Give 3x Attack to friend ahead"
       ],
       "tags": [
@@ -1207,9 +1207,9 @@
       "attack": 4,
       "health": 5,
       "levels": [
-        "Friend bought: Gain 1 gold",
-        "Friend bought: Gain 1 gold",
-        "Friend bought: Gain 1 gold"
+        "Friend bought: Gain 1 gold (works 3 times per turn)",
+        "Friend bought: Gain 1 gold (works 3 times per turn)",
+        "Friend bought: Gain 1 gold (works 3 times per turn)"
       ],
       "tags": [
         "friend-bought"
@@ -1285,9 +1285,9 @@
       "attack": 1,
       "health": 1,
       "levels": [
-        "No ability (has Peanut attack when summoned)",
-        "No ability (has Peanut attack when summoned)",
-        "No ability (has Peanut attack when summoned)"
+        "No ability (has Peanut attack when summoned, any animal it attacks faints unless it has Melon Armor or Coconut Shield)",
+        "No ability (has Peanut attack when summoned, any animal it attacks faints unless it has Melon Armor or Coconut Shield)",
+        "No ability (has Peanut attack when summoned, any animal it attacks faints unless it has Melon Armor or Coconut Shield)"
       ],
       "tags": []
     },
@@ -1419,9 +1419,9 @@
       "attack": 6,
       "health": 6,
       "levels": [
-        "Hurt: Gain Coconut Shield",
-        "Hurt: Gain Coconut Shield",
-        "Hurt: Gain Coconut Shield"
+        "Hurt: Gain Coconut Shield (works once per turn)",
+        "Hurt: Gain Coconut Shield (works once per turn)",
+        "Hurt: Gain Coconut Shield (works once per turn)"
       ],
       "tags": [
         "hurt"
@@ -1498,9 +1498,9 @@
       "attack": 4,
       "health": 12,
       "levels": [
-        "Buy food: Gain 1 gold",
-        "Buy food: Gain 1 gold",
-        "Buy food: Gain 1 gold"
+        "Buy food: Gain 1 gold (works 3 times per turn)",
+        "Buy food: Gain 1 gold (works 3 times per turn)",
+        "Buy food: Gain 1 gold (works 3 times per turn)"
       ],
       "tags": [
         "buy-food"
@@ -1591,7 +1591,7 @@
       "name": "Meat Bone",
       "imageUrl": "/images/meat-on-bone.png",
       "tier": 1,
-      "description": "Give an animal Bone Attack"
+      "description": "Give an animal Bone Attack (+5 attack)"
     },
     {
       "id": "sleeping-pill",
@@ -1640,7 +1640,7 @@
       "name": "Chocolate",
       "imageUrl": "/images/chocolate-bar.png",
       "tier": 4,
-      "description": "Give an animal +1 Experience"
+      "description": "Give an animal +1 Experience (and +1/+1)"
     },
     {
       "id": "sushi",
@@ -1654,14 +1654,14 @@
       "name": "Melon",
       "imageUrl": "/images/melon.png",
       "tier": 5,
-      "description": "Give an animal Melon Armor"
+      "description": "Give an animal Melon Armor (absorb +20 damage once per battle)"
     },
     {
       "id": "mushroom",
       "name": "Mushroom",
       "imageUrl": "/images/mushroom.png",
       "tier": 5,
-      "description": "Give an animal Extra Life"
+      "description": "Give an animal Extra Life (revive animal with 1/1)"
     },
     {
       "id": "pizza",
@@ -1675,7 +1675,7 @@
       "name": "Steak",
       "imageUrl": "/images/cut-of-meat.png",
       "tier": 5,
-      "description": "Give an animal Steak Attack"
+      "description": "Give an animal Steak Attack (do +20 damage once per battle)"
     }
   ]
 }
