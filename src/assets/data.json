@@ -1517,12 +1517,12 @@
       "attack": 6,
       "health": 6,
       "levels": [
-        "Friend ahead faints: Deal 5 damage to a random enemy",
-        "Friend ahead faints: Deal 10 damage to a random enemy",
-        "Friend ahead faints: Deal 15 damage to a random enemy"
+        "Friend ahead attacks: Deal 5 damage to a random enemy",
+        "Friend ahead attacks: Deal 10 damage to a random enemy",
+        "Friend ahead attacks: Deal 15 damage to a random enemy"
       ],
       "tags": [
-        "friend-ahead-faints"
+        "friend-ahead-attacks"
       ]
     },
     {
