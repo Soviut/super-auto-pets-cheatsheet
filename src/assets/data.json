@@ -1419,9 +1419,9 @@
       "attack": 6,
       "health": 6,
       "levels": [
-        "Hurt: Gain Coconut Shield (works once per turn)",
-        "Hurt: Gain Coconut Shield (works once per turn)",
-        "Hurt: Gain Coconut Shield (works once per turn)"
+        "Hurt: Gain Coconut Shield (works 1 time per turn)",
+        "Hurt: Gain Coconut Shield (works 2 times per turn)",
+        "Hurt: Gain Coconut Shield (works 3 times per turn)"
       ],
       "tags": [
         "hurt"
