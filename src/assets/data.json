@@ -1285,9 +1285,9 @@
       "attack": 1,
       "health": 1,
       "levels": [
-        "No ability",
-        "No ability",
-        "No ability"
+        "No ability (has Peanut attack when summoned)",
+        "No ability (has Peanut attack when summoned)",
+        "No ability (has Peanut attack when summoned)"
       ],
       "tags": []
     },
