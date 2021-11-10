@@ -1499,8 +1499,8 @@
       "health": 12,
       "levels": [
         "Buy food: Gain 1 gold (works 3 times per turn)",
-        "Buy food: Gain 1 gold (works 3 times per turn)",
-        "Buy food: Gain 1 gold (works 3 times per turn)"
+        "Buy food: Gain 1 gold (works 6 times per turn)",
+        "Buy food: Gain 1 gold (works 9 times per turn)"
       ],
       "tags": [
         "buy-food"
