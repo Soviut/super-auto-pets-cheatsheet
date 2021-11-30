@@ -115,6 +115,26 @@
       ]
     },
     {
+      "id": "boar",
+      "name": "Boar",
+      "imageUrl": "/images/boar.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 5,
+      "attack": 8,
+      "health": 6,
+      "levels": [
+        "Before Attack: Gain +2/+2",
+        "Before Attack: Gain +4/+4",
+        "Before Attack: Gain +6/+6"
+      ],
+      "tags": [
+        "before-attack"
+      ]
+    },
+    {
       "id": "cricket",
       "name": "Cricket",
       "imageUrl": "/images/cricket.png",
