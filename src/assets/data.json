@@ -4,12 +4,36 @@
     "Expansion Pack 1"
   ],
   "tiers": [
-    "Tier 1",
-    "Tier 2",
-    "Tier 3",
-    "Tier 4",
-    "Tier 5",
-    "Tier 6"
+    {
+      "id": "tier1",
+      "name": "Tier 1",
+      "description": "Available turn 1"
+    },
+    {
+      "id": "tier2",
+      "name": "Tier 2",
+      "description": "Available turn 3"
+    },
+    {
+      "id": "tier3",
+      "name": "Tier 3",
+      "description": "Available turn 5"
+    },
+    {
+      "id": "tier4",
+      "name": "Tier 4",
+      "description": "Available turn 7"
+    },
+    {
+      "id": "tier5",
+      "name": "Tier 5",
+      "description": "Available turn 9"
+    },
+    {
+      "id": "tier6",
+      "name": "Tier 6",
+      "description": "Available turn 11"
+    }
   ],
   "animals": [
     {

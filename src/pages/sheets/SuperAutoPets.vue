@@ -21,6 +21,12 @@ const router = useRouter()
 const route = useRoute()
 const gtag = useGtag()
 
+interface Tier {
+  id: string
+  name: string
+  description: string
+}
+
 // TODO: move to types
 interface Item {
   id: string
@@ -91,7 +97,7 @@ const filteredItems = computed(() => {
 
 const itemsByTier = computed(() => {
   return filteredItems.value
-    .reduce<Array<{ number: number; animals: Animal[]; foods: Food[] }>>(
+    .reduce<Array<Tier & { number: number; animals: Animal[]; foods: Food[] }>>(
       (acc, curr) => {
         if ('levels' in (curr as Animal)) {
           acc[curr.tier].animals.push(curr as Animal)
@@ -102,7 +108,7 @@ const itemsByTier = computed(() => {
       },
       new Array(tiers.length)
         .fill(0) // need to fill with primitives to avoid cross references
-        .map((_, i) => ({ number: i, animals: [], foods: [] }))
+        .map((_, i) => ({ ...tiers[i], number: i, animals: [], foods: [] }))
     )
     .filter((tier) => tier.animals.length || tier.foods.length)
 })
@@ -373,7 +379,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
               >
                 <div
                   v-for="(tier, i) in tiers"
-                  :key="tier"
+                  :key="tier.id"
                   class="flex items-center"
                 >
                   <input
@@ -430,8 +436,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     </div>
 
     <section v-for="tier in itemsByTier" :key="tier.number" class="mb-8">
-      <header class="mb-3">
-        <h2>{{ tiers[tier.number] }}</h2>
+      <header class="flex items-center sticky top-0 py-1 mb-8 bg-gray-200">
+        <h2 class="mr-3">{{ tier.name }}</h2>
+        <p class="px-2 py-1 rounded-full bg-gray-400 text-white text-sm">
+          {{ tier.description }}
+        </p>
       </header>
 
       <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -460,7 +469,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                   {{ animal.name }}
                 </h3>
 
-                <div>{{ tiers[animal.tier] }}</div>
+                <div>{{ tier.name }}</div>
 
                 <div>{{ animal.attack }}/{{ animal.health }}</div>
               </div>
@@ -503,7 +512,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                   {{ food.name }}
                 </h3>
 
-                <div>{{ tiers[food.tier] }}</div>
+                <div>{{ tier.name }}</div>
               </div>
             </header>
 
