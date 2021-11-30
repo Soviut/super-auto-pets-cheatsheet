@@ -389,7 +389,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                     @input="toggleTier(i)"
                   />
                   <label :for="`tier-${i}`" class="ml-2 flex-grow">
-                    {{ tier }}
+                    {{ tier.name }}
+
+                    <span class="ml-3 text-gray-400 text-sm">
+                      {{ tier.description }}
+                    </span>
                   </label>
                 </div>
               </fieldset>
