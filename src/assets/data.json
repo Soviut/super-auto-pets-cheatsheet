@@ -145,9 +145,9 @@
       "attack": 1,
       "health": 2,
       "levels": [
-        "Sell: Give shop animals +1/+1",
-        "Sell: Give shop animals +2/+2",
-        "Sell: Give shop animals +3/+3"
+        "Sell: Give shop animals +0/+1",
+        "Sell: Give shop animals +0/+2",
+        "Sell: Give shop animals +0/+3"
       ],
       "tags": [
         "sell"
@@ -222,9 +222,9 @@
       "attack": 2,
       "health": 2,
       "levels": [
-        "Start of battle: Deal 1 damage to a random enemy",
-        "Start of battle: Deal 2 damage to a random enemy",
-        "Start of battle: Deal 3 damage to a random enemy"
+        "Start of battle: Deal 1 damage to 1 random enemy",
+        "Start of battle: Deal 1 damage to 2 random enemies",
+        "Start of battle: Deal 1 damage to 3 random enemies"
       ],
       "tags": [
         "start-of-battle"
@@ -258,8 +258,8 @@
         1
       ],
       "tier": 0,
-      "attack": 2,
-      "health": 2,
+      "attack": 3,
+      "health": 1,
       "levels": [
         "Sell: Gain an extra 1 gold",
         "Sell: Gain an extra 2 gold",
@@ -317,12 +317,12 @@
       "attack": 3,
       "health": 3,
       "levels": [
-        "Start of battle: Copy Health from friend ahead",
-        "Start of battle: Copy Health from friend ahead",
-        "Start of battle: Copy Health from friend ahead"
+        "Buy: Copy Health from friend ahead",
+        "Buy: Copy Health from friend ahead",
+        "Buy: Copy Health from friend ahead"
       ],
       "tags": [
-        "start-of-battle"
+        "buy"
       ]
     },
     {
@@ -333,12 +333,12 @@
         0
       ],
       "tier": 1,
-      "attack": 1,
+      "attack": 2,
       "health": 3,
       "levels": [
-        "Start of battle: Give Attack to friend ahead",
-        "Start of battle: Give 2x Attack to friend ahead",
-        "Start of battle: Give 3x Attack to friend ahead"
+        "Start of battle: Give 50% Attack to friend ahead",
+        "Start of battle: Give 100% Attack to friend ahead",
+        "Start of battle: Give 150% Attack to friend ahead"
       ],
       "tags": [
         "start-of-battle"
@@ -352,7 +352,7 @@
         0,
         1
       ],
-      "tier": 1,
+      "tier": 2,
       "attack": 2,
       "health": 2,
       "levels": [
@@ -471,12 +471,12 @@
         1
       ],
       "tier": 1,
-      "attack": 4,
-      "health": 5,
+      "attack": 3,
+      "health": 1,
       "levels": [
-        "Faint: Summon one 1/1 Dirty Rat for the opponent that betrays him",
-        "Faint: Summon one 1/1 Dirty Rat for the opponent that betrays him",
-        "Faint: Summon one 1/1 Dirty Rat for the opponent that betrays him"
+        "Faint: Summon one 1/1 Dirty Rat that deals 3 damage to friend ahead",
+        "Faint: Summon one 1/1 Dirty Rat that deals 6 damage to friend ahead",
+        "Faint: Summon one 1/1 Dirty Rat that deals 9 damage to friend ahead"
       ],
       "tags": [
         "faint"
@@ -492,7 +492,7 @@
       ],
       "tier": 1,
       "attack": 2,
-      "health": 1,
+      "health": 3,
       "levels": [
         "Friend sold: Give a random friend +1 Health",
         "Friend sold: Give a random friend +2 Health",
@@ -514,9 +514,9 @@
       "attack": 2,
       "health": 2,
       "levels": [
-        "Faint: Summon one tier 3 animal as a 2/2",
-        "Faint: Summon one tier 3 animal as a 4/4",
-        "Faint: Summon one tier 3 animal as a 6/6"
+        "Faint: Summon a level 1 tier 3 animal as a 2/2",
+        "Faint: Summon a level 2 tier 3 animal as a 4/4",
+        "Faint: Summon a level 3 tier 3 animal as a 6/6"
       ],
       "tags": [
         "faint"
@@ -550,12 +550,12 @@
         1
       ],
       "tier": 1,
-      "attack": 4,
+      "attack": 2,
       "health": 3,
       "levels": [
-        "Eats shop food: Give friends +1 Attack until end of battle",
         "Eats shop food: Give friends +2 Attack until end of battle",
-        "Eats shop food: Give friends +3 Attack until end of battle"
+        "Eats shop food: Give friends +4 Attack until end of battle",
+        "Eats shop food: Give friends +6 Attack until end of battle"
       ],
       "tags": [
         "eats-shop-food"
@@ -628,7 +628,7 @@
       ],
       "tier": 2,
       "attack": 1,
-      "health": 4,
+      "health": 3,
       "levels": [
         "Start of turn: Gain 1 Experience",
         "Start of turn: Gain 1 Experience",
@@ -686,8 +686,8 @@
         0
       ],
       "tier": 2,
-      "attack": 2,
-      "health": 3,
+      "attack": 1,
+      "health": 2,
       "levels": [
         "Friend ahead attacks: Gain +2/+2",
         "Friend ahead attacks: Gain +4/+4",
@@ -746,9 +746,9 @@
       "attack": 1,
       "health": 1,
       "levels": [
-        "End turn: If you have 2 or more gold, gain +2/+2",
-        "End turn: If you have 2 or more gold, gain +4/+4",
-        "End turn: If you have 2 or more gold, gain +6/+6"
+        "End turn: If you have 3 or more gold, gain +2/+2",
+        "End turn: If you have 3 or more gold, gain +4/+4",
+        "End turn: If you have 3 or more gold, gain +6/+6"
       ],
       "tags": [
         "end-turn"
@@ -762,13 +762,13 @@
         0,
         1
       ],
-      "tier": 2,
+      "tier": 1,
       "attack": 3,
       "health": 2,
       "levels": [
-        "Friend eats shop food: Give it +1 Health",
-        "Friend eats shop food: Give it +2 Health",
-        "Friend eats shop food: Give it +3 Health"
+        "Friend eats shop food: Give it +1 Health (can trigger on itself)",
+        "Friend eats shop food: Give it +2 Health (can trigger on itself)",
+        "Friend eats shop food: Give it +3 Health (can trigger on itself)"
       ],
       "tags": [
         "friend-eats-shop-food"
@@ -842,8 +842,8 @@
         1
       ],
       "tier": 2,
-      "attack": 2,
-      "health": 4,
+      "attack": 1,
+      "health": 2,
       "levels": [
         "Faint: Give friend behind Melon Armor",
         "Faint: Give 2 friends behind Melon Armor",
@@ -977,8 +977,8 @@
         1
       ],
       "tier": 3,
-      "attack": 2,
-      "health": 5,
+      "attack": 3,
+      "health": 6,
       "levels": [
         "End turn: If you have 4 or less pets, gain +2/+2",
         "End turn: If you have 4 or less pets, gain +4/+4",
@@ -999,9 +999,9 @@
       "attack": 3,
       "health": 3,
       "levels": [
-        "Friend summoned: Give it +2/+2 when not in battle",
-        "Friend summoned: Give it +4/+4 when not in battle",
-        "Friend summoned: Give it +6/+6 when not in battle"
+        "Friend summoned: Give it +3/+3 when not in battle",
+        "Friend summoned: Give it +6/+6 when not in battle",
+        "Friend summoned: Give it +9/+9 when not in battle"
       ],
       "tags": [
         "friend-summoned"
@@ -1014,13 +1014,13 @@
       "packs": [
         0
       ],
-      "tier": 3,
+      "tier": 4,
       "attack": 3,
       "health": 3,
       "levels": [
-        "End turn: Give right-most friend +2/+2",
-        "End turn: Give right-most friend +4/+4",
-        "End turn: Give right-most friend +6/+6"
+        "End turn: Give right-most friend +3/+3",
+        "End turn: Give right-most friend +6/+6",
+        "End turn: Give right-most friend +9/+9"
       ],
       "tags": [
         "end-turn"
@@ -1052,8 +1052,8 @@
       "packs": [
         1
       ],
-      "tier": 3,
-      "attack": 4,
+      "tier": 4,
+      "attack": 2,
       "health": 2,
       "levels": [
         "End turn: Give +1/+1 to one pet from each tier",
@@ -1116,9 +1116,9 @@
       "attack": 2,
       "health": 2,
       "levels": [
-        "Buy: Clear and fill shop with food",
-        "Buy: Clear and fill shop with food",
-        "Buy: Clear and fill shop with food"
+        "Buy: Clear and fill shop with food that costs 2 gold",
+        "Buy: Clear and fill shop with food that costs 2 gold",
+        "Buy: Clear and fill shop with food that costs 2 gold"
       ],
       "tags": [
         "buy"
@@ -1133,8 +1133,8 @@
         1
       ],
       "tier": 3,
-      "attack": 1,
-      "health": 1,
+      "attack": 2,
+      "health": 2,
       "levels": [
         "Eats shop food: Gain +1/+1",
         "Eats shop food: Gain +2/+2",
@@ -1152,8 +1152,8 @@
         1
       ],
       "tier": 4,
-      "attack": 3,
-      "health": 4,
+      "attack": 1,
+      "health": 2,
       "levels": [
         "Buy tier 1 pet: Give current and future shop pets +1/+1",
         "Buy tier 1 pet: Give current and future shop pets +2/+2",
@@ -1174,9 +1174,9 @@
       "attack": 4,
       "health": 6,
       "levels": [
-        "Buy: Replace food shop with 2 free milk that gives +2/+2",
-        "Buy: Replace food shop with 2 free milk that gives +2/+2",
-        "Buy: Replace food shop with 2 free milk that gives +2/+2"
+        "Buy: Replace food shop with 2 free milk that gives +1/+2",
+        "Buy: Replace food shop with 2 free milk that gives +2/+4",
+        "Buy: Replace food shop with 2 free milk that gives +3/+6"
       ],
       "tags": [
         "buy"
@@ -1190,12 +1190,12 @@
         0
       ],
       "tier": 4,
-      "attack": 6,
-      "health": 3,
+      "attack": 8,
+      "health": 4,
       "levels": [
-        "Start of battle: Deal 7 damage to the last enemy",
-        "Start of battle: Deal 14 damage to the last enemy",
-        "Start of battle: Deal 21 damage to the last enemy"
+        "Start of battle: Deal 8 damage to the last enemy",
+        "Start of battle: Deal 16 damage to the last enemy",
+        "Start of battle: Deal 24 damage to the last enemy"
       ],
       "tags": [
         "start-of-battle"
@@ -1229,11 +1229,11 @@
       ],
       "tier": 4,
       "attack": 4,
-      "health": 5,
+      "health": 6,
       "levels": [
-        "Friend bought: Gain 1 gold (works 3 times per turn)",
-        "Friend bought: Gain 1 gold (works 6 times per turn)",
-        "Friend bought: Gain 1 gold (works 9 times per turn)"
+        "Friend bought: Gain 1 gold (works 2 times per turn)",
+        "Friend bought: Gain 2 gold (works 2 times per turn)",
+        "Friend bought: Gain 3 gold (works 2 times per turn)"
       ],
       "tags": [
         "friend-bought"
@@ -1246,7 +1246,7 @@
       "packs": [
         1
       ],
-      "tier": 4,
+      "tier": 3,
       "attack": 1,
       "health": 1,
       "levels": [
@@ -1265,9 +1265,9 @@
       "packs": [
         0
       ],
-      "tier": 4,
-      "attack": 3,
-      "health": 2,
+      "tier": 3,
+      "attack": 5,
+      "health": 3,
       "levels": [
         "End turn: Copy ability from pet ahead as level 1 until end of battle",
         "End turn: Copy ability from pet ahead as level 2 until end of battle",
@@ -1287,7 +1287,7 @@
       ],
       "tier": 4,
       "attack": 5,
-      "health": 6,
+      "health": 8,
       "levels": [
         "Knock out: Deal 4 damage to the first enemy",
         "Knock out: Deal 8 damage to the first enemy",
@@ -1325,7 +1325,7 @@
       ],
       "tier": 4,
       "attack": 3,
-      "health": 6,
+      "health": 8,
       "levels": [
         "Eats shop food: Give 2 random friends +1/+1",
         "Eats shop food: Give 2 random friends +2/+2",
@@ -1423,9 +1423,9 @@
       "attack": 2,
       "health": 2,
       "levels": [
-        "Friend faints: Summon a 2/2 fly in its place",
-        "Friend faints: Summon a 4/4 fly in its place",
-        "Friend faints: Summon a 6/6 fly in its place"
+        "Friend faints: Summon a 5/5 fly in its place up to 3 times",
+        "Friend faints: Summon a 10/10 fly in its place up to 3 times",
+        "Friend faints: Summon a 15/15 fly in its place up to 3 times"
       ],
       "tags": [
         "friend-faints"
@@ -1441,7 +1441,7 @@
       ],
       "tier": 5,
       "attack": 6,
-      "health": 6,
+      "health": 9,
       "levels": [
         "Hurt: Gain Coconut Shield (activates 1 time per turn)",
         "Hurt: Gain Coconut Shield (activates 2 times per turn)",
@@ -1460,7 +1460,7 @@
         1
       ],
       "tier": 5,
-      "attack": 6,
+      "attack": 10,
       "health": 4,
       "levels": [
         "Start of battle: Deal 50% Attack damage to a random enemy",
@@ -1480,8 +1480,8 @@
         1
       ],
       "tier": 5,
-      "attack": 2,
-      "health": 6,
+      "attack": 3,
+      "health": 10,
       "levels": [
         "Faint: Give all friends +2/+2",
         "Faint: Give all friends +4/+4",
@@ -1523,8 +1523,8 @@
       "health": 12,
       "levels": [
         "Buy food: Gain 1 gold (works 3 times per turn)",
-        "Buy food: Gain 1 gold (works 6 times per turn)",
-        "Buy food: Gain 1 gold (works 9 times per turn)"
+        "Buy food: Gain 2 gold (works 3 times per turn)",
+        "Buy food: Gain 3 gold (works 3 times per turn)"
       ],
       "tags": [
         "buy-food"
@@ -1560,9 +1560,9 @@
       "attack": 4,
       "health": 3,
       "levels": [
-        "The friend ahead casts their ability twice in battle",
-        "The friend ahead casts their ability twice in battle",
-        "The friend ahead casts their ability twice in battle"
+        "The friend ahead repeats their ability in battle as if they were level 1",
+        "The friend ahead repeats their ability in battle as if they were level 2",
+        "The friend ahead repeats their ability in battle as if they were level 3"
       ],
       "tags": [
         "friend-summoned"
@@ -1579,9 +1579,9 @@
       "attack": 9,
       "health": 4,
       "levels": [
-        "End turn: If you have 3 or more gold, give other friends +2/+2",
-        "End turn: If you have 3 or more gold, give other friends +4/+4",
-        "End turn: If you have 3 or more gold, give other friends +6/+6"
+        "End turn: If you have 3 or more gold, give friends and itself +2/+1",
+        "End turn: If you have 3 or more gold, give friends and itself +4/+2",
+        "End turn: If you have 3 or more gold, give friends and itself +6/+3"
       ],
       "tags": [
         "end-turn"
@@ -1643,7 +1643,7 @@
       "name": "Canned Food",
       "imageUrl": "/images/canned-food.png",
       "tier": 3,
-      "description": "Give all current and future shop animals +2/+2"
+      "description": "Give all current and future shop animals +2/+1"
     },
     {
       "id": "pear",
