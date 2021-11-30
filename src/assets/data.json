@@ -532,7 +532,7 @@
       ],
       "tier": 1,
       "attack": 3,
-      "health": 4,
+      "health": 3,
       "levels": [
         "Start of turn: Gain 1 gold",
         "Start of turn: Gain 2 gold",
@@ -647,8 +647,8 @@
         0
       ],
       "tier": 2,
-      "attack": 1,
-      "health": 3,
+      "attack": 2,
+      "health": 5,
       "levels": [
         "End turn: Give friend ahead +1/+1",
         "End turn: Give 2 friends ahead +1/+1",
@@ -1094,7 +1094,7 @@
       ],
       "tier": 3,
       "attack": 3,
-      "health": 5,
+      "health": 6,
       "levels": [
         "Start of battle: Reduce the highest Health enemy by 33%",
         "Start of battle: Reduce the highest Health enemy by 66%",
