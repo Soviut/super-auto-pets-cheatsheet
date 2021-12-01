@@ -589,7 +589,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
               {{ current.name }}
             </h3>
 
-            <div>{{ tiers[current.tier] }}</div>
+            <div>{{ tiers[current.tier].name }}</div>
+
+            <div class="inline-block px-2 py-1 rounded-full bg-gray-400 text-white text-sm">
+              {{ tiers[current.tier].description }}
+            </div>
 
             <div v-if="'attack' in current && 'health' in current">
               {{ current.attack }}/{{ current.health }}
