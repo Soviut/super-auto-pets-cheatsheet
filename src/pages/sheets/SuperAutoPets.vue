@@ -439,15 +439,15 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       </footer>
     </div>
 
-    <section v-for="tier in itemsByTier" :key="tier.number" class="mb-8">
-      <header class="flex items-center sticky top-0 py-1 mb-8 bg-gray-200">
+    <section v-for="tier in itemsByTier" :key="tier.number">
+      <header class="flex items-center sticky top-0 py-1 bg-gray-200">
         <h2 class="mr-3">{{ tier.name }}</h2>
         <p class="px-2 py-1 rounded-full bg-gray-400 text-white text-sm">
           {{ tier.description }}
         </p>
       </header>
 
-      <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-8">
         <li v-for="animal in tier.animals" :key="animal.id">
           <router-link
             :to="{ query: route.query, hash: `#${animal.id}` }"
