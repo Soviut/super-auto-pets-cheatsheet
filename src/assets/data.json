@@ -165,9 +165,9 @@
       "attack": 1,
       "health": 2,
       "levels": [
-        "Sell: Give shop animals +0/+1",
-        "Sell: Give shop animals +0/+2",
-        "Sell: Give shop animals +0/+3"
+        "Sell: Give shop animals +1 Health",
+        "Sell: Give shop animals +2 Health",
+        "Sell: Give shop animals +3 Health"
       ],
       "tags": [
         "sell"
@@ -200,7 +200,7 @@
         0
       ],
       "tier": 0,
-      "attack": 1,
+      "attack": 2,
       "health": 1,
       "levels": [
         "Friend summoned: Give it +1 Attack until end of battle",
@@ -337,9 +337,9 @@
       "attack": 3,
       "health": 3,
       "levels": [
-        "Buy: Copy Health from friend ahead",
-        "Buy: Copy Health from friend ahead",
-        "Buy: Copy Health from friend ahead"
+        "Buy: Copy Health from the most healthy friend",
+        "Buy: Copy Health from the most healthy friend",
+        "Buy: Copy Health from the most healthy friend"
       ],
       "tags": [
         "buy"
@@ -356,9 +356,9 @@
       "attack": 2,
       "health": 3,
       "levels": [
-        "Start of battle: Give 50% Attack to friend ahead",
-        "Start of battle: Give 100% Attack to friend ahead",
-        "Start of battle: Give 150% Attack to friend ahead"
+        "Start of battle: Give 50% of Dodo's Attack to friend ahead",
+        "Start of battle: Give 100% of Dodo's Attack to friend ahead",
+        "Start of battle: Give 150% of Dodo's Attack to friend ahead"
       ],
       "tags": [
         "start-of-battle"
@@ -494,9 +494,9 @@
       "attack": 3,
       "health": 1,
       "levels": [
-        "Faint: Summon one 1/1 Dirty Rat that deals 3 damage to friend ahead",
-        "Faint: Summon one 1/1 Dirty Rat that deals 6 damage to friend ahead",
-        "Faint: Summon one 1/1 Dirty Rat that deals 9 damage to friend ahead"
+        "Faint: Summon a 1/1 Dirty Rat for the opponent (deals 1 damage to last enemy)",
+        "Faint: Summon a 1/1 Dirty Rat for the opponent (deals 1 damage to last enemy)",
+        "Faint: Summon a 1/1 Dirty Rat for the opponent (deals 1 damage to last enemy)"
       ],
       "tags": [
         "faint"
@@ -570,12 +570,12 @@
         1
       ],
       "tier": 1,
-      "attack": 2,
+      "attack": 5,
       "health": 3,
       "levels": [
+        "Eats shop food: Give friends +1 Attack until end of battle",
         "Eats shop food: Give friends +2 Attack until end of battle",
-        "Eats shop food: Give friends +4 Attack until end of battle",
-        "Eats shop food: Give friends +6 Attack until end of battle"
+        "Eats shop food: Give friends +3 Attack until end of battle"
       ],
       "tags": [
         "eats-shop-food"
@@ -652,7 +652,7 @@
       "levels": [
         "Start of turn: Gain 1 Experience",
         "Start of turn: Gain 1 Experience",
-        "Start of battle: Evolve into a Butterfly, then copy stats of the strongest friend"
+        "Start of battle: Evolve into a Butterfly, then copy stats of the strongest friend (highest Attack + Health)"
       ],
       "tags": [
         "start-of-turn",
@@ -782,16 +782,16 @@
         0,
         1
       ],
-      "tier": 1,
+      "tier": 2,
       "attack": 3,
       "health": 2,
       "levels": [
-        "Friend eats shop food: Give it +1 Health (can trigger on itself)",
-        "Friend eats shop food: Give it +2 Health (can trigger on itself)",
-        "Friend eats shop food: Give it +3 Health (can trigger on itself)"
+        "Pet eats shop food: Give it +1 Health (can trigger on itself)",
+        "Pet eats shop food: Give it +2 Health (can trigger on itself)",
+        "Pet eats shop food: Give it +3 Health (can trigger on itself)"
       ],
       "tags": [
-        "friend-eats-shop-food"
+        "pet-eats-shop-food"
       ]
     },
     {
@@ -943,9 +943,9 @@
       "attack": 1,
       "health": 1,
       "levels": [
-        "Faint: Summon a 5/5 Bus with Spash attack",
-        "Faint: Summon a 10/10 Bus with Spash attack",
-        "Faint: Summon a 15/15 Bus with Spash attack"
+        "Faint: Summon a 5/5 Bus with Splash attack",
+        "Faint: Summon a 10/10 Bus with Splash attack",
+        "Faint: Summon a 15/15 Bus with Splash attack"
       ],
       "tags": [
         "faint"
@@ -956,7 +956,8 @@
       "name": "Dolphin",
       "imageUrl": "/images/dolphin.png",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 3,
       "attack": 4,
@@ -1016,12 +1017,12 @@
         1
       ],
       "tier": 3,
-      "attack": 3,
-      "health": 3,
+      "attack": 4,
+      "health": 5,
       "levels": [
-        "Friend summoned: Give it +3/+3 when not in battle",
-        "Friend summoned: Give it +6/+6 when not in battle",
-        "Friend summoned: Give it +9/+9 when not in battle"
+        "Friend summoned: Give it +2/+2 when not in battle",
+        "Friend summoned: Give it +4/+4 when not in battle",
+        "Friend summoned: Give it +6/+6 when not in battle"
       ],
       "tags": [
         "friend-summoned"
@@ -1093,12 +1094,12 @@
         1
       ],
       "tier": 3,
-      "attack": 3,
+      "attack": 5,
       "health": 3,
       "levels": [
-        "Faint: Summon a chick with 1 health and the same Attack as this",
-        "Faint: Summon 2 chicks with 1 health and the same Attack as this",
-        "Faint: Summon 3 chicks with 1 health and the same Attack as this"
+        "Faint: Summon a chick with 1 health and half the Attack of this",
+        "Faint: Summon 2 chicks with 1 health and half the Attack of this",
+        "Faint: Summon 3 chicks with 1 health and half the Attack of this"
       ],
       "tags": [
         "faint"
@@ -1114,7 +1115,7 @@
       ],
       "tier": 3,
       "attack": 3,
-      "health": 6,
+      "health": 5,
       "levels": [
         "Start of battle: Reduce the highest Health enemy by 33%",
         "Start of battle: Reduce the highest Health enemy by 66%",
@@ -1134,14 +1135,14 @@
       ],
       "tier": 3,
       "attack": 2,
-      "health": 2,
+      "health": 5,
       "levels": [
-        "Buy: Clear and fill shop with food that costs 2 gold",
-        "Buy: Clear and fill shop with food that costs 2 gold",
-        "Buy: Clear and fill shop with food that costs 2 gold"
+        "Start of turn: Discount shop food by 1 gold",
+        "Start of turn: Discount shop food by 2 gold",
+        "Start of turn: Discount shop food by 3 gold"
       ],
       "tags": [
-        "buy"
+        "start-of-turn"
       ]
     },
     {
@@ -1571,7 +1572,7 @@
     },
     {
       "id": "tiger",
-      "name": "Tiger",
+      "name": "Tiger Cub",
       "imageUrl": "/images/tiger.png",
       "packs": [
         0
