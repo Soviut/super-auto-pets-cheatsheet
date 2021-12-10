@@ -1115,7 +1115,7 @@
       ],
       "tier": 3,
       "attack": 3,
-      "health": 5,
+      "health": 6,
       "levels": [
         "Start of battle: Reduce the highest Health enemy by 33%",
         "Start of battle: Reduce the highest Health enemy by 66%",
@@ -1137,9 +1137,9 @@
       "attack": 2,
       "health": 5,
       "levels": [
-        "Start of turn: Discount shop food by 1 gold",
-        "Start of turn: Discount shop food by 2 gold",
-        "Start of turn: Discount shop food by 3 gold"
+        "Start of turn: Roll shop with food discount by 1 gold",
+        "Start of turn: Roll shop with food discount by 2 gold",
+        "Start of turn: Roll shop with food discount by 3 gold"
       ],
       "tags": [
         "start-of-turn"
@@ -1441,8 +1441,8 @@
         0
       ],
       "tier": 5,
-      "attack": 2,
-      "health": 2,
+      "attack": 5,
+      "health": 5,
       "levels": [
         "Friend faints: Summon a 5/5 fly in its place up to 3 times",
         "Friend faints: Summon a 10/10 fly in its place up to 3 times",
@@ -1575,7 +1575,8 @@
       "name": "Tiger Cub",
       "imageUrl": "/images/tiger.png",
       "packs": [
-        0
+        0,
+        1
       ],
       "tier": 5,
       "attack": 4,
