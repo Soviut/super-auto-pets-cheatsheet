@@ -1137,9 +1137,9 @@
       "attack": 2,
       "health": 5,
       "levels": [
-        "Start of turn: Roll shop with food discount by 1 gold",
-        "Start of turn: Roll shop with food discount by 2 gold",
-        "Start of turn: Roll shop with food discount by 3 gold"
+        "Start of turn: Roll shop with food discounted by 1 gold",
+        "Start of turn: Roll shop with food discounted by 2 gold",
+        "Start of turn: Roll shop with food discounted by 3 gold"
       ],
       "tags": [
         "start-of-turn"
