@@ -494,12 +494,32 @@
       "attack": 3,
       "health": 1,
       "levels": [
-        "Faint: Summon a 1/1 Dirty Rat for the opponent (deals 1 damage to last enemy)",
-        "Faint: Summon a 1/1 Dirty Rat for the opponent (deals 1 damage to last enemy)",
-        "Faint: Summon a 1/1 Dirty Rat for the opponent (deals 1 damage to last enemy)"
+        "Faint: Summon a 1/1 Dirty Rat for the opponent (See Dirty Rat)",
+        "Faint: Summon a 1/1 Dirty Rat for the opponent (See Dirty Rat)",
+        "Faint: Summon a 1/1 Dirty Rat for the opponent (See Dirty Rat)"
       ],
       "tags": [
         "faint"
+      ]
+    },
+    {
+      "id": "dirty-rat",
+      "name": "Dirty Rat",
+      "imageUrl": "/images/dirty-rat.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 1,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "Friend ahead attacks: deal 1 damage to it",
+        "Friend ahead attacks: deal 1 damage to it",
+        "Friend ahead attacks: deal 1 damage to it"
+      ],
+      "tags": [
+        "friend-ahead-attacks"
       ]
     },
     {
