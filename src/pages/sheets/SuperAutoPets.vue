@@ -58,7 +58,7 @@ const current = computed<Animal | Food | undefined>(() => {
   const id = route.hash.replace('#', '')
   const item = items.value.find((item) => item.id === id)
 
-  return item && ((item as Animal) ? item as Animal : item as Food)
+  return item && ((item as Animal) ? (item as Animal) : (item as Food))
 })
 
 // lock scrolling if we are in a modal
@@ -243,7 +243,16 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     </header>
 
     <div class="px-5 py-3 mb-8 rounded-lg bg-info-300">
-      Updated with Dec 8th, 2021 balance patch
+      Updated with Dec 8, 2021 balance patch
+
+      <a
+        href="https://www.reddit.com/r/superautopets/comments/rd1j6n/updated_my_sap_cheat_sheet_with_dec_8_balance/"
+        target="_blank"
+        rel="noopener"
+        class="inline-block ml-3 px-1 text-info-700 text-sm border border-info-600 rounded hover:bg-info-600 hover:text-white hover:no-underline"
+      >
+        give feedback
+      </a>
     </div>
 
     <form class="mb-8" @submit.prevent>
@@ -420,7 +429,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     </form>
 
     <div v-if="filteredItems.length === 0" class="text-center">
-      <img src="/images/turtle.png" class="inline-block mb-8 w-32 h-32" alt="turtle mascot" />
+      <img
+        src="/images/turtle.png"
+        class="inline-block mb-8 w-32 h-32"
+        alt="turtle mascot"
+      />
 
       <p class="mb-8">No results found, try modifying your search</p>
 
@@ -469,7 +482,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           >
             <header class="flex gap-3">
               <div class="flex-shrink-0">
-                <img :src="animal.imageUrl" class="w-20 h-20 object-contain" :alt="animal.name" />
+                <img
+                  :src="animal.imageUrl"
+                  class="w-20 h-20 object-contain"
+                  :alt="animal.name"
+                />
               </div>
 
               <div class="flex-grow">
@@ -512,7 +529,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
           >
             <header class="flex gap-3">
               <div class="flex-shrink-0">
-                <img :src="food.imageUrl" class="w-20 h-20 object-contain" :alt="food.name" />
+                <img
+                  :src="food.imageUrl"
+                  class="w-20 h-20 object-contain"
+                  :alt="food.name"
+                />
               </div>
 
               <div class="flex-grow">
@@ -585,7 +606,11 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
         <header class="flex gap-5">
           <div class="flex-shrink-0">
-            <img :src="current.imageUrl" class="w-32 h-32 object-contain" :alt="current.name" />
+            <img
+              :src="current.imageUrl"
+              class="w-32 h-32 object-contain"
+              :alt="current.name"
+            />
           </div>
 
           <div class="flex-grow">
@@ -595,7 +620,16 @@ if (route.query.term || route.query.packs || route.query.tiers) {
 
             <div>{{ tiers[current.tier].name }}</div>
 
-            <div class="inline-block px-2 py-1 rounded-full bg-gray-400 text-white text-sm">
+            <div
+              class="
+                inline-block
+                px-2
+                py-1
+                rounded-full
+                bg-gray-400
+                text-white text-sm
+              "
+            >
               {{ tiers[current.tier].description }}
             </div>
 
