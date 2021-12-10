@@ -242,6 +242,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
       </a>
     </header>
 
+    <div class="px-5 py-3 mb-8 rounded-lg bg-info-300">
+      Updated with Dec 8th, 2021 balance patch
+    </div>
+
     <form class="mb-8" @submit.prevent>
       <div class="mb-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="md:col-span-2">
