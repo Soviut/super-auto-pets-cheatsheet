@@ -249,7 +249,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
         href="https://www.reddit.com/r/superautopets/comments/rd1j6n/updated_my_sap_cheat_sheet_with_dec_8_balance/"
         target="_blank"
         rel="noopener"
-        class="inline-block ml-3 px-1 text-info-700 text-sm border border-info-600 rounded hover:bg-info-600 hover:text-white hover:no-underline"
+        class="inline-block px-1 text-info-700 text-sm border border-info-600 rounded hover:bg-info-600 hover:text-white hover:no-underline"
       >
         give feedback
       </a>
