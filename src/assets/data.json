@@ -767,12 +767,12 @@
       "attack": 1,
       "health": 4,
       "levels": [
-        "Friend ahead attacks: Gain Melon Armor and +2 Attack",
-        "Friend ahead attacks: Gain Melon Armor and +4 Attack",
-        "Friend ahead attacks: Gain Melon Armor and +6 Attack"
+        "Friend ahead faints: Gain Melon Armor and +2 Attack",
+        "Friend ahead faints: Gain Melon Armor and +4 Attack",
+        "Friend ahead faints: Gain Melon Armor and +6 Attack"
       ],
       "tags": [
-        "friend-ahead-attacks"
+        "friend-ahead-faints"
       ]
     },
     {
