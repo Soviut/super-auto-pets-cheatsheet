@@ -39,8 +39,8 @@ interface Animal extends Item {
   packs: number[]
   attack: number
   health: number
-  levels: string[]
   summon: boolean
+  levels: string[]
 }
 
 interface Food extends Item {
@@ -48,6 +48,9 @@ interface Food extends Item {
 }
 
 const { animals, foods, packs, tiers } = data
+
+// excludes summons
+const numberedTiers = tiers.slice(0, 6)
 
 const term = ref('')
 const normalizedTerm = computed(() => term.value.trim().toLowerCase())
@@ -130,6 +133,10 @@ const togglePack = (i: number) => {
 
 const selectedTiers = ref<number[]>([])
 
+const selectedNumberedTiers = computed(() => selectedTiers.value.filter(
+  (tier) => tier < numberedTiers.length
+))
+
 const toggleTier = (i: number) => {
   if (selectedTiers.value.includes(i)) {
     selectedTiers.value = selectedTiers.value.filter((t) => t !== i)
@@ -157,7 +164,11 @@ const toggleFood = () => {
 const showSummons = ref<boolean>(true)
 
 const toggleSummons = () => {
-  showSummons.value = !showSummons.value
+  if (selectedTiers.value.includes(6)) {
+    selectedTiers.value = selectedTiers.value.filter((t) => t !== 6)
+  } else {
+    selectedTiers.value.push(6)
+  }
 
   gtag.event('toggle_summons', {
     event_category: 'filters',
@@ -168,7 +179,7 @@ const toggleSummons = () => {
 const reset = () => {
   term.value = ''
   selectedPacks.value = [0, 1]
-  selectedTiers.value = [0, 1, 2, 3, 4, 5]
+  selectedTiers.value = [0, 1, 2, 3, 4, 5, 6] // 6 is summons
   showFood.value = true
 
   gtag.event('reset_filters', {
@@ -181,7 +192,7 @@ watch(
   [term, selectedPacks, selectedTiers],
   ([newTerm, newPacks, newTiers]) => {
     const filtering =
-      newTerm.length || newPacks.length !== 2 || newTiers.length !== 6
+      newTerm.length || newPacks.length !== 2 || newTiers.length !== 7
 
     router.replace({
       hash: route.hash,
@@ -380,10 +391,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             <div
               class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
               :class="{
-                '!bg-primary-500': selectedTiers.length !== tiers.length,
+                '!bg-primary-500': selectedNumberedTiers.length !== numberedTiers.length,
               }"
             >
-              {{ selectedTiers.length }} / {{ tiers.length }}
+              {{ selectedNumberedTiers.length }} / {{ numberedTiers.length }}
             </div>
 
             <div
@@ -411,7 +422,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                 class="p-5 bg-white rounded-b-lg shadow-lg space-y-2 border-t"
               >
                 <div
-                  v-for="(tier, i) in tiers"
+                  v-for="(tier, i) in numberedTiers"
                   :key="tier.id"
                   class="flex items-center"
                 >

@@ -33,6 +33,11 @@
       "id": "tier6",
       "name": "Tier 6",
       "description": "Available turn 11"
+    },
+    {
+      "id": "summons",
+      "name": "Summons",
+      "description": ""
     }
   ],
   "animals": [
@@ -510,7 +515,7 @@
         0,
         1
       ],
-      "tier": -1,
+      "tier": 6,
       "attack": 1,
       "health": 1,
       "levels": [
