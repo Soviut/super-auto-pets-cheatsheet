@@ -27,7 +27,6 @@ interface Tier {
   description: string
 }
 
-// TODO: move to types
 interface Item {
   id: string
   name: string
@@ -41,6 +40,7 @@ interface Animal extends Item {
   attack: number
   health: number
   levels: string[]
+  summon: boolean
 }
 
 interface Food extends Item {
@@ -151,6 +151,17 @@ const toggleFood = () => {
   gtag.event('toggle_food', {
     event_category: 'filters',
     event_label: 'food',
+  })
+}
+
+const showSummons = ref<boolean>(true)
+
+const toggleSummons = () => {
+  showSummons.value = !showSummons.value
+
+  gtag.event('toggle_summons', {
+    event_category: 'filters',
+    event_label: 'summons',
   })
 }
 
@@ -375,6 +386,15 @@ if (route.query.term || route.query.packs || route.query.tiers) {
               {{ selectedTiers.length }} / {{ tiers.length }}
             </div>
 
+            <div
+              class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
+              :class="{
+                '!bg-primary-500': !showSummons,
+              }"
+            >
+              Summons
+            </div>
+
             <ChevronDownIcon class="w-5 h-5 ml-auto text-gray-500" />
           </PopoverButton>
 
@@ -408,6 +428,18 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                       {{ tier.description }}
                     </span>
                   </label>
+                </div>
+
+                <hr />
+
+                <div class="flex items-center">
+                  <input
+                    id="summons"
+                    type="checkbox"
+                    :checked="showSummons"
+                    @input="toggleSummons"
+                  />
+                  <label for="summons" class="ml-2 flex-grow">Summons</label>
                 </div>
               </fieldset>
             </PopoverPanel>
