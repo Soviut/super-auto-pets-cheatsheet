@@ -49,7 +49,7 @@ interface Food extends Item {
 
 const { animals, foods, packs, tiers } = data
 
-// excludes summons
+// excludes summons (hidden tier 7)
 const numberedTiers = tiers.slice(0, 6)
 
 const term = ref('')
