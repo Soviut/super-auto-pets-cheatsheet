@@ -39,7 +39,6 @@ interface Animal extends Item {
   packs: number[]
   attack: number
   health: number
-  summon: boolean
   levels: string[]
 }
 
@@ -133,9 +132,9 @@ const togglePack = (i: number) => {
 
 const selectedTiers = ref<number[]>([])
 
-const selectedNumberedTiers = computed(() => selectedTiers.value.filter(
-  (tier) => tier < numberedTiers.length
-))
+const selectedNumberedTiers = computed(() =>
+  selectedTiers.value.filter((tier) => tier < numberedTiers.length)
+)
 
 const toggleTier = (i: number) => {
   if (selectedTiers.value.includes(i)) {
@@ -271,7 +270,14 @@ if (route.query.term || route.query.packs || route.query.tiers) {
         href="https://www.reddit.com/r/superautopets/comments/rd1j6n/updated_my_sap_cheat_sheet_with_dec_8_balance/"
         target="_blank"
         rel="noopener"
-        class="inline-block px-1 text-info-700 text-sm border border-info-600 rounded hover:bg-info-600 hover:text-white hover:no-underline"
+        class="
+          inline-block
+          px-1
+          text-info-700 text-sm
+          border border-info-600
+          rounded
+          hover:bg-info-600 hover:text-white hover:no-underline
+        "
       >
         give feedback
       </a>
@@ -391,7 +397,8 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             <div
               class="ml-2 px-2 py-1 rounded-full bg-gray-400 text-white text-xs"
               :class="{
-                '!bg-primary-500': selectedNumberedTiers.length !== numberedTiers.length,
+                '!bg-primary-500':
+                  selectedNumberedTiers.length !== numberedTiers.length,
               }"
             >
               {{ selectedNumberedTiers.length }} / {{ numberedTiers.length }}
@@ -435,7 +442,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
                   <label :for="`tier-${i}`" class="ml-2 flex-grow">
                     {{ tier.name }}
 
-                    <span class="ml-3 text-gray-400 text-sm">
+                    <span
+                      v-if="tier.description.trim()"
+                      class="ml-3 text-gray-400 text-sm"
+                    >
                       {{ tier.description }}
                     </span>
                   </label>
@@ -502,7 +512,10 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     <section v-for="tier in itemsByTier" :key="tier.number">
       <header class="flex items-center sticky top-0 py-1 bg-gray-200">
         <h2 class="mr-3">{{ tier.name }}</h2>
-        <p class="px-2 py-1 rounded-full bg-gray-400 text-white text-sm">
+        <p
+          v-if="tier.description.trim()"
+          class="px-2 py-1 rounded-full bg-gray-400 text-white text-sm"
+        >
           {{ tier.description }}
         </p>
       </header>
@@ -664,6 +677,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
             <div>{{ tiers[current.tier].name }}</div>
 
             <div
+              v-if="tiers[current.tier].description.trim()"
               class="
                 inline-block
                 px-2
