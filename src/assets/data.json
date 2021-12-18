@@ -1734,7 +1734,7 @@
     {
       "id": "zombie-cricket",
       "name": "Zombie Cricket",
-      "imageUrl": "/images/cricket.png",
+      "imageUrl": "/images/zombie-cricket.png",
       "packs": [
         0,
         1
