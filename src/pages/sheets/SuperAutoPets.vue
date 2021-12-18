@@ -160,7 +160,7 @@ const toggleFood = () => {
   })
 }
 
-const showSummons = ref<boolean>(true)
+const showSummons = computed<boolean>(() => selectedTiers.value.includes(6))
 
 const toggleSummons = () => {
   if (selectedTiers.value.includes(6)) {
