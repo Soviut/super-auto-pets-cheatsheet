@@ -82,64 +82,6 @@
       ]
     },
     {
-      "id": "bee",
-      "name": "Bee",
-      "imageUrl": "/images/honeybee.png",
-      "packs": [
-        0,
-        1
-      ],
-      "tier": 6,
-      "attack": 1,
-      "health": 1,
-      "levels": [
-        "No ability",
-        "No ability",
-        "No ability"
-      ],
-      "tags": [
-      ]
-    },
-    {
-      "id": "bus",
-      "name": "Bus",
-      "imageUrl": "/images/bus.png",
-      "packs": [
-        0,
-        1
-      ],
-      "tier": 6,
-      "attack": 5,
-      "health": 5,
-      "levels": [
-        "Summons as 5/5 with Splash Atack (attack second enemy for 5 damage)",
-        "Summons as 10/10 with Splash Atack (attack second enemy for 5 damage)",
-        "Summons as 15/15 with Splash Atack (attack second enemy for 5 damage)"
-      ],
-      "tags": [
-        "eat-shop-food"
-      ]
-    },
-    {
-      "id": "chick",
-      "name": "Chick",
-      "imageUrl": "/images/baby-chick.png",
-      "packs": [
-        0,
-        1
-      ],
-      "tier": 6,
-      "attack": 0,
-      "health": 1,
-      "levels": [
-        "Summons with 50% of summoner's attack",
-        "Summons with 50% of summoner's attack",
-        "Summons with 50% of summoner's attack"
-      ],
-      "tags": [
-      ]
-    },
-    {
       "id": "beetle",
       "name": "Beetle",
       "imageUrl": "/images/beetle.png",
@@ -215,25 +157,6 @@
       ],
       "tags": [
         "faint"
-      ]
-    },
-    {
-      "id": "zombie-cricket",
-      "name": "Zombie Cricket",
-      "imageUrl": "/images/cricket.png",
-      "packs": [
-        0,
-        1
-      ],
-      "tier": 6,
-      "attack": 1,
-      "health": 1,
-      "levels": [
-        "Summons as 1/1",
-        "Summons as 2/2",
-        "Summons as 3/3"
-      ],
-      "tags": [
       ]
     },
     {
@@ -585,26 +508,6 @@
       ]
     },
     {
-      "id": "dirty-rat",
-      "name": "Dirty Rat",
-      "imageUrl": "/images/dirty-rat.png",
-      "packs": [
-        0,
-        1
-      ],
-      "tier": 6,
-      "attack": 1,
-      "health": 1,
-      "levels": [
-        "Friend ahead attacks: deal 1 damage to it",
-        "Friend ahead attacks: deal 1 damage to it",
-        "Friend ahead attacks: deal 1 damage to it"
-      ],
-      "tags": [
-        "friend-ahead-attacks"
-      ]
-    },
-    {
       "id": "shrimp",
       "name": "Shrimp",
       "imageUrl": "/images/shrimp.png",
@@ -762,25 +665,6 @@
       ]
     },
     {
-      "id": "butterfly",
-      "name": "Butterfly",
-      "imageUrl": "/images/butterfly.png",
-      "packs": [
-        1
-      ],
-      "tier": 6,
-      "attack": 0,
-      "health": 0,
-      "levels": [
-        "Summon: copy stats of the strongest friend (highest Attack + Health)",
-        "Summon: copy stats of the strongest friend (highest Attack + Health)",
-        "Summon: copy stats of the strongest friend (highest Attack + Health)"
-      ],
-      "tags": [
-        "summon"
-      ]
-    },
-    {
       "id": "giraffe",
       "name": "Giraffe",
       "imageUrl": "/images/giraffe.png",
@@ -933,25 +817,6 @@
       ],
       "tags": [
         "faint"
-      ]
-    },
-    {
-      "id": "ram",
-      "name": "Ram",
-      "imageUrl": "/images/ram.png",
-      "packs": [
-        0,
-        1
-      ],
-      "tier": 6,
-      "attack": 2,
-      "health": 2,
-      "levels": [
-        "Summons as 2/2",
-        "Summons as 4/4",
-        "Summons as 6/6"
-      ],
-      "tags": [
       ]
     },
     {
@@ -1747,6 +1612,142 @@
       ],
       "tags": [
         "end-turn"
+      ]
+    },
+
+    {
+      "id": "bee",
+      "name": "Bee",
+      "imageUrl": "/images/honeybee.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 6,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "No ability",
+        "No ability",
+        "No ability"
+      ],
+      "tags": [
+      ]
+    },
+    {
+      "id": "bus",
+      "name": "Bus",
+      "imageUrl": "/images/bus.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 6,
+      "attack": 5,
+      "health": 5,
+      "levels": [
+        "Summons as 5/5 with Splash Atack (attack second enemy for 5 damage)",
+        "Summons as 10/10 with Splash Atack (attack second enemy for 5 damage)",
+        "Summons as 15/15 with Splash Atack (attack second enemy for 5 damage)"
+      ],
+      "tags": [
+        "eat-shop-food"
+      ]
+    },
+    {
+      "id": "butterfly",
+      "name": "Butterfly",
+      "imageUrl": "/images/butterfly.png",
+      "packs": [
+        1
+      ],
+      "tier": 6,
+      "attack": 0,
+      "health": 0,
+      "levels": [
+        "Summon: copy stats of the strongest friend (highest Attack + Health)",
+        "Summon: copy stats of the strongest friend (highest Attack + Health)",
+        "Summon: copy stats of the strongest friend (highest Attack + Health)"
+      ],
+      "tags": [
+        "summon"
+      ]
+    },
+    {
+      "id": "chick",
+      "name": "Chick",
+      "imageUrl": "/images/baby-chick.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 6,
+      "attack": 0,
+      "health": 1,
+      "levels": [
+        "Summons with 50% of summoner's attack",
+        "Summons with 50% of summoner's attack",
+        "Summons with 50% of summoner's attack"
+      ],
+      "tags": [
+      ]
+    },
+    {
+      "id": "dirty-rat",
+      "name": "Dirty Rat",
+      "imageUrl": "/images/dirty-rat.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 6,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "Friend ahead attacks: deal 1 damage to it",
+        "Friend ahead attacks: deal 1 damage to it",
+        "Friend ahead attacks: deal 1 damage to it"
+      ],
+      "tags": [
+        "friend-ahead-attacks"
+      ]
+    },
+    {
+      "id": "ram",
+      "name": "Ram",
+      "imageUrl": "/images/ram.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 6,
+      "attack": 2,
+      "health": 2,
+      "levels": [
+        "Summons as 2/2",
+        "Summons as 4/4",
+        "Summons as 6/6"
+      ],
+      "tags": [
+      ]
+    },
+    {
+      "id": "zombie-cricket",
+      "name": "Zombie Cricket",
+      "imageUrl": "/images/cricket.png",
+      "packs": [
+        0,
+        1
+      ],
+      "tier": 6,
+      "attack": 1,
+      "health": 1,
+      "levels": [
+        "Summons as 1/1",
+        "Summons as 2/2",
+        "Summons as 3/3"
+      ],
+      "tags": [
       ]
     }
   ],
