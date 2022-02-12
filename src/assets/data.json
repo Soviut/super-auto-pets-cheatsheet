@@ -168,7 +168,7 @@
       ],
       "tier": 0,
       "attack": 1,
-      "health": 2,
+      "health": 3,
       "levels": [
         "Sell: Give shop animals +1 Health",
         "Sell: Give shop animals +2 Health",
@@ -197,7 +197,8 @@
       "tags": [
         "level-up"
       ]
-    },    {
+    },
+    {
       "id": "horse",
       "name": "Horse",
       "imageUrl": "/images/horse.png",
@@ -476,12 +477,12 @@
         1
       ],
       "tier": 1,
-      "attack": 1,
+      "attack": 2,
       "health": 5,
       "levels": [
-        "Hurt: Gain +2 Attack",
-        "Hurt: Gain +4 Attack",
-        "Hurt: Gain +6 Attack"
+        "Hurt: Gain 50% more Attack. Works 1 time(s) per turn.",
+        "Hurt: Gain 50% more Attack. Works 2 time(s) per turn.",
+        "Hurt: Gain 50% more Attack. Works 3 time(s) per turn."
       ],
       "tags": [
         "hurt"
@@ -499,9 +500,9 @@
       "attack": 4,
       "health": 5,
       "levels": [
-        "Faint: Summon a 1/1 Dirty Rat for the opponent (See Dirty Rat)",
-        "Faint: Summon a 1/1 Dirty Rat for the opponent (See Dirty Rat)",
-        "Faint: Summon a 1/1 Dirty Rat for the opponent (See Dirty Rat)"
+        "Faint: Summon one 1/1 Dirty Rat up front for the opponent (See Dirty Rat)",
+        "Faint: Summon two 1/1 Dirty Rats up front for the opponent (See Dirty Rat)",
+        "Faint: Summon three 1/1 Dirty Rats up front for the opponent (See Dirty Rat)"
       ],
       "tags": [
         "faint"
@@ -556,7 +557,7 @@
         1
       ],
       "tier": 1,
-      "attack": 3,
+      "attack": 1,
       "health": 3,
       "levels": [
         "Start of turn: Gain 1 gold",
@@ -831,9 +832,9 @@
       "attack": 2,
       "health": 2,
       "levels": [
-        "Buy: If you lost last battle, give all friends +2/+1",
-        "Buy: If you lost last battle, give all friends +4/+2",
-        "Buy: If you lost last battle, give all friends +6/+3"
+        "Buy: If you lost last battle, give all friends +1/+1",
+        "Buy: If you lost last battle, give all friends +2/+2",
+        "Buy: If you lost last battle, give all friends +3/+3"
       ],
       "tags": [
         "buy"
@@ -886,8 +887,8 @@
         0
       ],
       "tier": 3,
-      "attack": 2,
-      "health": 6,
+      "attack": 3,
+      "health": 8,
       "levels": [
         "Start of battle: Swallow friend ahead and release it as a level 1 after fainting",
         "Start of battle: Swallow friend ahead and release it as a level 2 after fainting",
@@ -1044,9 +1045,9 @@
       "attack": 3,
       "health": 3,
       "levels": [
-        "End turn: Give right-most friend +3/+3",
-        "End turn: Give right-most friend +6/+6",
-        "End turn: Give right-most friend +9/+9"
+        "End turn: Give right-most friend +2/+3",
+        "End turn: Give right-most friend +4/+6",
+        "End turn: Give right-most friend +6/+9"
       ],
       "tags": [
         "end-turn"
@@ -1430,9 +1431,9 @@
       "attack": 6,
       "health": 8,
       "levels": [
-        "Buy tier 1 pet: Give all friends +1/+1",
-        "Buy tier 1 pet: Give all friends +2/+2",
-        "Buy tier 1 pet: Give all friends +3/+3"
+        "Buy tier 1 pet: Give other pets +1/+1",
+        "Buy tier 1 pet: Give other pets +2/+2",
+        "Buy tier 1 pet: Give other pets +3/+3"
       ],
       "tags": [
         "buy-tier-1-pet"
@@ -1606,15 +1607,14 @@
       "attack": 9,
       "health": 4,
       "levels": [
-        "End turn: If you have 3 or more gold, give friends and itself +2/+1",
-        "End turn: If you have 3 or more gold, give friends and itself +4/+2",
-        "End turn: If you have 3 or more gold, give friends and itself +6/+3"
+        "End turn: If you have 3 or more gold, give other pets +2/+1",
+        "End turn: If you have 3 or more gold, give other pets +4/+2",
+        "End turn: If you have 3 or more gold, give other pets +6/+3"
       ],
       "tags": [
         "end-turn"
       ]
     },
-
     {
       "id": "bee",
       "name": "Bee",
@@ -1631,8 +1631,7 @@
         "No ability",
         "No ability"
       ],
-      "tags": [
-      ]
+      "tags": []
     },
     {
       "id": "bus",
@@ -1689,8 +1688,7 @@
         "Summons with 50% of summoner's attack",
         "Summons with 50% of summoner's attack"
       ],
-      "tags": [
-      ]
+      "tags": []
     },
     {
       "id": "dirty-rat",
@@ -1728,8 +1726,7 @@
         "Summons as 4/4",
         "Summons as 6/6"
       ],
-      "tags": [
-      ]
+      "tags": []
     },
     {
       "id": "zombie-cricket",
@@ -1747,8 +1744,7 @@
         "Summons as 2/2",
         "Summons as 3/3"
       ],
-      "tags": [
-      ]
+      "tags": []
     }
   ],
   "foods": [

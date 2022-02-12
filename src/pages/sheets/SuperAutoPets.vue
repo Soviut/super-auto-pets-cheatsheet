@@ -264,23 +264,7 @@ if (route.query.term || route.query.packs || route.query.tiers) {
     </header>
 
     <div class="px-5 py-3 mb-8 rounded-lg bg-info-300">
-      Updated with Dec 8, 2021 balance patch
-
-      <a
-        href="https://www.reddit.com/r/superautopets/comments/rd1j6n/updated_my_sap_cheat_sheet_with_dec_8_balance/"
-        target="_blank"
-        rel="noopener"
-        class="
-          inline-block
-          px-1
-          text-info-700 text-sm
-          border border-info-600
-          rounded
-          hover:bg-info-600 hover:text-white hover:no-underline
-        "
-      >
-        give feedback
-      </a>
+      Updated to version 0.16 released Feb 10, 2022
     </div>
 
     <form class="mb-8" @submit.prevent>
