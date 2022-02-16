@@ -1470,9 +1470,9 @@
       "attack": 6,
       "health": 9,
       "levels": [
-        "Hurt: Gain Coconut Shield (activates 1 time per turn)",
-        "Hurt: Gain Coconut Shield (activates 2 times per turn)",
-        "Hurt: Gain Coconut Shield (activates 3 times per turn)"
+        "Hurt: Gain Coconut Shield (ignore damange once, activates 1 time per turn)",
+        "Hurt: Gain Coconut Shield (ignore damange once, activates 2 times per turn)",
+        "Hurt: Gain Coconut Shield (ignore damange once, activates 3 times per turn)"
       ],
       "tags": [
         "hurt"
@@ -1788,7 +1788,7 @@
       "name": "Garlic",
       "imageUrl": "/images/garlic.png",
       "tier": 2,
-      "description": "Give an animal Garlic Armor"
+      "description": "Give an animal Garlic Armor (take 2 less damage per incoming attack)"
     },
     {
       "id": "salad-bowl",
